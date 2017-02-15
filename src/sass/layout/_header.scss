@@ -1,0 +1,92 @@
+.ac {
+    color: $ac;
+    font-weight: 600;
+}
+.header__first-line {
+    .container {
+        @include clearfix;
+    }
+    i {
+        margin-right: 5px;
+    }
+    color: #cfcece;
+    font-size: 13px;
+    min-height: 35px;
+    background: $dg;
+    line-height: 35px;
+    .left-nav {
+        margin-right: 175px;
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        a {
+            @include transition(color .25s);
+            &:hover {
+                color: $ac;
+            }
+        }
+    }
+    .inBasket {
+        a {
+            @include transition(color .25s);
+            &:hover {
+                color: $ac;
+            }
+        }
+    }
+    .right-nav {
+        p {
+            display: inline-block;
+            margin-right: 35px;
+            cursor: pointer;
+            @include transition(color .25s);
+            &:hover {
+                color: $ac;
+            }
+        }
+        a {
+            color: $ac;
+        }
+    }
+}
+
+.header__top-line {
+    .container {
+        @include clearfix;
+    }
+    padding-top: 25px;
+    min-height: 125px;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 14px;
+    color: $lg;
+    .logo-img {
+        li {
+            display: inline-block;
+            padding: 0 10px;
+            border-right: 1px solid $lg;
+            &:first-child {
+                color: $dg;
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+                border-right: 1px solid transparent;
+            }
+        }
+    }
+    .logo-link {
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+.topMnu-item{
+    display: inline-block;
+}
+.topMnu-link{
+    display: block;
+}

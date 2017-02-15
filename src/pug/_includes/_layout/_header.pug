@@ -1,2 +1,69 @@
 header.header
-    h1 header
+    .header__first-line
+        .container
+            ul.left-nav.fl-l
+                li
+                    a(href="#")
+                        i.fa.fa-tags(aria-hidden='true')
+                        | Акции
+                li
+                    a(href="#")
+                        i.fa.fa-star(aria-hidden='true')
+                        | Закладки
+                li
+                    a(href="#")
+                        i.fa.fa-random(aria-hidden='true')
+                        | Сравнение  
+                        span.ac 20
+            .inBasket.fl-l
+                a(href="#")
+                    i.fa.fa-cart-plus(aria-hidden='true')
+                    | В корзине  
+                    span.ac 4 товара  
+                    | на сумму  
+                    span.ac 59 789 руб
+            .right-nav.fl-r
+                p
+                    span EUR: 
+                    | 71.34 RUB
+                p
+                    span USD: 
+                    | 64.21 RUB  
+                a(href="#")
+                    i.fa.fa-user(aria-hidden='true')
+                    | Вход
+    .header__top-line
+        .container
+            .logo-img.fl-l
+                a.logo-link(href='#')
+                    img.logo-img(src='img/logo.png', alt='title')
+                ul
+                    li 
+                        a(href="#") 
+                            |Снабжение 
+                    li
+                        a(href="#") 
+                            | Проектирование
+                    li
+                        a(href="#") 
+                            | Монтаж
+            .topMnu-wrap.fl-l
+                ul.topMnu-list
+                    li.topMnu-item
+                        a(href="#").topMnu-link   
+                            | Контакты	            
+                    li.topMnu-item
+                        a(href="#").topMnu-link  
+                            | Документация            
+                    li.topMnu-item
+                        a(href="#").topMnu-link   
+                            | Пресс-центр            
+                    li.topMnu-item
+                        a(href="#").topMnu-link 
+                            | Объекты	              
+                    li.topMnu-item
+                        a(href="#").topMnu-link  
+                            | Производители             
+                    li.topMnu-item
+                        a(href="#").topMnu-link 
+                            | Реквезиты              

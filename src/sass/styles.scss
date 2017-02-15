@@ -1,8 +1,9 @@
 // base
+@import "base/base";
 @import "base/variables";
 @import "base/mixins";
-@import "base/base";
 @import "base/typo";
+@import "base/layout";
 
 // vendor css
 @import "vendor/vendor";
