@@ -15,7 +15,7 @@ header.header
                         i.fa.fa-random(aria-hidden='true')
                         | Сравнение
                         span.ac 20
-            .inBasket.fl-l
+            .inBasket
                 a(href="#")
                     i.fa.fa-cart-plus(aria-hidden='true')
                     | В корзине
@@ -148,28 +148,100 @@ header.header
     .header__catalog-line
         .container
             .cats-wrap
-                .services__cat-wrap
+                .services__cat-wrap.cats
                     h3.cat-title КАТАЛОГ УЛУГ
                     - list = ['Подбор оборудования','Бурение на воду','Системы фильтрации','Монтажные работы','Анализ воды','Сервисные центры','Обслуживание','Аренда техники','Доставка по России','Проектирование'];
-                    ul.services__cat-list
+                    ul.services__cat-list.cats-toggle
                         - for (var x=0, k=list.length; x<k; x++)
                             li.services__cat-item
                                 a(href='#') #{list[x]}
-                .products__cat-wrap
+                .products__cat-wrap.cats
                     h3.cat-title КАТАЛОГ товаров
                     - list = ['Насосное оборудование','Котельное оборудование','Водонагреватели','Комплектующие','Отопительные приборы','Канализация','Тепловые насосы','Пластиковые баки','Мембранные баки','Мотопомпы'];
-                    ul.products__cat-list
+                    ul.products__cat-list.cats-toggle
                         - for (var x=0, k=list.length; x<k; x++)
                             li.products__cat-item
-                                a(href='#') #{list[x]}
+                                a.products__cat-link(href='#')(class= x==0 ? "inner_menu" : '') #{list[x]}
+                                if x==0
+                                    .hiddenmenu-table#hm_table
+                                        .hiddenmenu-blocks-wrap
+                                            .block__notation
+                                                .block__notation-title
+                                                    .close
+                                                        span Закрыть
+                                                    | Приминение
+                                                    .next
+                                                        span Далее
+                                                .block__content
+                                                    - var list2 = ['Скважинные насосы','Колодезные насосы','Насосные станции','Поверхностные насосы','Фекальные насосы','Циркуляционные насосы','Канализационные установки','Дозировочные насосы'];
+                                                    ul.block__notation-list
+                                                        - for (var i=0, g=list2.length; i<g; i++)
+                                                            li
+                                                                a(href='#' class= i==0 ? 'active': '') #{list2[i]}
+                                            .block__info
+                                                .block__info-content
+                                                    table
+                                                        thead
+                                                            tr
+                                                                td Производитель
+                                                                td Напор
+                                                                td Производительность
+                                                                td Диаметр
+                                                        tbody
+                                                            tr
+                                                                td
+                                                                    a(href='#') Pedrollo
+                                                                td До 405 м
+                                                                td До 60 м3/ч
+                                                                td 4-6`
+                                                            tr
+                                                                td
+                                                                    a(href='#') Pedrollo
+                                                                td До 405 м
+                                                                td До 60 м3/ч
+                                                                td 4-6`
+                                                            tr
+                                                                td
+                                                                    a(href='#') Pedrollo
+                                                                td До 405 м
+                                                                td До 60 м3/ч
+                                                                td 4-6`
+                                                            tr
+                                                                td
+                                                                    a(href='#') Pedrollo
+                                                                td До 405 м
+                                                                td До 60 м3/ч
+                                                                td 4-6`
+                                                            tr
+                                                                td
+                                                                    a(href='#') Pedrollo
+                                                                td До 405 м
+                                                                td До 60 м3/ч
+                                                                td 4-6`
+                                                            tr
+                                                                td
+                                                                    a(href='#') Pedrollo
+                                                                td До 405 м
+                                                                td До 60 м3/ч
+                                                                td 4-6`
             .search-slider-wrap
                 form.search-form__wrap
-                    button(type='submit').search-submit Искать
                     label.search-label
                         span.fa.fa-search
                         input(type='text' name='search-text' placeholder='Умный поиск').input-search
                         select.js_select(name='search-in')
                             option По всем категориям
                             option По товарах
+                    button(type='submit').search-submit Искать
                 .main-slider-wrap
-                    .slide
+                    .main-slider
+                        .slide.grundfos
+                            p.slide-text
+                                strogn Grundfos
+                                | надежный партнер в промышленной сфере деятельности на которого можно положиться в самых сложных инжинерных решениях. Мы рекомендуем пожарные станции и станции повышения давления серии
+                                strong MX и HYDRO multi.
+                        .slide.grundfos
+                            p.slide-text
+                                strogn Grundfos
+                                | надежный партнер в промышленной сфере деятельности на которого можно положиться в самых сложных инжинерных решениях. Мы рекомендуем пожарные станции и станции повышения давления серии
+                                strong MX и HYDRO multi.
