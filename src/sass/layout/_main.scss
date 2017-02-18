@@ -92,6 +92,7 @@
         right: 0;
     }
     .b-img {
+        @include transition(opacity .25s);        
         height: 164px;
         line-height: 164px;
         margin-bottom: 45px;
@@ -124,6 +125,9 @@
         .item-hover {
             // opacity: 1;
             transform: translateY(0);
+        }
+        .b-img{
+            opacity: .3;
         }
     }
 }
