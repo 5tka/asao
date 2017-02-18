@@ -10,9 +10,28 @@
 .container {
     @include container(1240, 320);
 }
-.fl-l{
+.fl-l {
     float: left;
 }
-.fl-r{
+.fl-r {
     float: right;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 800;
+    color: $dg;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px solid $ac;
+    // &:after {
+    //     content: "";
+    //     position: absolute;
+    //     width: 85px;
+    //     top: 100%;
+    //     bottom: 0;
+    //     left: 50%;
+    //     margin: 4px 0 0 -42.5px;
+    // }
 }
