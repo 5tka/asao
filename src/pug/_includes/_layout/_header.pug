@@ -161,7 +161,7 @@ header.header
                     ul.products__cat-list.cats-toggle
                         - for (var x=0, k=list.length; x<k; x++)
                             li.products__cat-item
-                                a.products__cat-link(href='#')(class= x==0 ? "inner_menu" : '') #{list[x]}
+                                a.products__cat-link(href='#' class= x==0 ? "inner_menu" : '') #{list[x]}
                                 if x==0
                                     .hiddenmenu-table#hm_table
                                         .hiddenmenu-blocks-wrap

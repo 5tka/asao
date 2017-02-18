@@ -461,7 +461,15 @@
         }
     }
 }
-
+@media screen and (max-width: 1000px) {
+    .header__top-line .logo-img-wrap {
+        height: 82px;
+    }
+    .topMnu-wrap {
+        height: 82px;
+        float: right;
+    }
+}
 @media screen and (max-width: 900px) {
     .header__first-line {
         .inBasket {
