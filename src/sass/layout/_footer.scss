@@ -1,0 +1,271 @@
+.footer {
+	background-color: $dg;
+	.container {
+		padding-top: 42px;
+		padding-bottom: 40px;
+	}
+	color: $lg;
+	font-size: 12px;
+	.white-text {
+		color: #fff;
+	}
+}
+.footer-blocks-wrap {
+	@include clearfix;
+	border-bottom: 1px solid #4e4e4e;
+	padding-bottom: 30px;
+	font-size: 0;
+}
+.footer-block {
+	font-size: 12px;
+	float: left;
+	padding-right: 10px;
+	&.help {
+		width: 25.3%;
+		max-width: 314px;
+	}
+	&.about {
+		width: 24.18%;
+		max-width: 300px;
+	}
+	&.contacts {
+		width: 34.66%;
+		max-width: 430px;
+	}
+	&.socials {
+		width: 14.5%;
+		max-width: 180px;
+		padding-right: 0;
+	}
+}
+.footer-block__caption {
+	text-transform: uppercase;
+	border-bottom: 2px solid $ac;
+	font-size: 13px;
+	display: inline-block;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 15px;
+}
+.footer-menu__list {
+}
+.footer-menu__item {
+	a {
+		display: inline-block;
+		padding: 8px 0;
+		transition: color 0.25s;
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+.footer-items-wrap {
+	margin-bottom: 30px;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	.text-block {
+		margin-bottom: 20px;
+	}
+	.call-back {
+		display: inline-block;
+		text-align: center;
+		padding: 6px;
+		width: 160px;
+		height: 30px;
+		background-color: #fff;
+		border-radius: 4px;
+		color: $dg;
+		font-size: 14px;
+	}
+}
+.footer-block {
+	.line {
+		padding: 8px 0;
+	    line-height: 1.4;
+	}
+	.subcaption {
+		color: #fff;
+		font-weight: 700;
+	}
+}
+.footer-subscribe {
+	@include clearfix;
+	input {
+		display: block;
+		float: left;
+		width: 240px;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		font-size: 12px;
+		color: $lg;
+		padding: 6px 20px;
+		height: 36px;
+		outline: none;
+		border: none;
+	}
+	button {
+		display: block;
+		float: left;
+		width: 104px;
+		text-align: center;
+		font-size: 14px;
+		color: #fff;
+		padding: 6px;
+		background-color: $ac;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		height: 36px;
+	}
+}
+.footer-bottom-text {
+	text-align: center;
+	margin-top: 16px;
+	.grey-text {
+		margin-bottom: 5px;
+	}
+}
+
+.socials-footer {
+	@include clearfix;
+	.socials-item {
+		float: left;
+		margin-right: 12px;
+	}
+	.social {
+		font-size: 18px;
+		width: 38px;
+		height: 36px;
+		background-color: #fff;
+		transition: background-color 0.25s;
+		text-align: center;
+		line-height: 1;
+		border-radius: 4px;
+		@extend .fa;
+		color: $dg;
+		&:hover {
+			background-color: $ac;
+		}
+		span {
+			text-indent: -9999px;
+			overflow: hidden;
+			display: inline-block;
+		}
+		&.vk {
+			@extend .fa-vk;
+		}
+		&.tw {
+			@extend .fa-twitter;
+		}
+		&:before {
+			display: inline-block;
+			line-height: 36px;
+			vertical-align: middle;
+		}
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.footer-block {
+		&.help {
+			width: 20%;
+		}
+		&.about {
+			width: 18%;
+		}
+		&.contacts {
+			width: 42%;
+		}
+		&.socials {
+			width: 20%;
+		}
+	}
+}
+@media screen and (max-width: 900px) {
+	.footer-blocks-wrap {
+		text-align: center;
+	}
+	.footer-block {
+		text-align: left;
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+		&.help {
+			width: auto;
+			padding-right: 30px;
+		}
+		&.about {
+			width: auto;
+			padding-right: 30px;
+		}
+		&.contacts {
+			width: auto;
+		}
+		&.socials {
+			width: auto;
+		}
+	}
+}
+@media screen and (max-width: 600px) {
+	.footer-blocks-wrap {
+		padding-bottom: 0;
+	}
+	.footer-block {
+		text-align: left;
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 30px;
+		&.help {
+			// width: 50%;
+			padding-right: 30px;
+		}
+		&.about {
+			// width: 50%;
+			padding-right: 30px;
+		}
+		&.contacts {
+			width: auto;
+		}
+		&.socials {
+			width: auto;
+			text-align: center;
+		}
+	}
+	.socials-footer {
+		font-size: 0;
+		.socials-item {
+			display: inline-block;
+			float: none;
+		}
+	}
+}
+@media screen and (max-width: 400px) {
+	.footer-block {
+		text-align: left;
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 30px;
+		&.help {
+			// width: 50%;
+			padding-right: 10px;
+		}
+		&.about {
+			// width: 50%;
+			padding-right: 10px;
+		}
+		&.contacts {
+			width: auto;
+			padding: 0;
+		}
+		&.socials {
+			padding: 0;
+			width: auto;
+			text-align: center;
+		}
+	}
+	.footer-subscribe input {
+		width: 186px;
+	}
+}
