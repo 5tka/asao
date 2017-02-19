@@ -1,7 +1,10 @@
 console.log('hello from script.js');
+var windowSize = document.documentElement.clientWidth;
+var windowHeight = document.documentElement.clientHeight;
 $(document).ready(function(){
 
-    $('.bestsellerItems-slider').bxSlider({
+    var slider;
+    slider = $('#main .bestsellerItems-slider').bxSlider({
         slideWidth: 205,
         // slideWidth: 194,
         // infiniteLoop: false,
@@ -13,6 +16,7 @@ $(document).ready(function(){
         maxSlides:4,
         moveSlides:1,
     });
+
     var all = $('.double__slider-wrap .title') // клас стиля ссылки
 	all.click( function(){
 		all.removeClass('title--active')   // клас активной ссылки
