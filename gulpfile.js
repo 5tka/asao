@@ -34,7 +34,7 @@ var path = {
         pug: ['src/pug/*.pug','!src/pug/_*.pug'], //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'src/js/*.js',//В стилях и скриптах нам понадобятся только main файлы
         jsVendor: 'src/js/vendor/*.js',//В стилях и скриптах нам понадобятся только main файлы
-        scss: 'src/sass/**/*.scss',
+        scss: 'src/sass/styles.scss',
         img: ['src/img/**/*.*','!src/img/**/*.tmp'],//  Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/fonts/*',
         favicon: 'src/favicon/*'
@@ -99,7 +99,8 @@ gulp.task('sass-dev', function() {
     .pipe(sass({
       style: 'compressed',
       errLogToConsole: true,
-      sourcemaps : false
+      sourcemaps : false,
+      includePaths: ['src/sass/base','src/sass/layout','src/sass/vendor']
       }))
     // .pipe(gcmq())
     .on('error', sass.logError)

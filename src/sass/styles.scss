@@ -1,12 +1,12 @@
 // base
-@import "base/base";
-@import "base/variables";
-@import "base/mixins";
-@import "base/typo";
-@import "base/layout";
+@import "base/_base";
+@import "base/_variables";
+@import "base/_mixins";
+@import "base/_typo";
+@import "base/_layout";
 
 // vendor css
-@import "vendor/vendor";
+@import "vendor/_vendor";
 
 // Your css
 @import "layout/_style";

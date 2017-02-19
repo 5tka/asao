@@ -1,3 +1,62 @@
 footer.footer
-    h2 footer
-    
+	.container
+		.footer-blocks-wrap
+			.footer-block.help
+				.footer-block__caption Помощь
+				ul.footer-menu__list
+					- list = ['Как сделать заказ','Способы оплаты','Доставка','Возврат и обмен','Обратная связь','Подбор оборудования','Реквизиты','Сертификаты','Производители'];
+					- for (var x=0, k=list.length; x<k; x++)
+						li.footer-menu__item
+							a(href='#') #{list[x]}
+			.footer-block.about
+				.footer-items-wrap
+					.footer-block__caption Акции
+					ul.footer-menu__list
+						- list = ['Сезонные цены','Наборы','Наши акции','Бонусы','Новинки'];
+						- for (var x=0, k=list.length; x<k; x++)
+							li.footer-menu__item
+								a(href='#') #{list[x]}
+				.footer-items-wrap
+					.footer-block__caption О компании
+					ul.footer-menu__list
+						- list = ['Миссия','История','Контакты'];
+						- for (var x=0, k=list.length; x<k; x++)
+							li.footer-menu__item
+								a(href='#') #{list[x]}
+			.footer-block.contacts
+				.footer-items-wrap
+					.footer-block__caption Контакты
+					.line Санкт-Петербург, ул. Строителей, 25 офис 121
+					.line
+						span.subcaption Email:
+						a(href='mailto:info@asao.ru').text info@asao.ru
+					.line
+						span.subcaption Телефон:
+						a(href='tel:88007771020').text 8 (800) 777-10-20,
+						a(href='tel:88007770099').text 8 (800) 777-00-99
+					.line
+						span.subcaption Режим работы:
+						span.text ПН-ПТ: 10:00-19:00, <br> СБ-ВС: 10:00-15:00
+				.footer-items-wrap
+					.footer-block__caption Будьте в курсе
+					p.text-block Будьте в курсе наших акций, подпишитесь на рассылку:
+					form.footer-subscribe
+						input(type='text' placeholder='Введите свой Email')
+						button(type='submit') Отправить
+			.footer-block.socials
+				.footer-items-wrap
+					.footer-block__caption Будьте в курсе
+					ul.socials-footer
+						li.socials-item
+							a(href='#').social.vk
+								span Вконтакте
+						li.socials-item
+							a(href='#').social.tw
+								span twitter
+				.footer-items-wrap
+					.footer-block__caption Обратная связь
+					a(href='#').call-back Перезвоните мне
+		.footer-bottom-text
+			p.grey-text Вся информация на сайте – собственность интернет-магазина asao.ru
+			p.white-text © 2010-2016. asao.ru
+
