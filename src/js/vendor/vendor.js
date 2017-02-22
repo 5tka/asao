@@ -2377,3 +2377,2379 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
 /*! Gray v1.5.0 https://github.com/karlhorky/gray) | MIT */
 /*! Modernizr 2.8.3 (Custom Build) | MIT & BSD */
 ;window.Modernizr=window.Modernizr||function(a,b,c){function d(a){n.cssText=a}function f(a,b){return typeof a===b}var o,x,z,i="2.8.3",j={},k=b.documentElement,l="modernizr",m=b.createElement(l),n=m.style,q=({}.toString," -webkit- -moz- -o- -ms- ".split(" ")),r={svg:"http://www.w3.org/2000/svg"},s={},v=[],w=v.slice,y={}.hasOwnProperty;z=f(y,"undefined")||f(y.call,"undefined")?function(a,b){return b in a&&f(a.constructor.prototype[b],"undefined")}:function(a,b){return y.call(a,b)},Function.prototype.bind||(Function.prototype.bind=function(a){var b=this;if("function"!=typeof b)throw new TypeError;var c=w.call(arguments,1),d=function(){if(this instanceof d){var e=function(){};e.prototype=b.prototype;var f=new e,g=b.apply(f,c.concat(w.call(arguments)));return Object(g)===g?g:f}return b.apply(a,c.concat(w.call(arguments)))};return d}),s.inlinesvg=function(){var a=b.createElement("div");return a.innerHTML="<svg/>",(a.firstChild&&a.firstChild.namespaceURI)==r.svg};for(var A in s)z(s,A)&&(x=A.toLowerCase(),j[x]=s[A](),v.push((j[x]?"":"no-")+x));return j.addTest=function(a,b){if("object"==typeof a)for(var d in a)z(a,d)&&j.addTest(d,a[d]);else{if(a=a.toLowerCase(),j[a]!==c)return j;b="function"==typeof b?b():b,"undefined"!=typeof enableClasses&&enableClasses&&(k.className+=" "+(b?"":"no-")+a),j[a]=b}return j},d(""),m=o=null,j._version=i,j._prefixes=q,j}(this,this.document),Modernizr.addTest("cssfilters",function(){var a=document.createElement("div");return a.style.cssText=Modernizr._prefixes.join("filter:blur(2px); "),!!a.style.length&&(void 0===document.documentMode||document.documentMode>9)}),Modernizr.addTest("svgfilters",function(){var a=!1;try{a=void 0!==typeof SVGFEColorMatrixElement&&2==SVGFEColorMatrixElement.SVG_FECOLORMATRIX_TYPE_SATURATE}catch(b){}return a}),function(a,b,c,d){function h(b,c){var d,h;c=c||{},d=c.classes||{},h=d.fade||f.classes.fade,c.fade=c.fade||b.className.indexOf(h)>-1,this.element=b,this.elementId=g++,this.settings=a.extend({},f,c),this._defaults=f,this._name=e,this.init()}var e="gray",f={fade:!1,classes:{fade:"grayscale-fade"}},g=0;a.extend(h.prototype,{init:function(){var b;!Modernizr.cssfilters&&Modernizr.inlinesvg&&Modernizr.svgfilters&&(b=a(this.element),(this.cssFilterDeprecated(b)||this.settings.fade)&&this.switchImage(b))},cssFilterDeprecated:function(a){return"none"===a.css("filter")},elementType:function(a){return"IMG"===a.prop("tagName")?"Img":"Bg"},pxToNumber:function(a){return parseInt(a.replace("px",""))},getComputedStyle:function(a){var c={},d={};c=b.getComputedStyle(a,null);for(var e=0,f=c.length;f>e;e++){var g=c[e],h=c.getPropertyValue(g);d[g]=h}return d},extractUrl:function(a){var b;return startRegex=/^url\(["']?/,endRegex=/["']?\)$/,b=a.replace(startRegex,"").replace(endRegex,"")},positionToNegativeMargin:function(a){var b,c,d;return b=a.match(/^(-?\d+\S+)/)[0],c=a.match(/\s(-?\d+\S+)$/)[0],d="margin:"+c+" 0 0 "+b},getBgSize:function(b,c){var d,e,f,g,h,i,j;if(d=new Image,d.src=b,"auto"!==c&&"cover"!==c&&"contain"!==c&&"inherit"!==c){var k=a(this.element);e=d.width/d.height,g=parseInt((c.match(/^(\d+)px/)||[0,0])[1]),i=parseInt((c.match(/\s(\d+)px$/)||[0,0])[1]),f=k.height()*e,h=k.width()/e,g=g||f,i=i||h}return j=g||i?{width:g,height:i}:{width:d.width,height:d.height}},getImgParams:function(a){var b={};b.styles=this.getComputedStyle(a[0]);var c={top:this.pxToNumber(b.styles["padding-top"]),right:this.pxToNumber(b.styles["padding-right"]),bottom:this.pxToNumber(b.styles["padding-bottom"]),left:this.pxToNumber(b.styles["padding-left"])},d={top:this.pxToNumber(b.styles["border-top-width"]),right:this.pxToNumber(b.styles["border-right-width"]),bottom:this.pxToNumber(b.styles["border-bottom-width"]),left:this.pxToNumber(b.styles["border-left-width"])};return b.image={width:this.pxToNumber(b.styles.width),height:this.pxToNumber(b.styles.height)},b.svg={url:a[0].src,padding:c,borderWidth:d,width:b.image.width+c.left+c.right+d.left+d.right,height:b.image.height+c.top+c.bottom+d.top+d.bottom,offset:""},b},getBgParams:function(b){var d,c={};return d=this.extractUrl(b.css("background-image")),bgSize=this.getBgSize(d,b.css("background-size")),offset=this.positionToNegativeMargin(b.css("background-position")),c.styles=this.getComputedStyle(b[0]),c.svg=a.extend({url:d},bgSize,{offset:offset}),c.image={width:c.svg.width,height:c.svg.height},c},setStyles:function(a,b,c,d){return b.display="inline-block",b.overflow=b["overflow-x"]=b["overflow-y"]="hidden",b["background-image"]='url("'+c.url+'")',b["background-size"]=d.width+"px "+d.height+"px","Img"===a&&(b["background-repeat"]="no-repeat",b["background-position"]=c.padding.left+"px "+c.padding.top+"px",b.width=c.width,b.height=c.height),delete b.filter,b},addSVGFilterOnce:function(){$body=a("body"),$body.data("plugin_"+e+"_has_filter")||$body.data("plugin_"+e+"_has_filter","true").append('<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute"><defs><filter id="gray"><feColorMatrix type="saturate" values="0"/></filter></defs></svg>')},switchImage:function(b){var c,d,e,f,g,h;c=this.elementType(b),d=this["get"+c+"Params"](b),e=this.settings.fade?this.settings.classes.fade:"",f=b[0].alt?' aria-labelledby="gray-title-'+this.elementId+'"':"",g=b[0].alt?'<title id="gray-title-'+this.elementId+'">'+b[0].alt+"</title>":"",h=a('<div class="grayscale grayscale-replaced '+e+'"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+d.svg.width+" "+d.svg.height+'" width="'+d.svg.width+'" height="'+d.svg.height+'" style="'+d.svg.offset+'" role="img"'+f+">"+g+'<image filter="url(&quot;#gray&quot;)" x="0" y="0" width="'+d.image.width+'" height="'+d.image.height+'" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+d.svg.url+'" /></svg></div>'),d.styles=this.setStyles(c,d.styles,d.svg,d.image),h.css(d.styles),this.addSVGFilterOnce(),b.replaceWith(h)}}),a.fn[e]=function(b){return this.each(function(){a.data(this,"plugin_"+e)||a.data(this,"plugin_"+e,new h(this,b))}),this},a(b).on("load",function(){a(".grayscale:not(.grayscale-replaced)")[e]()})}(jQuery,window,document);
+
+
+
+/**
+ * Owl Carousel v2.2.0
+ * Copyright 2013-2016 David Deutsch
+ * Licensed under MIT (https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE)
+ */
+!function(a,b,c,d){function e(b,c){this.settings=null,this.options=a.extend({},e.Defaults,c),this.$element=a(b),this._handlers={},this._plugins={},this._supress={},this._current=null,this._speed=null,this._coordinates=[],this._breakpoint=null,this._width=null,this._items=[],this._clones=[],this._mergers=[],this._widths=[],this._invalidated={},this._pipe=[],this._drag={time:null,target:null,pointer:null,stage:{start:null,current:null},direction:null},this._states={current:{},tags:{initializing:["busy"],animating:["busy"],dragging:["interacting"]}},a.each(["onResize","onThrottledResize"],a.proxy(function(b,c){this._handlers[c]=a.proxy(this[c],this)},this)),a.each(e.Plugins,a.proxy(function(a,b){this._plugins[a.charAt(0).toLowerCase()+a.slice(1)]=new b(this)},this)),a.each(e.Workers,a.proxy(function(b,c){this._pipe.push({filter:c.filter,run:a.proxy(c.run,this)})},this)),this.setup(),this.initialize()}e.Defaults={items:3,loop:!1,center:!1,rewind:!1,mouseDrag:!0,touchDrag:!0,pullDrag:!0,freeDrag:!1,margin:0,stagePadding:0,merge:!1,mergeFit:!0,autoWidth:!1,startPosition:0,rtl:!1,smartSpeed:250,fluidSpeed:!1,dragEndSpeed:!1,responsive:{},responsiveRefreshRate:200,responsiveBaseElement:b,fallbackEasing:"swing",info:!1,nestedItemSelector:!1,itemElement:"div",stageElement:"div",refreshClass:"owl-refresh",loadedClass:"owl-loaded",loadingClass:"owl-loading",rtlClass:"owl-rtl",responsiveClass:"owl-responsive",dragClass:"owl-drag",itemClass:"owl-item",stageClass:"owl-stage",stageOuterClass:"owl-stage-outer",grabClass:"owl-grab"},e.Width={Default:"default",Inner:"inner",Outer:"outer"},e.Type={Event:"event",State:"state"},e.Plugins={},e.Workers=[{filter:["width","settings"],run:function(){this._width=this.$element.width()}},{filter:["width","items","settings"],run:function(a){a.current=this._items&&this._items[this.relative(this._current)]}},{filter:["items","settings"],run:function(){this.$stage.children(".cloned").remove()}},{filter:["width","items","settings"],run:function(a){var b=this.settings.margin||"",c=!this.settings.autoWidth,d=this.settings.rtl,e={width:"auto","margin-left":d?b:"","margin-right":d?"":b};!c&&this.$stage.children().css(e),a.css=e}},{filter:["width","items","settings"],run:function(a){var b=(this.width()/this.settings.items).toFixed(3)-this.settings.margin,c=null,d=this._items.length,e=!this.settings.autoWidth,f=[];for(a.items={merge:!1,width:b};d--;)c=this._mergers[d],c=this.settings.mergeFit&&Math.min(c,this.settings.items)||c,a.items.merge=c>1||a.items.merge,f[d]=e?b*c:this._items[d].width();this._widths=f}},{filter:["items","settings"],run:function(){var b=[],c=this._items,d=this.settings,e=Math.max(2*d.items,4),f=2*Math.ceil(c.length/2),g=d.loop&&c.length?d.rewind?e:Math.max(e,f):0,h="",i="";for(g/=2;g--;)b.push(this.normalize(b.length/2,!0)),h+=c[b[b.length-1]][0].outerHTML,b.push(this.normalize(c.length-1-(b.length-1)/2,!0)),i=c[b[b.length-1]][0].outerHTML+i;this._clones=b,a(h).addClass("cloned").appendTo(this.$stage),a(i).addClass("cloned").prependTo(this.$stage)}},{filter:["width","items","settings"],run:function(){for(var a=this.settings.rtl?1:-1,b=this._clones.length+this._items.length,c=-1,d=0,e=0,f=[];++c<b;)d=f[c-1]||0,e=this._widths[this.relative(c)]+this.settings.margin,f.push(d+e*a);this._coordinates=f}},{filter:["width","items","settings"],run:function(){var a=this.settings.stagePadding,b=this._coordinates,c={width:Math.ceil(Math.abs(b[b.length-1]))+2*a,"padding-left":a||"","padding-right":a||""};this.$stage.css(c)}},{filter:["width","items","settings"],run:function(a){var b=this._coordinates.length,c=!this.settings.autoWidth,d=this.$stage.children();if(c&&a.items.merge)for(;b--;)a.css.width=this._widths[this.relative(b)],d.eq(b).css(a.css);else c&&(a.css.width=a.items.width,d.css(a.css))}},{filter:["items"],run:function(){this._coordinates.length<1&&this.$stage.removeAttr("style")}},{filter:["width","items","settings"],run:function(a){a.current=a.current?this.$stage.children().index(a.current):0,a.current=Math.max(this.minimum(),Math.min(this.maximum(),a.current)),this.reset(a.current)}},{filter:["position"],run:function(){this.animate(this.coordinates(this._current))}},{filter:["width","position","items","settings"],run:function(){var a,b,c,d,e=this.settings.rtl?1:-1,f=2*this.settings.stagePadding,g=this.coordinates(this.current())+f,h=g+this.width()*e,i=[];for(c=0,d=this._coordinates.length;d>c;c++)a=this._coordinates[c-1]||0,b=Math.abs(this._coordinates[c])+f*e,(this.op(a,"<=",g)&&this.op(a,">",h)||this.op(b,"<",g)&&this.op(b,">",h))&&i.push(c);this.$stage.children(".active").removeClass("active"),this.$stage.children(":eq("+i.join("), :eq(")+")").addClass("active"),this.settings.center&&(this.$stage.children(".center").removeClass("center"),this.$stage.children().eq(this.current()).addClass("center"))}}],e.prototype.initialize=function(){if(this.enter("initializing"),this.trigger("initialize"),this.$element.toggleClass(this.settings.rtlClass,this.settings.rtl),this.settings.autoWidth&&!this.is("pre-loading")){var b,c,e;b=this.$element.find("img"),c=this.settings.nestedItemSelector?"."+this.settings.nestedItemSelector:d,e=this.$element.children(c).width(),b.length&&0>=e&&this.preloadAutoWidthImages(b)}this.$element.addClass(this.options.loadingClass),this.$stage=a("<"+this.settings.stageElement+' class="'+this.settings.stageClass+'"/>').wrap('<div class="'+this.settings.stageOuterClass+'"/>'),this.$element.append(this.$stage.parent()),this.replace(this.$element.children().not(this.$stage.parent())),this.$element.is(":visible")?this.refresh():this.invalidate("width"),this.$element.removeClass(this.options.loadingClass).addClass(this.options.loadedClass),this.registerEventHandlers(),this.leave("initializing"),this.trigger("initialized")},e.prototype.setup=function(){var b=this.viewport(),c=this.options.responsive,d=-1,e=null;c?(a.each(c,function(a){b>=a&&a>d&&(d=Number(a))}),e=a.extend({},this.options,c[d]),"function"==typeof e.stagePadding&&(e.stagePadding=e.stagePadding()),delete e.responsive,e.responsiveClass&&this.$element.attr("class",this.$element.attr("class").replace(new RegExp("("+this.options.responsiveClass+"-)\\S+\\s","g"),"$1"+d))):e=a.extend({},this.options),this.trigger("change",{property:{name:"settings",value:e}}),this._breakpoint=d,this.settings=e,this.invalidate("settings"),this.trigger("changed",{property:{name:"settings",value:this.settings}})},e.prototype.optionsLogic=function(){this.settings.autoWidth&&(this.settings.stagePadding=!1,this.settings.merge=!1)},e.prototype.prepare=function(b){var c=this.trigger("prepare",{content:b});return c.data||(c.data=a("<"+this.settings.itemElement+"/>").addClass(this.options.itemClass).append(b)),this.trigger("prepared",{content:c.data}),c.data},e.prototype.update=function(){for(var b=0,c=this._pipe.length,d=a.proxy(function(a){return this[a]},this._invalidated),e={};c>b;)(this._invalidated.all||a.grep(this._pipe[b].filter,d).length>0)&&this._pipe[b].run(e),b++;this._invalidated={},!this.is("valid")&&this.enter("valid")},e.prototype.width=function(a){switch(a=a||e.Width.Default){case e.Width.Inner:case e.Width.Outer:return this._width;default:return this._width-2*this.settings.stagePadding+this.settings.margin}},e.prototype.refresh=function(){this.enter("refreshing"),this.trigger("refresh"),this.setup(),this.optionsLogic(),this.$element.addClass(this.options.refreshClass),this.update(),this.$element.removeClass(this.options.refreshClass),this.leave("refreshing"),this.trigger("refreshed")},e.prototype.onThrottledResize=function(){b.clearTimeout(this.resizeTimer),this.resizeTimer=b.setTimeout(this._handlers.onResize,this.settings.responsiveRefreshRate)},e.prototype.onResize=function(){return this._items.length?this._width===this.$element.width()?!1:this.$element.is(":visible")?(this.enter("resizing"),this.trigger("resize").isDefaultPrevented()?(this.leave("resizing"),!1):(this.invalidate("width"),this.refresh(),this.leave("resizing"),void this.trigger("resized"))):!1:!1},e.prototype.registerEventHandlers=function(){a.support.transition&&this.$stage.on(a.support.transition.end+".owl.core",a.proxy(this.onTransitionEnd,this)),this.settings.responsive!==!1&&this.on(b,"resize",this._handlers.onThrottledResize),this.settings.mouseDrag&&(this.$element.addClass(this.options.dragClass),this.$stage.on("mousedown.owl.core",a.proxy(this.onDragStart,this)),this.$stage.on("dragstart.owl.core selectstart.owl.core",function(){return!1})),this.settings.touchDrag&&(this.$stage.on("touchstart.owl.core",a.proxy(this.onDragStart,this)),this.$stage.on("touchcancel.owl.core",a.proxy(this.onDragEnd,this)))},e.prototype.onDragStart=function(b){var d=null;3!==b.which&&(a.support.transform?(d=this.$stage.css("transform").replace(/.*\(|\)| /g,"").split(","),d={x:d[16===d.length?12:4],y:d[16===d.length?13:5]}):(d=this.$stage.position(),d={x:this.settings.rtl?d.left+this.$stage.width()-this.width()+this.settings.margin:d.left,y:d.top}),this.is("animating")&&(a.support.transform?this.animate(d.x):this.$stage.stop(),this.invalidate("position")),this.$element.toggleClass(this.options.grabClass,"mousedown"===b.type),this.speed(0),this._drag.time=(new Date).getTime(),this._drag.target=a(b.target),this._drag.stage.start=d,this._drag.stage.current=d,this._drag.pointer=this.pointer(b),a(c).on("mouseup.owl.core touchend.owl.core",a.proxy(this.onDragEnd,this)),a(c).one("mousemove.owl.core touchmove.owl.core",a.proxy(function(b){var d=this.difference(this._drag.pointer,this.pointer(b));a(c).on("mousemove.owl.core touchmove.owl.core",a.proxy(this.onDragMove,this)),Math.abs(d.x)<Math.abs(d.y)&&this.is("valid")||(b.preventDefault(),this.enter("dragging"),this.trigger("drag"))},this)))},e.prototype.onDragMove=function(a){var b=null,c=null,d=null,e=this.difference(this._drag.pointer,this.pointer(a)),f=this.difference(this._drag.stage.start,e);this.is("dragging")&&(a.preventDefault(),this.settings.loop?(b=this.coordinates(this.minimum()),c=this.coordinates(this.maximum()+1)-b,f.x=((f.x-b)%c+c)%c+b):(b=this.settings.rtl?this.coordinates(this.maximum()):this.coordinates(this.minimum()),c=this.settings.rtl?this.coordinates(this.minimum()):this.coordinates(this.maximum()),d=this.settings.pullDrag?-1*e.x/5:0,f.x=Math.max(Math.min(f.x,b+d),c+d)),this._drag.stage.current=f,this.animate(f.x))},e.prototype.onDragEnd=function(b){var d=this.difference(this._drag.pointer,this.pointer(b)),e=this._drag.stage.current,f=d.x>0^this.settings.rtl?"left":"right";a(c).off(".owl.core"),this.$element.removeClass(this.options.grabClass),(0!==d.x&&this.is("dragging")||!this.is("valid"))&&(this.speed(this.settings.dragEndSpeed||this.settings.smartSpeed),this.current(this.closest(e.x,0!==d.x?f:this._drag.direction)),this.invalidate("position"),this.update(),this._drag.direction=f,(Math.abs(d.x)>3||(new Date).getTime()-this._drag.time>300)&&this._drag.target.one("click.owl.core",function(){return!1})),this.is("dragging")&&(this.leave("dragging"),this.trigger("dragged"))},e.prototype.closest=function(b,c){var d=-1,e=30,f=this.width(),g=this.coordinates();return this.settings.freeDrag||a.each(g,a.proxy(function(a,h){return"left"===c&&b>h-e&&h+e>b?d=a:"right"===c&&b>h-f-e&&h-f+e>b?d=a+1:this.op(b,"<",h)&&this.op(b,">",g[a+1]||h-f)&&(d="left"===c?a+1:a),-1===d},this)),this.settings.loop||(this.op(b,">",g[this.minimum()])?d=b=this.minimum():this.op(b,"<",g[this.maximum()])&&(d=b=this.maximum())),d},e.prototype.animate=function(b){var c=this.speed()>0;this.is("animating")&&this.onTransitionEnd(),c&&(this.enter("animating"),this.trigger("translate")),a.support.transform3d&&a.support.transition?this.$stage.css({transform:"translate3d("+b+"px,0px,0px)",transition:this.speed()/1e3+"s"}):c?this.$stage.animate({left:b+"px"},this.speed(),this.settings.fallbackEasing,a.proxy(this.onTransitionEnd,this)):this.$stage.css({left:b+"px"})},e.prototype.is=function(a){return this._states.current[a]&&this._states.current[a]>0},e.prototype.current=function(a){if(a===d)return this._current;if(0===this._items.length)return d;if(a=this.normalize(a),this._current!==a){var b=this.trigger("change",{property:{name:"position",value:a}});b.data!==d&&(a=this.normalize(b.data)),this._current=a,this.invalidate("position"),this.trigger("changed",{property:{name:"position",value:this._current}})}return this._current},e.prototype.invalidate=function(b){return"string"===a.type(b)&&(this._invalidated[b]=!0,this.is("valid")&&this.leave("valid")),a.map(this._invalidated,function(a,b){return b})},e.prototype.reset=function(a){a=this.normalize(a),a!==d&&(this._speed=0,this._current=a,this.suppress(["translate","translated"]),this.animate(this.coordinates(a)),this.release(["translate","translated"]))},e.prototype.normalize=function(a,b){var c=this._items.length,e=b?0:this._clones.length;return!this.isNumeric(a)||1>c?a=d:(0>a||a>=c+e)&&(a=((a-e/2)%c+c)%c+e/2),a},e.prototype.relative=function(a){return a-=this._clones.length/2,this.normalize(a,!0)},e.prototype.maximum=function(a){var b,c,d,e=this.settings,f=this._coordinates.length;if(e.loop)f=this._clones.length/2+this._items.length-1;else if(e.autoWidth||e.merge){for(b=this._items.length,c=this._items[--b].width(),d=this.$element.width();b--&&(c+=this._items[b].width()+this.settings.margin,!(c>d)););f=b+1}else f=e.center?this._items.length-1:this._items.length-e.items;return a&&(f-=this._clones.length/2),Math.max(f,0)},e.prototype.minimum=function(a){return a?0:this._clones.length/2},e.prototype.items=function(a){return a===d?this._items.slice():(a=this.normalize(a,!0),this._items[a])},e.prototype.mergers=function(a){return a===d?this._mergers.slice():(a=this.normalize(a,!0),this._mergers[a])},e.prototype.clones=function(b){var c=this._clones.length/2,e=c+this._items.length,f=function(a){return a%2===0?e+a/2:c-(a+1)/2};return b===d?a.map(this._clones,function(a,b){return f(b)}):a.map(this._clones,function(a,c){return a===b?f(c):null})},e.prototype.speed=function(a){return a!==d&&(this._speed=a),this._speed},e.prototype.coordinates=function(b){var c,e=1,f=b-1;return b===d?a.map(this._coordinates,a.proxy(function(a,b){return this.coordinates(b)},this)):(this.settings.center?(this.settings.rtl&&(e=-1,f=b+1),c=this._coordinates[b],c+=(this.width()-c+(this._coordinates[f]||0))/2*e):c=this._coordinates[f]||0,c=Math.ceil(c))},e.prototype.duration=function(a,b,c){return 0===c?0:Math.min(Math.max(Math.abs(b-a),1),6)*Math.abs(c||this.settings.smartSpeed)},e.prototype.to=function(a,b){var c=this.current(),d=null,e=a-this.relative(c),f=(e>0)-(0>e),g=this._items.length,h=this.minimum(),i=this.maximum();this.settings.loop?(!this.settings.rewind&&Math.abs(e)>g/2&&(e+=-1*f*g),a=c+e,d=((a-h)%g+g)%g+h,d!==a&&i>=d-e&&d-e>0&&(c=d-e,a=d,this.reset(c))):this.settings.rewind?(i+=1,a=(a%i+i)%i):a=Math.max(h,Math.min(i,a)),this.speed(this.duration(c,a,b)),this.current(a),this.$element.is(":visible")&&this.update()},e.prototype.next=function(a){a=a||!1,this.to(this.relative(this.current())+1,a)},e.prototype.prev=function(a){a=a||!1,this.to(this.relative(this.current())-1,a)},e.prototype.onTransitionEnd=function(a){return a!==d&&(a.stopPropagation(),(a.target||a.srcElement||a.originalTarget)!==this.$stage.get(0))?!1:(this.leave("animating"),void this.trigger("translated"))},e.prototype.viewport=function(){var d;if(this.options.responsiveBaseElement!==b)d=a(this.options.responsiveBaseElement).width();else if(b.innerWidth)d=b.innerWidth;else{if(!c.documentElement||!c.documentElement.clientWidth)throw"Can not detect viewport width.";d=c.documentElement.clientWidth}return d},e.prototype.replace=function(b){this.$stage.empty(),this._items=[],b&&(b=b instanceof jQuery?b:a(b)),this.settings.nestedItemSelector&&(b=b.find("."+this.settings.nestedItemSelector)),b.filter(function(){return 1===this.nodeType}).each(a.proxy(function(a,b){b=this.prepare(b),this.$stage.append(b),this._items.push(b),this._mergers.push(1*b.find("[data-merge]").addBack("[data-merge]").attr("data-merge")||1)},this)),this.reset(this.isNumeric(this.settings.startPosition)?this.settings.startPosition:0),this.invalidate("items")},e.prototype.add=function(b,c){var e=this.relative(this._current);c=c===d?this._items.length:this.normalize(c,!0),b=b instanceof jQuery?b:a(b),this.trigger("add",{content:b,position:c}),b=this.prepare(b),0===this._items.length||c===this._items.length?(0===this._items.length&&this.$stage.append(b),0!==this._items.length&&this._items[c-1].after(b),this._items.push(b),this._mergers.push(1*b.find("[data-merge]").addBack("[data-merge]").attr("data-merge")||1)):(this._items[c].before(b),this._items.splice(c,0,b),this._mergers.splice(c,0,1*b.find("[data-merge]").addBack("[data-merge]").attr("data-merge")||1)),this._items[e]&&this.reset(this._items[e].index()),this.invalidate("items"),this.trigger("added",{content:b,position:c})},e.prototype.remove=function(a){a=this.normalize(a,!0),a!==d&&(this.trigger("remove",{content:this._items[a],position:a}),this._items[a].remove(),this._items.splice(a,1),this._mergers.splice(a,1),this.invalidate("items"),this.trigger("removed",{content:null,position:a}))},e.prototype.preloadAutoWidthImages=function(b){b.each(a.proxy(function(b,c){this.enter("pre-loading"),c=a(c),a(new Image).one("load",a.proxy(function(a){c.attr("src",a.target.src),c.css("opacity",1),this.leave("pre-loading"),!this.is("pre-loading")&&!this.is("initializing")&&this.refresh()},this)).attr("src",c.attr("src")||c.attr("data-src")||c.attr("data-src-retina"))},this))},e.prototype.destroy=function(){this.$element.off(".owl.core"),this.$stage.off(".owl.core"),a(c).off(".owl.core"),this.settings.responsive!==!1&&(b.clearTimeout(this.resizeTimer),this.off(b,"resize",this._handlers.onThrottledResize));for(var d in this._plugins)this._plugins[d].destroy();this.$stage.children(".cloned").remove(),this.$stage.unwrap(),this.$stage.children().contents().unwrap(),this.$stage.children().unwrap(),this.$element.removeClass(this.options.refreshClass).removeClass(this.options.loadingClass).removeClass(this.options.loadedClass).removeClass(this.options.rtlClass).removeClass(this.options.dragClass).removeClass(this.options.grabClass).attr("class",this.$element.attr("class").replace(new RegExp(this.options.responsiveClass+"-\\S+\\s","g"),"")).removeData("owl.carousel")},e.prototype.op=function(a,b,c){var d=this.settings.rtl;switch(b){case"<":return d?a>c:c>a;case">":return d?c>a:a>c;case">=":return d?c>=a:a>=c;case"<=":return d?a>=c:c>=a}},e.prototype.on=function(a,b,c,d){a.addEventListener?a.addEventListener(b,c,d):a.attachEvent&&a.attachEvent("on"+b,c)},e.prototype.off=function(a,b,c,d){a.removeEventListener?a.removeEventListener(b,c,d):a.detachEvent&&a.detachEvent("on"+b,c)},e.prototype.trigger=function(b,c,d,f,g){var h={item:{count:this._items.length,index:this.current()}},i=a.camelCase(a.grep(["on",b,d],function(a){return a}).join("-").toLowerCase()),j=a.Event([b,"owl",d||"carousel"].join(".").toLowerCase(),a.extend({relatedTarget:this},h,c));return this._supress[b]||(a.each(this._plugins,function(a,b){b.onTrigger&&b.onTrigger(j)}),this.register({type:e.Type.Event,name:b}),this.$element.trigger(j),this.settings&&"function"==typeof this.settings[i]&&this.settings[i].call(this,j)),j},e.prototype.enter=function(b){a.each([b].concat(this._states.tags[b]||[]),a.proxy(function(a,b){this._states.current[b]===d&&(this._states.current[b]=0),this._states.current[b]++},this))},e.prototype.leave=function(b){a.each([b].concat(this._states.tags[b]||[]),a.proxy(function(a,b){this._states.current[b]--},this))},e.prototype.register=function(b){if(b.type===e.Type.Event){if(a.event.special[b.name]||(a.event.special[b.name]={}),!a.event.special[b.name].owl){var c=a.event.special[b.name]._default;a.event.special[b.name]._default=function(a){return!c||!c.apply||a.namespace&&-1!==a.namespace.indexOf("owl")?a.namespace&&a.namespace.indexOf("owl")>-1:c.apply(this,arguments)},a.event.special[b.name].owl=!0}}else b.type===e.Type.State&&(this._states.tags[b.name]?this._states.tags[b.name]=this._states.tags[b.name].concat(b.tags):this._states.tags[b.name]=b.tags,this._states.tags[b.name]=a.grep(this._states.tags[b.name],a.proxy(function(c,d){return a.inArray(c,this._states.tags[b.name])===d},this)))},e.prototype.suppress=function(b){a.each(b,a.proxy(function(a,b){this._supress[b]=!0},this))},e.prototype.release=function(b){a.each(b,a.proxy(function(a,b){delete this._supress[b]},this))},e.prototype.pointer=function(a){var c={x:null,y:null};return a=a.originalEvent||a||b.event,a=a.touches&&a.touches.length?a.touches[0]:a.changedTouches&&a.changedTouches.length?a.changedTouches[0]:a,a.pageX?(c.x=a.pageX,c.y=a.pageY):(c.x=a.clientX,c.y=a.clientY),c},e.prototype.isNumeric=function(a){return!isNaN(parseFloat(a))},e.prototype.difference=function(a,b){return{x:a.x-b.x,y:a.y-b.y}},a.fn.owlCarousel=function(b){var c=Array.prototype.slice.call(arguments,1);return this.each(function(){var d=a(this),f=d.data("owl.carousel");f||(f=new e(this,"object"==typeof b&&b),d.data("owl.carousel",f),a.each(["next","prev","to","destroy","refresh","replace","add","remove"],function(b,c){f.register({type:e.Type.Event,name:c}),f.$element.on(c+".owl.carousel.core",a.proxy(function(a){a.namespace&&a.relatedTarget!==this&&(this.suppress([c]),f[c].apply(this,[].slice.call(arguments,1)),this.release([c]))},f))})),"string"==typeof b&&"_"!==b.charAt(0)&&f[b].apply(f,c)})},a.fn.owlCarousel.Constructor=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){var e=function(b){this._core=b,this._interval=null,this._visible=null,this._handlers={"initialized.owl.carousel":a.proxy(function(a){a.namespace&&this._core.settings.autoRefresh&&this.watch()},this)},this._core.options=a.extend({},e.Defaults,this._core.options),this._core.$element.on(this._handlers)};e.Defaults={autoRefresh:!0,autoRefreshInterval:500},e.prototype.watch=function(){this._interval||(this._visible=this._core.$element.is(":visible"),this._interval=b.setInterval(a.proxy(this.refresh,this),this._core.settings.autoRefreshInterval))},e.prototype.refresh=function(){this._core.$element.is(":visible")!==this._visible&&(this._visible=!this._visible,this._core.$element.toggleClass("owl-hidden",!this._visible),this._visible&&this._core.invalidate("width")&&this._core.refresh())},e.prototype.destroy=function(){var a,c;b.clearInterval(this._interval);for(a in this._handlers)this._core.$element.off(a,this._handlers[a]);for(c in Object.getOwnPropertyNames(this))"function"!=typeof this[c]&&(this[c]=null)},a.fn.owlCarousel.Constructor.Plugins.AutoRefresh=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){var e=function(b){this._core=b,this._loaded=[],this._handlers={"initialized.owl.carousel change.owl.carousel resized.owl.carousel":a.proxy(function(b){if(b.namespace&&this._core.settings&&this._core.settings.lazyLoad&&(b.property&&"position"==b.property.name||"initialized"==b.type))for(var c=this._core.settings,e=c.center&&Math.ceil(c.items/2)||c.items,f=c.center&&-1*e||0,g=(b.property&&b.property.value!==d?b.property.value:this._core.current())+f,h=this._core.clones().length,i=a.proxy(function(a,b){this.load(b)},this);f++<e;)this.load(h/2+this._core.relative(g)),h&&a.each(this._core.clones(this._core.relative(g)),i),g++},this)},this._core.options=a.extend({},e.Defaults,this._core.options),this._core.$element.on(this._handlers)};e.Defaults={lazyLoad:!1},e.prototype.load=function(c){var d=this._core.$stage.children().eq(c),e=d&&d.find(".owl-lazy");!e||a.inArray(d.get(0),this._loaded)>-1||(e.each(a.proxy(function(c,d){var e,f=a(d),g=b.devicePixelRatio>1&&f.attr("data-src-retina")||f.attr("data-src");this._core.trigger("load",{element:f,url:g},"lazy"),f.is("img")?f.one("load.owl.lazy",a.proxy(function(){f.css("opacity",1),this._core.trigger("loaded",{element:f,url:g},"lazy")},this)).attr("src",g):(e=new Image,e.onload=a.proxy(function(){f.css({"background-image":"url("+g+")",opacity:"1"}),this._core.trigger("loaded",{element:f,url:g},"lazy")},this),e.src=g)},this)),this._loaded.push(d.get(0)))},e.prototype.destroy=function(){var a,b;for(a in this.handlers)this._core.$element.off(a,this.handlers[a]);for(b in Object.getOwnPropertyNames(this))"function"!=typeof this[b]&&(this[b]=null)},a.fn.owlCarousel.Constructor.Plugins.Lazy=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){var e=function(b){this._core=b,this._handlers={"initialized.owl.carousel refreshed.owl.carousel":a.proxy(function(a){a.namespace&&this._core.settings.autoHeight&&this.update()},this),"changed.owl.carousel":a.proxy(function(a){a.namespace&&this._core.settings.autoHeight&&"position"==a.property.name&&this.update()},this),"loaded.owl.lazy":a.proxy(function(a){a.namespace&&this._core.settings.autoHeight&&a.element.closest("."+this._core.settings.itemClass).index()===this._core.current()&&this.update()},this)},this._core.options=a.extend({},e.Defaults,this._core.options),this._core.$element.on(this._handlers)};e.Defaults={autoHeight:!1,autoHeightClass:"owl-height"},e.prototype.update=function(){var b=this._core._current,c=b+this._core.settings.items,d=this._core.$stage.children().toArray().slice(b,c),e=[],f=0;a.each(d,function(b,c){e.push(a(c).height())}),f=Math.max.apply(null,e),this._core.$stage.parent().height(f).addClass(this._core.settings.autoHeightClass)},e.prototype.destroy=function(){var a,b;for(a in this._handlers)this._core.$element.off(a,this._handlers[a]);for(b in Object.getOwnPropertyNames(this))"function"!=typeof this[b]&&(this[b]=null)},a.fn.owlCarousel.Constructor.Plugins.AutoHeight=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){var e=function(b){this._core=b,this._videos={},this._playing=null,this._handlers={"initialized.owl.carousel":a.proxy(function(a){a.namespace&&this._core.register({type:"state",name:"playing",tags:["interacting"]})},this),"resize.owl.carousel":a.proxy(function(a){a.namespace&&this._core.settings.video&&this.isInFullScreen()&&a.preventDefault()},this),"refreshed.owl.carousel":a.proxy(function(a){a.namespace&&this._core.is("resizing")&&this._core.$stage.find(".cloned .owl-video-frame").remove()},this),"changed.owl.carousel":a.proxy(function(a){a.namespace&&"position"===a.property.name&&this._playing&&this.stop()},this),"prepared.owl.carousel":a.proxy(function(b){if(b.namespace){var c=a(b.content).find(".owl-video");c.length&&(c.css("display","none"),this.fetch(c,a(b.content)))}},this)},this._core.options=a.extend({},e.Defaults,this._core.options),this._core.$element.on(this._handlers),this._core.$element.on("click.owl.video",".owl-video-play-icon",a.proxy(function(a){this.play(a)},this))};e.Defaults={video:!1,videoHeight:!1,videoWidth:!1},e.prototype.fetch=function(a,b){var c=function(){return a.attr("data-vimeo-id")?"vimeo":a.attr("data-vzaar-id")?"vzaar":"youtube"}(),d=a.attr("data-vimeo-id")||a.attr("data-youtube-id")||a.attr("data-vzaar-id"),e=a.attr("data-width")||this._core.settings.videoWidth,f=a.attr("data-height")||this._core.settings.videoHeight,g=a.attr("href");if(!g)throw new Error("Missing video URL.");if(d=g.match(/(http:|https:|)\/\/(player.|www.|app.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com)|vzaar\.com)\/(video\/|videos\/|embed\/|channels\/.+\/|groups\/.+\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/),d[3].indexOf("youtu")>-1)c="youtube";else if(d[3].indexOf("vimeo")>-1)c="vimeo";else{if(!(d[3].indexOf("vzaar")>-1))throw new Error("Video URL not supported.");c="vzaar"}d=d[6],this._videos[g]={type:c,id:d,width:e,height:f},b.attr("data-video",g),this.thumbnail(a,this._videos[g])},e.prototype.thumbnail=function(b,c){var d,e,f,g=c.width&&c.height?'style="width:'+c.width+"px;height:"+c.height+'px;"':"",h=b.find("img"),i="src",j="",k=this._core.settings,l=function(a){e='<div class="owl-video-play-icon"></div>',d=k.lazyLoad?'<div class="owl-video-tn '+j+'" '+i+'="'+a+'"></div>':'<div class="owl-video-tn" style="opacity:1;background-image:url('+a+')"></div>',b.after(d),b.after(e)};return b.wrap('<div class="owl-video-wrapper"'+g+"></div>"),this._core.settings.lazyLoad&&(i="data-src",j="owl-lazy"),h.length?(l(h.attr(i)),h.remove(),!1):void("youtube"===c.type?(f="//img.youtube.com/vi/"+c.id+"/hqdefault.jpg",l(f)):"vimeo"===c.type?a.ajax({type:"GET",url:"//vimeo.com/api/v2/video/"+c.id+".json",jsonp:"callback",dataType:"jsonp",success:function(a){f=a[0].thumbnail_large,l(f)}}):"vzaar"===c.type&&a.ajax({type:"GET",url:"//vzaar.com/api/videos/"+c.id+".json",jsonp:"callback",dataType:"jsonp",success:function(a){f=a.framegrab_url,l(f)}}))},e.prototype.stop=function(){this._core.trigger("stop",null,"video"),this._playing.find(".owl-video-frame").remove(),this._playing.removeClass("owl-video-playing"),this._playing=null,this._core.leave("playing"),this._core.trigger("stopped",null,"video")},e.prototype.play=function(b){var c,d=a(b.target),e=d.closest("."+this._core.settings.itemClass),f=this._videos[e.attr("data-video")],g=f.width||"100%",h=f.height||this._core.$stage.height();this._playing||(this._core.enter("playing"),this._core.trigger("play",null,"video"),e=this._core.items(this._core.relative(e.index())),this._core.reset(e.index()),"youtube"===f.type?c='<iframe width="'+g+'" height="'+h+'" src="//www.youtube.com/embed/'+f.id+"?autoplay=1&v="+f.id+'" frameborder="0" allowfullscreen></iframe>':"vimeo"===f.type?c='<iframe src="//player.vimeo.com/video/'+f.id+'?autoplay=1" width="'+g+'" height="'+h+'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>':"vzaar"===f.type&&(c='<iframe frameborder="0"height="'+h+'"width="'+g+'" allowfullscreen mozallowfullscreen webkitAllowFullScreen src="//view.vzaar.com/'+f.id+'/player?autoplay=true"></iframe>'),a('<div class="owl-video-frame">'+c+"</div>").insertAfter(e.find(".owl-video")),this._playing=e.addClass("owl-video-playing"))},e.prototype.isInFullScreen=function(){var b=c.fullscreenElement||c.mozFullScreenElement||c.webkitFullscreenElement;return b&&a(b).parent().hasClass("owl-video-frame")},e.prototype.destroy=function(){var a,b;this._core.$element.off("click.owl.video");for(a in this._handlers)this._core.$element.off(a,this._handlers[a]);for(b in Object.getOwnPropertyNames(this))"function"!=typeof this[b]&&(this[b]=null)},a.fn.owlCarousel.Constructor.Plugins.Video=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){var e=function(b){this.core=b,this.core.options=a.extend({},e.Defaults,this.core.options),this.swapping=!0,this.previous=d,this.next=d,this.handlers={"change.owl.carousel":a.proxy(function(a){a.namespace&&"position"==a.property.name&&(this.previous=this.core.current(),this.next=a.property.value)},this),"drag.owl.carousel dragged.owl.carousel translated.owl.carousel":a.proxy(function(a){a.namespace&&(this.swapping="translated"==a.type)},this),"translate.owl.carousel":a.proxy(function(a){a.namespace&&this.swapping&&(this.core.options.animateOut||this.core.options.animateIn)&&this.swap()},this)},this.core.$element.on(this.handlers)};e.Defaults={animateOut:!1,animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.support.animation&&a.support.transition){this.core.speed(0);var b,c=a.proxy(this.clear,this),d=this.core.$stage.children().eq(this.previous),e=this.core.$stage.children().eq(this.next),f=this.core.settings.animateIn,g=this.core.settings.animateOut;this.core.current()!==this.previous&&(g&&(b=this.core.coordinates(this.previous)-this.core.coordinates(this.next),d.one(a.support.animation.end,c).css({left:b+"px"}).addClass("animated owl-animated-out").addClass(g)),f&&e.one(a.support.animation.end,c).addClass("animated owl-animated-in").addClass(f))}},e.prototype.clear=function(b){a(b.target).css({left:""}).removeClass("animated owl-animated-out owl-animated-in").removeClass(this.core.settings.animateIn).removeClass(this.core.settings.animateOut),this.core.onTransitionEnd()},e.prototype.destroy=function(){var a,b;for(a in this.handlers)this.core.$element.off(a,this.handlers[a]);for(b in Object.getOwnPropertyNames(this))"function"!=typeof this[b]&&(this[b]=null);
+},a.fn.owlCarousel.Constructor.Plugins.Animate=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){var e=function(b){this._core=b,this._timeout=null,this._paused=!1,this._handlers={"changed.owl.carousel":a.proxy(function(a){a.namespace&&"settings"===a.property.name?this._core.settings.autoplay?this.play():this.stop():a.namespace&&"position"===a.property.name&&this._core.settings.autoplay&&this._setAutoPlayInterval()},this),"initialized.owl.carousel":a.proxy(function(a){a.namespace&&this._core.settings.autoplay&&this.play()},this),"play.owl.autoplay":a.proxy(function(a,b,c){a.namespace&&this.play(b,c)},this),"stop.owl.autoplay":a.proxy(function(a){a.namespace&&this.stop()},this),"mouseover.owl.autoplay":a.proxy(function(){this._core.settings.autoplayHoverPause&&this._core.is("rotating")&&this.pause()},this),"mouseleave.owl.autoplay":a.proxy(function(){this._core.settings.autoplayHoverPause&&this._core.is("rotating")&&this.play()},this),"touchstart.owl.core":a.proxy(function(){this._core.settings.autoplayHoverPause&&this._core.is("rotating")&&this.pause()},this),"touchend.owl.core":a.proxy(function(){this._core.settings.autoplayHoverPause&&this.play()},this)},this._core.$element.on(this._handlers),this._core.options=a.extend({},e.Defaults,this._core.options)};e.Defaults={autoplay:!1,autoplayTimeout:5e3,autoplayHoverPause:!1,autoplaySpeed:!1},e.prototype.play=function(a,b){this._paused=!1,this._core.is("rotating")||(this._core.enter("rotating"),this._setAutoPlayInterval())},e.prototype._getNextTimeout=function(d,e){return this._timeout&&b.clearTimeout(this._timeout),b.setTimeout(a.proxy(function(){this._paused||this._core.is("busy")||this._core.is("interacting")||c.hidden||this._core.next(e||this._core.settings.autoplaySpeed)},this),d||this._core.settings.autoplayTimeout)},e.prototype._setAutoPlayInterval=function(){this._timeout=this._getNextTimeout()},e.prototype.stop=function(){this._core.is("rotating")&&(b.clearTimeout(this._timeout),this._core.leave("rotating"))},e.prototype.pause=function(){this._core.is("rotating")&&(this._paused=!0)},e.prototype.destroy=function(){var a,b;this.stop();for(a in this._handlers)this._core.$element.off(a,this._handlers[a]);for(b in Object.getOwnPropertyNames(this))"function"!=typeof this[b]&&(this[b]=null)},a.fn.owlCarousel.Constructor.Plugins.autoplay=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){"use strict";var e=function(b){this._core=b,this._initialized=!1,this._pages=[],this._controls={},this._templates=[],this.$element=this._core.$element,this._overrides={next:this._core.next,prev:this._core.prev,to:this._core.to},this._handlers={"prepared.owl.carousel":a.proxy(function(b){b.namespace&&this._core.settings.dotsData&&this._templates.push('<div class="'+this._core.settings.dotClass+'">'+a(b.content).find("[data-dot]").addBack("[data-dot]").attr("data-dot")+"</div>")},this),"added.owl.carousel":a.proxy(function(a){a.namespace&&this._core.settings.dotsData&&this._templates.splice(a.position,0,this._templates.pop())},this),"remove.owl.carousel":a.proxy(function(a){a.namespace&&this._core.settings.dotsData&&this._templates.splice(a.position,1)},this),"changed.owl.carousel":a.proxy(function(a){a.namespace&&"position"==a.property.name&&this.draw()},this),"initialized.owl.carousel":a.proxy(function(a){a.namespace&&!this._initialized&&(this._core.trigger("initialize",null,"navigation"),this.initialize(),this.update(),this.draw(),this._initialized=!0,this._core.trigger("initialized",null,"navigation"))},this),"refreshed.owl.carousel":a.proxy(function(a){a.namespace&&this._initialized&&(this._core.trigger("refresh",null,"navigation"),this.update(),this.draw(),this._core.trigger("refreshed",null,"navigation"))},this)},this._core.options=a.extend({},e.Defaults,this._core.options),this.$element.on(this._handlers)};e.Defaults={nav:!1,navText:["prev","next"],navSpeed:!1,navElement:"div",navContainer:!1,navContainerClass:"owl-nav",navClass:["owl-prev","owl-next"],slideBy:1,dotClass:"owl-dot",dotsClass:"owl-dots",dots:!0,dotsEach:!1,dotsData:!1,dotsSpeed:!1,dotsContainer:!1},e.prototype.initialize=function(){var b,c=this._core.settings;this._controls.$relative=(c.navContainer?a(c.navContainer):a("<div>").addClass(c.navContainerClass).appendTo(this.$element)).addClass("disabled"),this._controls.$previous=a("<"+c.navElement+">").addClass(c.navClass[0]).html(c.navText[0]).prependTo(this._controls.$relative).on("click",a.proxy(function(a){this.prev(c.navSpeed)},this)),this._controls.$next=a("<"+c.navElement+">").addClass(c.navClass[1]).html(c.navText[1]).appendTo(this._controls.$relative).on("click",a.proxy(function(a){this.next(c.navSpeed)},this)),c.dotsData||(this._templates=[a("<div>").addClass(c.dotClass).append(a("<span>")).prop("outerHTML")]),this._controls.$absolute=(c.dotsContainer?a(c.dotsContainer):a("<div>").addClass(c.dotsClass).appendTo(this.$element)).addClass("disabled"),this._controls.$absolute.on("click","div",a.proxy(function(b){var d=a(b.target).parent().is(this._controls.$absolute)?a(b.target).index():a(b.target).parent().index();b.preventDefault(),this.to(d,c.dotsSpeed)},this));for(b in this._overrides)this._core[b]=a.proxy(this[b],this)},e.prototype.destroy=function(){var a,b,c,d;for(a in this._handlers)this.$element.off(a,this._handlers[a]);for(b in this._controls)this._controls[b].remove();for(d in this.overides)this._core[d]=this._overrides[d];for(c in Object.getOwnPropertyNames(this))"function"!=typeof this[c]&&(this[c]=null)},e.prototype.update=function(){var a,b,c,d=this._core.clones().length/2,e=d+this._core.items().length,f=this._core.maximum(!0),g=this._core.settings,h=g.center||g.autoWidth||g.dotsData?1:g.dotsEach||g.items;if("page"!==g.slideBy&&(g.slideBy=Math.min(g.slideBy,g.items)),g.dots||"page"==g.slideBy)for(this._pages=[],a=d,b=0,c=0;e>a;a++){if(b>=h||0===b){if(this._pages.push({start:Math.min(f,a-d),end:a-d+h-1}),Math.min(f,a-d)===f)break;b=0,++c}b+=this._core.mergers(this._core.relative(a))}},e.prototype.draw=function(){var b,c=this._core.settings,d=this._core.items().length<=c.items,e=this._core.relative(this._core.current()),f=c.loop||c.rewind;this._controls.$relative.toggleClass("disabled",!c.nav||d),c.nav&&(this._controls.$previous.toggleClass("disabled",!f&&e<=this._core.minimum(!0)),this._controls.$next.toggleClass("disabled",!f&&e>=this._core.maximum(!0))),this._controls.$absolute.toggleClass("disabled",!c.dots||d),c.dots&&(b=this._pages.length-this._controls.$absolute.children().length,c.dotsData&&0!==b?this._controls.$absolute.html(this._templates.join("")):b>0?this._controls.$absolute.append(new Array(b+1).join(this._templates[0])):0>b&&this._controls.$absolute.children().slice(b).remove(),this._controls.$absolute.find(".active").removeClass("active"),this._controls.$absolute.children().eq(a.inArray(this.current(),this._pages)).addClass("active"))},e.prototype.onTrigger=function(b){var c=this._core.settings;b.page={index:a.inArray(this.current(),this._pages),count:this._pages.length,size:c&&(c.center||c.autoWidth||c.dotsData?1:c.dotsEach||c.items)}},e.prototype.current=function(){var b=this._core.relative(this._core.current());return a.grep(this._pages,a.proxy(function(a,c){return a.start<=b&&a.end>=b},this)).pop()},e.prototype.getPosition=function(b){var c,d,e=this._core.settings;return"page"==e.slideBy?(c=a.inArray(this.current(),this._pages),d=this._pages.length,b?++c:--c,c=this._pages[(c%d+d)%d].start):(c=this._core.relative(this._core.current()),d=this._core.items().length,b?c+=e.slideBy:c-=e.slideBy),c},e.prototype.next=function(b){a.proxy(this._overrides.to,this._core)(this.getPosition(!0),b)},e.prototype.prev=function(b){a.proxy(this._overrides.to,this._core)(this.getPosition(!1),b)},e.prototype.to=function(b,c,d){var e;!d&&this._pages.length?(e=this._pages.length,a.proxy(this._overrides.to,this._core)(this._pages[(b%e+e)%e].start,c)):a.proxy(this._overrides.to,this._core)(b,c)},a.fn.owlCarousel.Constructor.Plugins.Navigation=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){"use strict";var e=function(c){this._core=c,this._hashes={},this.$element=this._core.$element,this._handlers={"initialized.owl.carousel":a.proxy(function(c){c.namespace&&"URLHash"===this._core.settings.startPosition&&a(b).trigger("hashchange.owl.navigation")},this),"prepared.owl.carousel":a.proxy(function(b){if(b.namespace){var c=a(b.content).find("[data-hash]").addBack("[data-hash]").attr("data-hash");if(!c)return;this._hashes[c]=b.content}},this),"changed.owl.carousel":a.proxy(function(c){if(c.namespace&&"position"===c.property.name){var d=this._core.items(this._core.relative(this._core.current())),e=a.map(this._hashes,function(a,b){return a===d?b:null}).join();if(!e||b.location.hash.slice(1)===e)return;b.location.hash=e}},this)},this._core.options=a.extend({},e.Defaults,this._core.options),this.$element.on(this._handlers),a(b).on("hashchange.owl.navigation",a.proxy(function(a){var c=b.location.hash.substring(1),e=this._core.$stage.children(),f=this._hashes[c]&&e.index(this._hashes[c]);f!==d&&f!==this._core.current()&&this._core.to(this._core.relative(f),!1,!0)},this))};e.Defaults={URLhashListener:!1},e.prototype.destroy=function(){var c,d;a(b).off("hashchange.owl.navigation");for(c in this._handlers)this._core.$element.off(c,this._handlers[c]);for(d in Object.getOwnPropertyNames(this))"function"!=typeof this[d]&&(this[d]=null)},a.fn.owlCarousel.Constructor.Plugins.Hash=e}(window.Zepto||window.jQuery,window,document),function(a,b,c,d){function e(b,c){var e=!1,f=b.charAt(0).toUpperCase()+b.slice(1);return a.each((b+" "+h.join(f+" ")+f).split(" "),function(a,b){return g[b]!==d?(e=c?b:!0,!1):void 0}),e}function f(a){return e(a,!0)}var g=a("<support>").get(0).style,h="Webkit Moz O ms".split(" "),i={transition:{end:{WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd",transition:"transitionend"}},animation:{end:{WebkitAnimation:"webkitAnimationEnd",MozAnimation:"animationend",OAnimation:"oAnimationEnd",animation:"animationend"}}},j={csstransforms:function(){return!!e("transform")},csstransforms3d:function(){return!!e("perspective")},csstransitions:function(){return!!e("transition")},cssanimations:function(){return!!e("animation")}};j.csstransitions()&&(a.support.transition=new String(f("transition")),a.support.transition.end=i.transition.end[a.support.transition]),j.cssanimations()&&(a.support.animation=new String(f("animation")),a.support.animation.end=i.animation.end[a.support.animation]),j.csstransforms()&&(a.support.transform=new String(f("transform")),a.support.transform3d=j.csstransforms3d())}(window.Zepto||window.jQuery,window,document);
+
+
+// Ion.RangeSlider
+// version 2.1.6 Build: 369
+// © Denis Ineshin, 2016
+// https://github.com/IonDen
+//
+// Project page:    http://ionden.com/a/plugins/ion.rangeSlider/en.html
+// GitHub page:     https://github.com/IonDen/ion.rangeSlider
+//
+// Released under MIT licence:
+// http://ionden.com/a/plugins/licence-en.html
+// =====================================================================================================================
+
+;(function(factory) {
+    if (typeof define === "function" && define.amd) {
+        define(["jquery"], function (jQuery) {
+            return factory(jQuery, document, window, navigator);
+        });
+    } else if (typeof exports === "object") {
+        factory(require("jquery"), document, window, navigator);
+    } else {
+        factory(jQuery, document, window, navigator);
+    }
+} (function ($, document, window, navigator, undefined) {
+    "use strict";
+
+    // =================================================================================================================
+    // Service
+
+    var plugin_count = 0;
+
+    // IE8 fix
+    var is_old_ie = (function () {
+        var n = navigator.userAgent,
+            r = /msie\s\d+/i,
+            v;
+        if (n.search(r) > 0) {
+            v = r.exec(n).toString();
+            v = v.split(" ")[1];
+            if (v < 9) {
+                $("html").addClass("lt-ie9");
+                return true;
+            }
+        }
+        return false;
+    } ());
+    if (!Function.prototype.bind) {
+        Function.prototype.bind = function bind(that) {
+
+            var target = this;
+            var slice = [].slice;
+
+            if (typeof target != "function") {
+                throw new TypeError();
+            }
+
+            var args = slice.call(arguments, 1),
+                bound = function () {
+
+                    if (this instanceof bound) {
+
+                        var F = function(){};
+                        F.prototype = target.prototype;
+                        var self = new F();
+
+                        var result = target.apply(
+                            self,
+                            args.concat(slice.call(arguments))
+                        );
+                        if (Object(result) === result) {
+                            return result;
+                        }
+                        return self;
+
+                    } else {
+
+                        return target.apply(
+                            that,
+                            args.concat(slice.call(arguments))
+                        );
+
+                    }
+
+                };
+
+            return bound;
+        };
+    }
+    if (!Array.prototype.indexOf) {
+        Array.prototype.indexOf = function(searchElement, fromIndex) {
+            var k;
+            if (this == null) {
+                throw new TypeError('"this" is null or not defined');
+            }
+            var O = Object(this);
+            var len = O.length >>> 0;
+            if (len === 0) {
+                return -1;
+            }
+            var n = +fromIndex || 0;
+            if (Math.abs(n) === Infinity) {
+                n = 0;
+            }
+            if (n >= len) {
+                return -1;
+            }
+            k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+            while (k < len) {
+                if (k in O && O[k] === searchElement) {
+                    return k;
+                }
+                k++;
+            }
+            return -1;
+        };
+    }
+
+
+
+    // =================================================================================================================
+    // Template
+
+    var base_html =
+        '<span class="irs">' +
+        '<span class="irs-line" tabindex="-1"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span>' +
+        '<span class="irs-min">0</span><span class="irs-max">1</span>' +
+        '<span class="irs-from">0</span><span class="irs-to">0</span><span class="irs-single">0</span>' +
+        '</span>' +
+        '<span class="irs-grid"></span>' +
+        '<span class="irs-bar"></span>';
+
+    var single_html =
+        '<span class="irs-bar-edge"></span>' +
+        '<span class="irs-shadow shadow-single"></span>' +
+        '<span class="irs-slider single"></span>';
+
+    var double_html =
+        '<span class="irs-shadow shadow-from"></span>' +
+        '<span class="irs-shadow shadow-to"></span>' +
+        '<span class="irs-slider from"></span>' +
+        '<span class="irs-slider to"></span>';
+
+    var disable_html =
+        '<span class="irs-disable-mask"></span>';
+
+
+
+    // =================================================================================================================
+    // Core
+
+    /**
+     * Main plugin constructor
+     *
+     * @param input {Object} link to base input element
+     * @param options {Object} slider config
+     * @param plugin_count {Number}
+     * @constructor
+     */
+    var IonRangeSlider = function (input, options, plugin_count) {
+        this.VERSION = "2.1.6";
+        this.input = input;
+        this.plugin_count = plugin_count;
+        this.current_plugin = 0;
+        this.calc_count = 0;
+        this.update_tm = 0;
+        this.old_from = 0;
+        this.old_to = 0;
+        this.old_min_interval = null;
+        this.raf_id = null;
+        this.dragging = false;
+        this.force_redraw = false;
+        this.no_diapason = false;
+        this.is_key = false;
+        this.is_update = false;
+        this.is_first_update = true;
+        this.is_start = true;
+        this.is_finish = false;
+        this.is_active = false;
+        this.is_resize = false;
+        this.is_click = false;
+
+        options = options || {};
+
+        // cache for links to all DOM elements
+        this.$cache = {
+            win: $(window),
+            body: $(document.body),
+            input: $(input),
+            cont: null,
+            rs: null,
+            min: null,
+            max: null,
+            from: null,
+            to: null,
+            single: null,
+            bar: null,
+            line: null,
+            s_single: null,
+            s_from: null,
+            s_to: null,
+            shad_single: null,
+            shad_from: null,
+            shad_to: null,
+            edge: null,
+            grid: null,
+            grid_labels: []
+        };
+
+        // storage for measure variables
+        this.coords = {
+            // left
+            x_gap: 0,
+            x_pointer: 0,
+
+            // width
+            w_rs: 0,
+            w_rs_old: 0,
+            w_handle: 0,
+
+            // percents
+            p_gap: 0,
+            p_gap_left: 0,
+            p_gap_right: 0,
+            p_step: 0,
+            p_pointer: 0,
+            p_handle: 0,
+            p_single_fake: 0,
+            p_single_real: 0,
+            p_from_fake: 0,
+            p_from_real: 0,
+            p_to_fake: 0,
+            p_to_real: 0,
+            p_bar_x: 0,
+            p_bar_w: 0,
+
+            // grid
+            grid_gap: 0,
+            big_num: 0,
+            big: [],
+            big_w: [],
+            big_p: [],
+            big_x: []
+        };
+
+        // storage for labels measure variables
+        this.labels = {
+            // width
+            w_min: 0,
+            w_max: 0,
+            w_from: 0,
+            w_to: 0,
+            w_single: 0,
+
+            // percents
+            p_min: 0,
+            p_max: 0,
+            p_from_fake: 0,
+            p_from_left: 0,
+            p_to_fake: 0,
+            p_to_left: 0,
+            p_single_fake: 0,
+            p_single_left: 0
+        };
+
+
+
+        /**
+         * get and validate config
+         */
+        var $inp = this.$cache.input,
+            val = $inp.prop("value"),
+            config, config_from_data, prop;
+
+        // default config
+        config = {
+            type: "single",
+
+            min: 10,
+            max: 100,
+            from: null,
+            to: null,
+            step: 1,
+
+            min_interval: 0,
+            max_interval: 0,
+            drag_interval: false,
+
+            values: [],
+            p_values: [],
+
+            from_fixed: false,
+            from_min: null,
+            from_max: null,
+            from_shadow: false,
+
+            to_fixed: false,
+            to_min: null,
+            to_max: null,
+            to_shadow: false,
+
+            prettify_enabled: true,
+            prettify_separator: " ",
+            prettify: null,
+
+            force_edges: false,
+
+            keyboard: false,
+            keyboard_step: 5,
+
+            grid: false,
+            grid_margin: true,
+            grid_num: 4,
+            grid_snap: false,
+
+            hide_min_max: false,
+            hide_from_to: false,
+
+            prefix: "",
+            postfix: "",
+            max_postfix: "",
+            decorate_both: true,
+            values_separator: " — ",
+
+            input_values_separator: ";",
+
+            disable: false,
+
+            onStart: null,
+            onChange: null,
+            onFinish: null,
+            onUpdate: null
+        };
+
+
+        // check if base element is input
+        if ($inp[0].nodeName !== "INPUT") {
+            console && console.warn && console.warn("Base element should be <input>!", $inp[0]);
+        }
+
+
+        // config from data-attributes extends js config
+        config_from_data = {
+            type: $inp.data("type"),
+
+            min: $inp.data("min"),
+            max: $inp.data("max"),
+            from: $inp.data("from"),
+            to: $inp.data("to"),
+            step: $inp.data("step"),
+
+            min_interval: $inp.data("minInterval"),
+            max_interval: $inp.data("maxInterval"),
+            drag_interval: $inp.data("dragInterval"),
+
+            values: $inp.data("values"),
+
+            from_fixed: $inp.data("fromFixed"),
+            from_min: $inp.data("fromMin"),
+            from_max: $inp.data("fromMax"),
+            from_shadow: $inp.data("fromShadow"),
+
+            to_fixed: $inp.data("toFixed"),
+            to_min: $inp.data("toMin"),
+            to_max: $inp.data("toMax"),
+            to_shadow: $inp.data("toShadow"),
+
+            prettify_enabled: $inp.data("prettifyEnabled"),
+            prettify_separator: $inp.data("prettifySeparator"),
+
+            force_edges: $inp.data("forceEdges"),
+
+            keyboard: $inp.data("keyboard"),
+            keyboard_step: $inp.data("keyboardStep"),
+
+            grid: $inp.data("grid"),
+            grid_margin: $inp.data("gridMargin"),
+            grid_num: $inp.data("gridNum"),
+            grid_snap: $inp.data("gridSnap"),
+
+            hide_min_max: $inp.data("hideMinMax"),
+            hide_from_to: $inp.data("hideFromTo"),
+
+            prefix: $inp.data("prefix"),
+            postfix: $inp.data("postfix"),
+            max_postfix: $inp.data("maxPostfix"),
+            decorate_both: $inp.data("decorateBoth"),
+            values_separator: $inp.data("valuesSeparator"),
+
+            input_values_separator: $inp.data("inputValuesSeparator"),
+
+            disable: $inp.data("disable")
+        };
+        config_from_data.values = config_from_data.values && config_from_data.values.split(",");
+
+        for (prop in config_from_data) {
+            if (config_from_data.hasOwnProperty(prop)) {
+                if (config_from_data[prop] === undefined || config_from_data[prop] === "") {
+                    delete config_from_data[prop];
+                }
+            }
+        }
+
+
+        // input value extends default config
+        if (val !== undefined && val !== "") {
+            val = val.split(config_from_data.input_values_separator || options.input_values_separator || ";");
+
+            if (val[0] && val[0] == +val[0]) {
+                val[0] = +val[0];
+            }
+            if (val[1] && val[1] == +val[1]) {
+                val[1] = +val[1];
+            }
+
+            if (options && options.values && options.values.length) {
+                config.from = val[0] && options.values.indexOf(val[0]);
+                config.to = val[1] && options.values.indexOf(val[1]);
+            } else {
+                config.from = val[0] && +val[0];
+                config.to = val[1] && +val[1];
+            }
+        }
+
+
+
+        // js config extends default config
+        $.extend(config, options);
+
+
+        // data config extends config
+        $.extend(config, config_from_data);
+        this.options = config;
+
+
+
+        // validate config, to be sure that all data types are correct
+        this.update_check = {};
+        this.validate();
+
+
+
+        // default result object, returned to callbacks
+        this.result = {
+            input: this.$cache.input,
+            slider: null,
+
+            min: this.options.min,
+            max: this.options.max,
+
+            from: this.options.from,
+            from_percent: 0,
+            from_value: null,
+
+            to: this.options.to,
+            to_percent: 0,
+            to_value: null
+        };
+
+
+
+        this.init();
+    };
+
+    IonRangeSlider.prototype = {
+
+        /**
+         * Starts or updates the plugin instance
+         *
+         * @param [is_update] {boolean}
+         */
+        init: function (is_update) {
+            this.no_diapason = false;
+            this.coords.p_step = this.convertToPercent(this.options.step, true);
+
+            this.target = "base";
+
+            this.toggleInput();
+            this.append();
+            this.setMinMax();
+
+            if (is_update) {
+                this.force_redraw = true;
+                this.calc(true);
+
+                // callbacks called
+                this.callOnUpdate();
+            } else {
+                this.force_redraw = true;
+                this.calc(true);
+
+                // callbacks called
+                this.callOnStart();
+            }
+
+            this.updateScene();
+        },
+
+        /**
+         * Appends slider template to a DOM
+         */
+        append: function () {
+            var container_html = '<span class="irs js-irs-' + this.plugin_count + '"></span>';
+            this.$cache.input.before(container_html);
+            this.$cache.input.prop("readonly", true);
+            this.$cache.cont = this.$cache.input.prev();
+            this.result.slider = this.$cache.cont;
+
+            this.$cache.cont.html(base_html);
+            this.$cache.rs = this.$cache.cont.find(".irs");
+            this.$cache.min = this.$cache.cont.find(".irs-min");
+            this.$cache.max = this.$cache.cont.find(".irs-max");
+            this.$cache.from = this.$cache.cont.find(".irs-from");
+            this.$cache.to = this.$cache.cont.find(".irs-to");
+            this.$cache.single = this.$cache.cont.find(".irs-single");
+            this.$cache.bar = this.$cache.cont.find(".irs-bar");
+            this.$cache.line = this.$cache.cont.find(".irs-line");
+            this.$cache.grid = this.$cache.cont.find(".irs-grid");
+
+            if (this.options.type === "single") {
+                this.$cache.cont.append(single_html);
+                this.$cache.edge = this.$cache.cont.find(".irs-bar-edge");
+                this.$cache.s_single = this.$cache.cont.find(".single");
+                this.$cache.from[0].style.visibility = "hidden";
+                this.$cache.to[0].style.visibility = "hidden";
+                this.$cache.shad_single = this.$cache.cont.find(".shadow-single");
+            } else {
+                this.$cache.cont.append(double_html);
+                this.$cache.s_from = this.$cache.cont.find(".from");
+                this.$cache.s_to = this.$cache.cont.find(".to");
+                this.$cache.shad_from = this.$cache.cont.find(".shadow-from");
+                this.$cache.shad_to = this.$cache.cont.find(".shadow-to");
+
+                this.setTopHandler();
+            }
+
+            if (this.options.hide_from_to) {
+                this.$cache.from[0].style.display = "none";
+                this.$cache.to[0].style.display = "none";
+                this.$cache.single[0].style.display = "none";
+            }
+
+            this.appendGrid();
+
+            if (this.options.disable) {
+                this.appendDisableMask();
+                this.$cache.input[0].disabled = true;
+            } else {
+                this.$cache.cont.removeClass("irs-disabled");
+                this.$cache.input[0].disabled = false;
+                this.bindEvents();
+            }
+
+            if (this.options.drag_interval) {
+                this.$cache.bar[0].style.cursor = "ew-resize";
+            }
+        },
+
+        /**
+         * Determine which handler has a priority
+         * works only for double slider type
+         */
+        setTopHandler: function () {
+            var min = this.options.min,
+                max = this.options.max,
+                from = this.options.from,
+                to = this.options.to;
+
+            if (from > min && to === max) {
+                this.$cache.s_from.addClass("type_last");
+            } else if (to < max) {
+                this.$cache.s_to.addClass("type_last");
+            }
+        },
+
+        /**
+         * Determine which handles was clicked last
+         * and which handler should have hover effect
+         *
+         * @param target {String}
+         */
+        changeLevel: function (target) {
+            switch (target) {
+                case "single":
+                    this.coords.p_gap = this.toFixed(this.coords.p_pointer - this.coords.p_single_fake);
+                    break;
+                case "from":
+                    this.coords.p_gap = this.toFixed(this.coords.p_pointer - this.coords.p_from_fake);
+                    this.$cache.s_from.addClass("state_hover");
+                    this.$cache.s_from.addClass("type_last");
+                    this.$cache.s_to.removeClass("type_last");
+                    break;
+                case "to":
+                    this.coords.p_gap = this.toFixed(this.coords.p_pointer - this.coords.p_to_fake);
+                    this.$cache.s_to.addClass("state_hover");
+                    this.$cache.s_to.addClass("type_last");
+                    this.$cache.s_from.removeClass("type_last");
+                    break;
+                case "both":
+                    this.coords.p_gap_left = this.toFixed(this.coords.p_pointer - this.coords.p_from_fake);
+                    this.coords.p_gap_right = this.toFixed(this.coords.p_to_fake - this.coords.p_pointer);
+                    this.$cache.s_to.removeClass("type_last");
+                    this.$cache.s_from.removeClass("type_last");
+                    break;
+            }
+        },
+
+        /**
+         * Then slider is disabled
+         * appends extra layer with opacity
+         */
+        appendDisableMask: function () {
+            this.$cache.cont.append(disable_html);
+            this.$cache.cont.addClass("irs-disabled");
+        },
+
+        /**
+         * Remove slider instance
+         * and ubind all events
+         */
+        remove: function () {
+            this.$cache.cont.remove();
+            this.$cache.cont = null;
+
+            this.$cache.line.off("keydown.irs_" + this.plugin_count);
+
+            this.$cache.body.off("touchmove.irs_" + this.plugin_count);
+            this.$cache.body.off("mousemove.irs_" + this.plugin_count);
+
+            this.$cache.win.off("touchend.irs_" + this.plugin_count);
+            this.$cache.win.off("mouseup.irs_" + this.plugin_count);
+
+            if (is_old_ie) {
+                this.$cache.body.off("mouseup.irs_" + this.plugin_count);
+                this.$cache.body.off("mouseleave.irs_" + this.plugin_count);
+            }
+
+            this.$cache.grid_labels = [];
+            this.coords.big = [];
+            this.coords.big_w = [];
+            this.coords.big_p = [];
+            this.coords.big_x = [];
+
+            cancelAnimationFrame(this.raf_id);
+        },
+
+        /**
+         * bind all slider events
+         */
+        bindEvents: function () {
+            if (this.no_diapason) {
+                return;
+            }
+
+            this.$cache.body.on("touchmove.irs_" + this.plugin_count, this.pointerMove.bind(this));
+            this.$cache.body.on("mousemove.irs_" + this.plugin_count, this.pointerMove.bind(this));
+
+            this.$cache.win.on("touchend.irs_" + this.plugin_count, this.pointerUp.bind(this));
+            this.$cache.win.on("mouseup.irs_" + this.plugin_count, this.pointerUp.bind(this));
+
+            this.$cache.line.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            this.$cache.line.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+
+            if (this.options.drag_interval && this.options.type === "double") {
+                this.$cache.bar.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "both"));
+                this.$cache.bar.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "both"));
+            } else {
+                this.$cache.bar.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.bar.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            }
+
+            if (this.options.type === "single") {
+                this.$cache.single.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.s_single.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.shad_single.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+
+                this.$cache.single.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.s_single.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.edge.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.shad_single.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            } else {
+                this.$cache.single.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, null));
+                this.$cache.single.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, null));
+
+                this.$cache.from.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.s_from.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.to.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.s_to.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.shad_from.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.shad_to.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+
+                this.$cache.from.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.s_from.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.to.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.s_to.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.shad_from.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.shad_to.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            }
+
+            if (this.options.keyboard) {
+                this.$cache.line.on("keydown.irs_" + this.plugin_count, this.key.bind(this, "keyboard"));
+            }
+
+            if (is_old_ie) {
+                this.$cache.body.on("mouseup.irs_" + this.plugin_count, this.pointerUp.bind(this));
+                this.$cache.body.on("mouseleave.irs_" + this.plugin_count, this.pointerUp.bind(this));
+            }
+        },
+
+        /**
+         * Mousemove or touchmove
+         * only for handlers
+         *
+         * @param e {Object} event object
+         */
+        pointerMove: function (e) {
+            if (!this.dragging) {
+                return;
+            }
+
+            var x = e.pageX || e.originalEvent.touches && e.originalEvent.touches[0].pageX;
+            this.coords.x_pointer = x - this.coords.x_gap;
+
+            this.calc();
+        },
+
+        /**
+         * Mouseup or touchend
+         * only for handlers
+         *
+         * @param e {Object} event object
+         */
+        pointerUp: function (e) {
+            if (this.current_plugin !== this.plugin_count) {
+                return;
+            }
+
+            if (this.is_active) {
+                this.is_active = false;
+            } else {
+                return;
+            }
+
+            this.$cache.cont.find(".state_hover").removeClass("state_hover");
+
+            this.force_redraw = true;
+
+            if (is_old_ie) {
+                $("*").prop("unselectable", false);
+            }
+
+            this.updateScene();
+            this.restoreOriginalMinInterval();
+
+            // callbacks call
+            if ($.contains(this.$cache.cont[0], e.target) || this.dragging) {
+                this.callOnFinish();
+            }
+
+            this.dragging = false;
+        },
+
+        /**
+         * Mousedown or touchstart
+         * only for handlers
+         *
+         * @param target {String|null}
+         * @param e {Object} event object
+         */
+        pointerDown: function (target, e) {
+            e.preventDefault();
+            var x = e.pageX || e.originalEvent.touches && e.originalEvent.touches[0].pageX;
+            if (e.button === 2) {
+                return;
+            }
+
+            if (target === "both") {
+                this.setTempMinInterval();
+            }
+
+            if (!target) {
+                target = this.target || "from";
+            }
+
+            this.current_plugin = this.plugin_count;
+            this.target = target;
+
+            this.is_active = true;
+            this.dragging = true;
+
+            this.coords.x_gap = this.$cache.rs.offset().left;
+            this.coords.x_pointer = x - this.coords.x_gap;
+
+            this.calcPointerPercent();
+            this.changeLevel(target);
+
+            if (is_old_ie) {
+                $("*").prop("unselectable", true);
+            }
+
+            this.$cache.line.trigger("focus");
+
+            this.updateScene();
+        },
+
+        /**
+         * Mousedown or touchstart
+         * for other slider elements, like diapason line
+         *
+         * @param target {String}
+         * @param e {Object} event object
+         */
+        pointerClick: function (target, e) {
+            e.preventDefault();
+            var x = e.pageX || e.originalEvent.touches && e.originalEvent.touches[0].pageX;
+            if (e.button === 2) {
+                return;
+            }
+
+            this.current_plugin = this.plugin_count;
+            this.target = target;
+
+            this.is_click = true;
+            this.coords.x_gap = this.$cache.rs.offset().left;
+            this.coords.x_pointer = +(x - this.coords.x_gap).toFixed();
+
+            this.force_redraw = true;
+            this.calc();
+
+            this.$cache.line.trigger("focus");
+        },
+
+        /**
+         * Keyborard controls for focused slider
+         *
+         * @param target {String}
+         * @param e {Object} event object
+         * @returns {boolean|undefined}
+         */
+        key: function (target, e) {
+            if (this.current_plugin !== this.plugin_count || e.altKey || e.ctrlKey || e.shiftKey || e.metaKey) {
+                return;
+            }
+
+            switch (e.which) {
+                case 83: // W
+                case 65: // A
+                case 40: // DOWN
+                case 37: // LEFT
+                    e.preventDefault();
+                    this.moveByKey(false);
+                    break;
+
+                case 87: // S
+                case 68: // D
+                case 38: // UP
+                case 39: // RIGHT
+                    e.preventDefault();
+                    this.moveByKey(true);
+                    break;
+            }
+
+            return true;
+        },
+
+        /**
+         * Move by key. Beta
+         * @todo refactor than have plenty of time
+         *
+         * @param right {boolean} direction to move
+         */
+        moveByKey: function (right) {
+            var p = this.coords.p_pointer;
+
+            if (right) {
+                p += this.options.keyboard_step;
+            } else {
+                p -= this.options.keyboard_step;
+            }
+
+            this.coords.x_pointer = this.toFixed(this.coords.w_rs / 100 * p);
+            this.is_key = true;
+            this.calc();
+        },
+
+        /**
+         * Set visibility and content
+         * of Min and Max labels
+         */
+        setMinMax: function () {
+            if (!this.options) {
+                return;
+            }
+
+            if (this.options.hide_min_max) {
+                this.$cache.min[0].style.display = "none";
+                this.$cache.max[0].style.display = "none";
+                return;
+            }
+
+            if (this.options.values.length) {
+                this.$cache.min.html(this.decorate(this.options.p_values[this.options.min]));
+                this.$cache.max.html(this.decorate(this.options.p_values[this.options.max]));
+            } else {
+                this.$cache.min.html(this.decorate(this._prettify(this.options.min), this.options.min));
+                this.$cache.max.html(this.decorate(this._prettify(this.options.max), this.options.max));
+            }
+
+            this.labels.w_min = this.$cache.min.outerWidth(false);
+            this.labels.w_max = this.$cache.max.outerWidth(false);
+        },
+
+        /**
+         * Then dragging interval, prevent interval collapsing
+         * using min_interval option
+         */
+        setTempMinInterval: function () {
+            var interval = this.result.to - this.result.from;
+
+            if (this.old_min_interval === null) {
+                this.old_min_interval = this.options.min_interval;
+            }
+
+            this.options.min_interval = interval;
+        },
+
+        /**
+         * Restore min_interval option to original
+         */
+        restoreOriginalMinInterval: function () {
+            if (this.old_min_interval !== null) {
+                this.options.min_interval = this.old_min_interval;
+                this.old_min_interval = null;
+            }
+        },
+
+
+
+        // =============================================================================================================
+        // Calculations
+
+        /**
+         * All calculations and measures start here
+         *
+         * @param update {boolean=}
+         */
+        calc: function (update) {
+            if (!this.options) {
+                return;
+            }
+
+            this.calc_count++;
+
+            if (this.calc_count === 10 || update) {
+                this.calc_count = 0;
+                this.coords.w_rs = this.$cache.rs.outerWidth(false);
+
+                this.calcHandlePercent();
+            }
+
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            this.calcPointerPercent();
+            var handle_x = this.getHandleX();
+
+
+            if (this.target === "both") {
+                this.coords.p_gap = 0;
+                handle_x = this.getHandleX();
+            }
+
+            if (this.target === "click") {
+                this.coords.p_gap = this.coords.p_handle / 2;
+                handle_x = this.getHandleX();
+
+                if (this.options.drag_interval) {
+                    this.target = "both_one";
+                } else {
+                    this.target = this.chooseHandle(handle_x);
+                }
+            }
+
+            switch (this.target) {
+                case "base":
+                    var w = (this.options.max - this.options.min) / 100,
+                        f = (this.result.from - this.options.min) / w,
+                        t = (this.result.to - this.options.min) / w;
+
+                    this.coords.p_single_real = this.toFixed(f);
+                    this.coords.p_from_real = this.toFixed(f);
+                    this.coords.p_to_real = this.toFixed(t);
+
+                    this.coords.p_single_real = this.checkDiapason(this.coords.p_single_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+
+                    this.coords.p_single_fake = this.convertToFakePercent(this.coords.p_single_real);
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    this.target = null;
+
+                    break;
+
+                case "single":
+                    if (this.options.from_fixed) {
+                        break;
+                    }
+
+                    this.coords.p_single_real = this.convertToRealPercent(handle_x);
+                    this.coords.p_single_real = this.calcWithStep(this.coords.p_single_real);
+                    this.coords.p_single_real = this.checkDiapason(this.coords.p_single_real, this.options.from_min, this.options.from_max);
+
+                    this.coords.p_single_fake = this.convertToFakePercent(this.coords.p_single_real);
+
+                    break;
+
+                case "from":
+                    if (this.options.from_fixed) {
+                        break;
+                    }
+
+                    this.coords.p_from_real = this.convertToRealPercent(handle_x);
+                    this.coords.p_from_real = this.calcWithStep(this.coords.p_from_real);
+                    if (this.coords.p_from_real > this.coords.p_to_real) {
+                        this.coords.p_from_real = this.coords.p_to_real;
+                    }
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_real = this.checkMinInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
+                    this.coords.p_from_real = this.checkMaxInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
+
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+
+                    break;
+
+                case "to":
+                    if (this.options.to_fixed) {
+                        break;
+                    }
+
+                    this.coords.p_to_real = this.convertToRealPercent(handle_x);
+                    this.coords.p_to_real = this.calcWithStep(this.coords.p_to_real);
+                    if (this.coords.p_to_real < this.coords.p_from_real) {
+                        this.coords.p_to_real = this.coords.p_from_real;
+                    }
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+                    this.coords.p_to_real = this.checkMinInterval(this.coords.p_to_real, this.coords.p_from_real, "to");
+                    this.coords.p_to_real = this.checkMaxInterval(this.coords.p_to_real, this.coords.p_from_real, "to");
+
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    break;
+
+                case "both":
+                    if (this.options.from_fixed || this.options.to_fixed) {
+                        break;
+                    }
+
+                    handle_x = this.toFixed(handle_x + (this.coords.p_handle * 0.001));
+
+                    this.coords.p_from_real = this.convertToRealPercent(handle_x) - this.coords.p_gap_left;
+                    this.coords.p_from_real = this.calcWithStep(this.coords.p_from_real);
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_real = this.checkMinInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+
+                    this.coords.p_to_real = this.convertToRealPercent(handle_x) + this.coords.p_gap_right;
+                    this.coords.p_to_real = this.calcWithStep(this.coords.p_to_real);
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+                    this.coords.p_to_real = this.checkMinInterval(this.coords.p_to_real, this.coords.p_from_real, "to");
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    break;
+
+                case "both_one":
+                    if (this.options.from_fixed || this.options.to_fixed) {
+                        break;
+                    }
+
+                    var real_x = this.convertToRealPercent(handle_x),
+                        from = this.result.from_percent,
+                        to = this.result.to_percent,
+                        full = to - from,
+                        half = full / 2,
+                        new_from = real_x - half,
+                        new_to = real_x + half;
+
+                    if (new_from < 0) {
+                        new_from = 0;
+                        new_to = new_from + full;
+                    }
+
+                    if (new_to > 100) {
+                        new_to = 100;
+                        new_from = new_to - full;
+                    }
+
+                    this.coords.p_from_real = this.calcWithStep(new_from);
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+
+                    this.coords.p_to_real = this.calcWithStep(new_to);
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    break;
+            }
+
+            if (this.options.type === "single") {
+                this.coords.p_bar_x = (this.coords.p_handle / 2);
+                this.coords.p_bar_w = this.coords.p_single_fake;
+
+                this.result.from_percent = this.coords.p_single_real;
+                this.result.from = this.convertToValue(this.coords.p_single_real);
+
+                if (this.options.values.length) {
+                    this.result.from_value = this.options.values[this.result.from];
+                }
+            } else {
+                this.coords.p_bar_x = this.toFixed(this.coords.p_from_fake + (this.coords.p_handle / 2));
+                this.coords.p_bar_w = this.toFixed(this.coords.p_to_fake - this.coords.p_from_fake);
+
+                this.result.from_percent = this.coords.p_from_real;
+                this.result.from = this.convertToValue(this.coords.p_from_real);
+                this.result.to_percent = this.coords.p_to_real;
+                this.result.to = this.convertToValue(this.coords.p_to_real);
+
+                if (this.options.values.length) {
+                    this.result.from_value = this.options.values[this.result.from];
+                    this.result.to_value = this.options.values[this.result.to];
+                }
+            }
+
+            this.calcMinMax();
+            this.calcLabels();
+        },
+
+
+        /**
+         * calculates pointer X in percent
+         */
+        calcPointerPercent: function () {
+            if (!this.coords.w_rs) {
+                this.coords.p_pointer = 0;
+                return;
+            }
+
+            if (this.coords.x_pointer < 0 || isNaN(this.coords.x_pointer)  ) {
+                this.coords.x_pointer = 0;
+            } else if (this.coords.x_pointer > this.coords.w_rs) {
+                this.coords.x_pointer = this.coords.w_rs;
+            }
+
+            this.coords.p_pointer = this.toFixed(this.coords.x_pointer / this.coords.w_rs * 100);
+        },
+
+        convertToRealPercent: function (fake) {
+            var full = 100 - this.coords.p_handle;
+            return fake / full * 100;
+        },
+
+        convertToFakePercent: function (real) {
+            var full = 100 - this.coords.p_handle;
+            return real / 100 * full;
+        },
+
+        getHandleX: function () {
+            var max = 100 - this.coords.p_handle,
+                x = this.toFixed(this.coords.p_pointer - this.coords.p_gap);
+
+            if (x < 0) {
+                x = 0;
+            } else if (x > max) {
+                x = max;
+            }
+
+            return x;
+        },
+
+        calcHandlePercent: function () {
+            if (this.options.type === "single") {
+                this.coords.w_handle = this.$cache.s_single.outerWidth(false);
+            } else {
+                this.coords.w_handle = this.$cache.s_from.outerWidth(false);
+            }
+
+            this.coords.p_handle = this.toFixed(this.coords.w_handle / this.coords.w_rs * 100);
+        },
+
+        /**
+         * Find closest handle to pointer click
+         *
+         * @param real_x {Number}
+         * @returns {String}
+         */
+        chooseHandle: function (real_x) {
+            if (this.options.type === "single") {
+                return "single";
+            } else {
+                var m_point = this.coords.p_from_real + ((this.coords.p_to_real - this.coords.p_from_real) / 2);
+                if (real_x >= m_point) {
+                    return this.options.to_fixed ? "from" : "to";
+                } else {
+                    return this.options.from_fixed ? "to" : "from";
+                }
+            }
+        },
+
+        /**
+         * Measure Min and Max labels width in percent
+         */
+        calcMinMax: function () {
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            this.labels.p_min = this.labels.w_min / this.coords.w_rs * 100;
+            this.labels.p_max = this.labels.w_max / this.coords.w_rs * 100;
+        },
+
+        /**
+         * Measure labels width and X in percent
+         */
+        calcLabels: function () {
+            if (!this.coords.w_rs || this.options.hide_from_to) {
+                return;
+            }
+
+            if (this.options.type === "single") {
+
+                this.labels.w_single = this.$cache.single.outerWidth(false);
+                this.labels.p_single_fake = this.labels.w_single / this.coords.w_rs * 100;
+                this.labels.p_single_left = this.coords.p_single_fake + (this.coords.p_handle / 2) - (this.labels.p_single_fake / 2);
+                this.labels.p_single_left = this.checkEdges(this.labels.p_single_left, this.labels.p_single_fake);
+
+            } else {
+
+                this.labels.w_from = this.$cache.from.outerWidth(false);
+                this.labels.p_from_fake = this.labels.w_from / this.coords.w_rs * 100;
+                this.labels.p_from_left = this.coords.p_from_fake + (this.coords.p_handle / 2) - (this.labels.p_from_fake / 2);
+                this.labels.p_from_left = this.toFixed(this.labels.p_from_left);
+                this.labels.p_from_left = this.checkEdges(this.labels.p_from_left, this.labels.p_from_fake);
+
+                this.labels.w_to = this.$cache.to.outerWidth(false);
+                this.labels.p_to_fake = this.labels.w_to / this.coords.w_rs * 100;
+                this.labels.p_to_left = this.coords.p_to_fake + (this.coords.p_handle / 2) - (this.labels.p_to_fake / 2);
+                this.labels.p_to_left = this.toFixed(this.labels.p_to_left);
+                this.labels.p_to_left = this.checkEdges(this.labels.p_to_left, this.labels.p_to_fake);
+
+                this.labels.w_single = this.$cache.single.outerWidth(false);
+                this.labels.p_single_fake = this.labels.w_single / this.coords.w_rs * 100;
+                this.labels.p_single_left = ((this.labels.p_from_left + this.labels.p_to_left + this.labels.p_to_fake) / 2) - (this.labels.p_single_fake / 2);
+                this.labels.p_single_left = this.toFixed(this.labels.p_single_left);
+                this.labels.p_single_left = this.checkEdges(this.labels.p_single_left, this.labels.p_single_fake);
+
+            }
+        },
+
+
+
+        // =============================================================================================================
+        // Drawings
+
+        /**
+         * Main function called in request animation frame
+         * to update everything
+         */
+        updateScene: function () {
+            if (this.raf_id) {
+                cancelAnimationFrame(this.raf_id);
+                this.raf_id = null;
+            }
+
+            clearTimeout(this.update_tm);
+            this.update_tm = null;
+
+            if (!this.options) {
+                return;
+            }
+
+            this.drawHandles();
+
+            if (this.is_active) {
+                this.raf_id = requestAnimationFrame(this.updateScene.bind(this));
+            } else {
+                this.update_tm = setTimeout(this.updateScene.bind(this), 300);
+            }
+        },
+
+        /**
+         * Draw handles
+         */
+        drawHandles: function () {
+            this.coords.w_rs = this.$cache.rs.outerWidth(false);
+
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            if (this.coords.w_rs !== this.coords.w_rs_old) {
+                this.target = "base";
+                this.is_resize = true;
+            }
+
+            if (this.coords.w_rs !== this.coords.w_rs_old || this.force_redraw) {
+                this.setMinMax();
+                this.calc(true);
+                this.drawLabels();
+                if (this.options.grid) {
+                    this.calcGridMargin();
+                    this.calcGridLabels();
+                }
+                this.force_redraw = true;
+                this.coords.w_rs_old = this.coords.w_rs;
+                this.drawShadow();
+            }
+
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            if (!this.dragging && !this.force_redraw && !this.is_key) {
+                return;
+            }
+
+            if (this.old_from !== this.result.from || this.old_to !== this.result.to || this.force_redraw || this.is_key) {
+
+                this.drawLabels();
+
+                this.$cache.bar[0].style.left = this.coords.p_bar_x + "%";
+                this.$cache.bar[0].style.width = this.coords.p_bar_w + "%";
+
+                if (this.options.type === "single") {
+                    this.$cache.s_single[0].style.left = this.coords.p_single_fake + "%";
+
+                    this.$cache.single[0].style.left = this.labels.p_single_left + "%";
+                } else {
+                    this.$cache.s_from[0].style.left = this.coords.p_from_fake + "%";
+                    this.$cache.s_to[0].style.left = this.coords.p_to_fake + "%";
+
+                    if (this.old_from !== this.result.from || this.force_redraw) {
+                        this.$cache.from[0].style.left = this.labels.p_from_left + "%";
+                    }
+                    if (this.old_to !== this.result.to || this.force_redraw) {
+                        this.$cache.to[0].style.left = this.labels.p_to_left + "%";
+                    }
+
+                    this.$cache.single[0].style.left = this.labels.p_single_left + "%";
+                }
+
+                this.writeToInput();
+
+                if ((this.old_from !== this.result.from || this.old_to !== this.result.to) && !this.is_start) {
+                    this.$cache.input.trigger("change");
+                    this.$cache.input.trigger("input");
+                }
+
+                this.old_from = this.result.from;
+                this.old_to = this.result.to;
+
+                // callbacks call
+                if (!this.is_resize && !this.is_update && !this.is_start && !this.is_finish) {
+                    this.callOnChange();
+                }
+                if (this.is_key || this.is_click || this.is_first_update) {
+                    this.is_key = false;
+                    this.is_click = false;
+                    this.is_first_update = false;
+                    this.callOnFinish();
+                }
+
+                this.is_update = false;
+                this.is_resize = false;
+                this.is_finish = false;
+            }
+
+            this.is_start = false;
+            this.is_key = false;
+            this.is_click = false;
+            this.force_redraw = false;
+        },
+
+        /**
+         * Draw labels
+         * measure labels collisions
+         * collapse close labels
+         */
+        drawLabels: function () {
+            if (!this.options) {
+                return;
+            }
+
+            var values_num = this.options.values.length,
+                p_values = this.options.p_values,
+                text_single,
+                text_from,
+                text_to;
+
+            if (this.options.hide_from_to) {
+                return;
+            }
+
+            if (this.options.type === "single") {
+
+                if (values_num) {
+                    text_single = this.decorate(p_values[this.result.from]);
+                    this.$cache.single.html(text_single);
+                } else {
+                    text_single = this.decorate(this._prettify(this.result.from), this.result.from);
+                    this.$cache.single.html(text_single);
+                }
+
+                this.calcLabels();
+
+                if (this.labels.p_single_left < this.labels.p_min + 1) {
+                    this.$cache.min[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.min[0].style.visibility = "visible";
+                }
+
+                if (this.labels.p_single_left + this.labels.p_single_fake > 100 - this.labels.p_max - 1) {
+                    this.$cache.max[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.max[0].style.visibility = "visible";
+                }
+
+            } else {
+
+                if (values_num) {
+
+                    if (this.options.decorate_both) {
+                        text_single = this.decorate(p_values[this.result.from]);
+                        text_single += this.options.values_separator;
+                        text_single += this.decorate(p_values[this.result.to]);
+                    } else {
+                        text_single = this.decorate(p_values[this.result.from] + this.options.values_separator + p_values[this.result.to]);
+                    }
+                    text_from = this.decorate(p_values[this.result.from]);
+                    text_to = this.decorate(p_values[this.result.to]);
+
+                    this.$cache.single.html(text_single);
+                    this.$cache.from.html(text_from);
+                    this.$cache.to.html(text_to);
+
+                } else {
+
+                    if (this.options.decorate_both) {
+                        text_single = this.decorate(this._prettify(this.result.from), this.result.from);
+                        text_single += this.options.values_separator;
+                        text_single += this.decorate(this._prettify(this.result.to), this.result.to);
+                    } else {
+                        text_single = this.decorate(this._prettify(this.result.from) + this.options.values_separator + this._prettify(this.result.to), this.result.to);
+                    }
+                    text_from = this.decorate(this._prettify(this.result.from), this.result.from);
+                    text_to = this.decorate(this._prettify(this.result.to), this.result.to);
+
+                    this.$cache.single.html(text_single);
+                    this.$cache.from.html(text_from);
+                    this.$cache.to.html(text_to);
+
+                }
+
+                this.calcLabels();
+
+                var min = Math.min(this.labels.p_single_left, this.labels.p_from_left),
+                    single_left = this.labels.p_single_left + this.labels.p_single_fake,
+                    to_left = this.labels.p_to_left + this.labels.p_to_fake,
+                    max = Math.max(single_left, to_left);
+
+                if (this.labels.p_from_left + this.labels.p_from_fake >= this.labels.p_to_left) {
+                    this.$cache.from[0].style.visibility = "hidden";
+                    this.$cache.to[0].style.visibility = "hidden";
+                    this.$cache.single[0].style.visibility = "visible";
+
+                    if (this.result.from === this.result.to) {
+                        if (this.target === "from") {
+                            this.$cache.from[0].style.visibility = "visible";
+                        } else if (this.target === "to") {
+                            this.$cache.to[0].style.visibility = "visible";
+                        } else if (!this.target) {
+                            this.$cache.from[0].style.visibility = "visible";
+                        }
+                        this.$cache.single[0].style.visibility = "hidden";
+                        max = to_left;
+                    } else {
+                        this.$cache.from[0].style.visibility = "hidden";
+                        this.$cache.to[0].style.visibility = "hidden";
+                        this.$cache.single[0].style.visibility = "visible";
+                        max = Math.max(single_left, to_left);
+                    }
+                } else {
+                    this.$cache.from[0].style.visibility = "visible";
+                    this.$cache.to[0].style.visibility = "visible";
+                    this.$cache.single[0].style.visibility = "hidden";
+                }
+
+                if (min < this.labels.p_min + 1) {
+                    this.$cache.min[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.min[0].style.visibility = "visible";
+                }
+
+                if (max > 100 - this.labels.p_max - 1) {
+                    this.$cache.max[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.max[0].style.visibility = "visible";
+                }
+
+            }
+        },
+
+        /**
+         * Draw shadow intervals
+         */
+        drawShadow: function () {
+            var o = this.options,
+                c = this.$cache,
+
+                is_from_min = typeof o.from_min === "number" && !isNaN(o.from_min),
+                is_from_max = typeof o.from_max === "number" && !isNaN(o.from_max),
+                is_to_min = typeof o.to_min === "number" && !isNaN(o.to_min),
+                is_to_max = typeof o.to_max === "number" && !isNaN(o.to_max),
+
+                from_min,
+                from_max,
+                to_min,
+                to_max;
+
+            if (o.type === "single") {
+                if (o.from_shadow && (is_from_min || is_from_max)) {
+                    from_min = this.convertToPercent(is_from_min ? o.from_min : o.min);
+                    from_max = this.convertToPercent(is_from_max ? o.from_max : o.max) - from_min;
+                    from_min = this.toFixed(from_min - (this.coords.p_handle / 100 * from_min));
+                    from_max = this.toFixed(from_max - (this.coords.p_handle / 100 * from_max));
+                    from_min = from_min + (this.coords.p_handle / 2);
+
+                    c.shad_single[0].style.display = "block";
+                    c.shad_single[0].style.left = from_min + "%";
+                    c.shad_single[0].style.width = from_max + "%";
+                } else {
+                    c.shad_single[0].style.display = "none";
+                }
+            } else {
+                if (o.from_shadow && (is_from_min || is_from_max)) {
+                    from_min = this.convertToPercent(is_from_min ? o.from_min : o.min);
+                    from_max = this.convertToPercent(is_from_max ? o.from_max : o.max) - from_min;
+                    from_min = this.toFixed(from_min - (this.coords.p_handle / 100 * from_min));
+                    from_max = this.toFixed(from_max - (this.coords.p_handle / 100 * from_max));
+                    from_min = from_min + (this.coords.p_handle / 2);
+
+                    c.shad_from[0].style.display = "block";
+                    c.shad_from[0].style.left = from_min + "%";
+                    c.shad_from[0].style.width = from_max + "%";
+                } else {
+                    c.shad_from[0].style.display = "none";
+                }
+
+                if (o.to_shadow && (is_to_min || is_to_max)) {
+                    to_min = this.convertToPercent(is_to_min ? o.to_min : o.min);
+                    to_max = this.convertToPercent(is_to_max ? o.to_max : o.max) - to_min;
+                    to_min = this.toFixed(to_min - (this.coords.p_handle / 100 * to_min));
+                    to_max = this.toFixed(to_max - (this.coords.p_handle / 100 * to_max));
+                    to_min = to_min + (this.coords.p_handle / 2);
+
+                    c.shad_to[0].style.display = "block";
+                    c.shad_to[0].style.left = to_min + "%";
+                    c.shad_to[0].style.width = to_max + "%";
+                } else {
+                    c.shad_to[0].style.display = "none";
+                }
+            }
+        },
+
+
+
+        /**
+         * Write values to input element
+         */
+        writeToInput: function () {
+            if (this.options.type === "single") {
+                if (this.options.values.length) {
+                    this.$cache.input.prop("value", this.result.from_value);
+                } else {
+                    this.$cache.input.prop("value", this.result.from);
+                }
+                this.$cache.input.data("from", this.result.from);
+            } else {
+                if (this.options.values.length) {
+                    this.$cache.input.prop("value", this.result.from_value + this.options.input_values_separator + this.result.to_value);
+                } else {
+                    this.$cache.input.prop("value", this.result.from + this.options.input_values_separator + this.result.to);
+                }
+                this.$cache.input.data("from", this.result.from);
+                this.$cache.input.data("to", this.result.to);
+            }
+        },
+
+
+
+        // =============================================================================================================
+        // Callbacks
+
+        callOnStart: function () {
+            this.writeToInput();
+
+            if (this.options.onStart && typeof this.options.onStart === "function") {
+                this.options.onStart(this.result);
+            }
+        },
+        callOnChange: function () {
+            this.writeToInput();
+
+            if (this.options.onChange && typeof this.options.onChange === "function") {
+                this.options.onChange(this.result);
+            }
+        },
+        callOnFinish: function () {
+            this.writeToInput();
+
+            if (this.options.onFinish && typeof this.options.onFinish === "function") {
+                this.options.onFinish(this.result);
+            }
+        },
+        callOnUpdate: function () {
+            this.writeToInput();
+
+            if (this.options.onUpdate && typeof this.options.onUpdate === "function") {
+                this.options.onUpdate(this.result);
+            }
+        },
+
+
+
+
+        // =============================================================================================================
+        // Service methods
+
+        toggleInput: function () {
+            this.$cache.input.toggleClass("irs-hidden-input");
+        },
+
+        /**
+         * Convert real value to percent
+         *
+         * @param value {Number} X in real
+         * @param no_min {boolean=} don't use min value
+         * @returns {Number} X in percent
+         */
+        convertToPercent: function (value, no_min) {
+            var diapason = this.options.max - this.options.min,
+                one_percent = diapason / 100,
+                val, percent;
+
+            if (!diapason) {
+                this.no_diapason = true;
+                return 0;
+            }
+
+            if (no_min) {
+                val = value;
+            } else {
+                val = value - this.options.min;
+            }
+
+            percent = val / one_percent;
+
+            return this.toFixed(percent);
+        },
+
+        /**
+         * Convert percent to real values
+         *
+         * @param percent {Number} X in percent
+         * @returns {Number} X in real
+         */
+        convertToValue: function (percent) {
+            var min = this.options.min,
+                max = this.options.max,
+                min_decimals = min.toString().split(".")[1],
+                max_decimals = max.toString().split(".")[1],
+                min_length, max_length,
+                avg_decimals = 0,
+                abs = 0;
+
+            if (percent === 0) {
+                return this.options.min;
+            }
+            if (percent === 100) {
+                return this.options.max;
+            }
+
+
+            if (min_decimals) {
+                min_length = min_decimals.length;
+                avg_decimals = min_length;
+            }
+            if (max_decimals) {
+                max_length = max_decimals.length;
+                avg_decimals = max_length;
+            }
+            if (min_length && max_length) {
+                avg_decimals = (min_length >= max_length) ? min_length : max_length;
+            }
+
+            if (min < 0) {
+                abs = Math.abs(min);
+                min = +(min + abs).toFixed(avg_decimals);
+                max = +(max + abs).toFixed(avg_decimals);
+            }
+
+            var number = ((max - min) / 100 * percent) + min,
+                string = this.options.step.toString().split(".")[1],
+                result;
+
+            if (string) {
+                number = +number.toFixed(string.length);
+            } else {
+                number = number / this.options.step;
+                number = number * this.options.step;
+
+                number = +number.toFixed(0);
+            }
+
+            if (abs) {
+                number -= abs;
+            }
+
+            if (string) {
+                result = +number.toFixed(string.length);
+            } else {
+                result = this.toFixed(number);
+            }
+
+            if (result < this.options.min) {
+                result = this.options.min;
+            } else if (result > this.options.max) {
+                result = this.options.max;
+            }
+
+            return result;
+        },
+
+        /**
+         * Round percent value with step
+         *
+         * @param percent {Number}
+         * @returns percent {Number} rounded
+         */
+        calcWithStep: function (percent) {
+            var rounded = Math.round(percent / this.coords.p_step) * this.coords.p_step;
+
+            if (rounded > 100) {
+                rounded = 100;
+            }
+            if (percent === 100) {
+                rounded = 100;
+            }
+
+            return this.toFixed(rounded);
+        },
+
+        checkMinInterval: function (p_current, p_next, type) {
+            var o = this.options,
+                current,
+                next;
+
+            if (!o.min_interval) {
+                return p_current;
+            }
+
+            current = this.convertToValue(p_current);
+            next = this.convertToValue(p_next);
+
+            if (type === "from") {
+
+                if (next - current < o.min_interval) {
+                    current = next - o.min_interval;
+                }
+
+            } else {
+
+                if (current - next < o.min_interval) {
+                    current = next + o.min_interval;
+                }
+
+            }
+
+            return this.convertToPercent(current);
+        },
+
+        checkMaxInterval: function (p_current, p_next, type) {
+            var o = this.options,
+                current,
+                next;
+
+            if (!o.max_interval) {
+                return p_current;
+            }
+
+            current = this.convertToValue(p_current);
+            next = this.convertToValue(p_next);
+
+            if (type === "from") {
+
+                if (next - current > o.max_interval) {
+                    current = next - o.max_interval;
+                }
+
+            } else {
+
+                if (current - next > o.max_interval) {
+                    current = next + o.max_interval;
+                }
+
+            }
+
+            return this.convertToPercent(current);
+        },
+
+        checkDiapason: function (p_num, min, max) {
+            var num = this.convertToValue(p_num),
+                o = this.options;
+
+            if (typeof min !== "number") {
+                min = o.min;
+            }
+
+            if (typeof max !== "number") {
+                max = o.max;
+            }
+
+            if (num < min) {
+                num = min;
+            }
+
+            if (num > max) {
+                num = max;
+            }
+
+            return this.convertToPercent(num);
+        },
+
+        toFixed: function (num) {
+            num = num.toFixed(20);
+            return +num;
+        },
+
+        _prettify: function (num) {
+            if (!this.options.prettify_enabled) {
+                return num;
+            }
+
+            if (this.options.prettify && typeof this.options.prettify === "function") {
+                return this.options.prettify(num);
+            } else {
+                return this.prettify(num);
+            }
+        },
+
+        prettify: function (num) {
+            var n = num.toString();
+            return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + this.options.prettify_separator);
+        },
+
+        checkEdges: function (left, width) {
+            if (!this.options.force_edges) {
+                return this.toFixed(left);
+            }
+
+            if (left < 0) {
+                left = 0;
+            } else if (left > 100 - width) {
+                left = 100 - width;
+            }
+
+            return this.toFixed(left);
+        },
+
+        validate: function () {
+            var o = this.options,
+                r = this.result,
+                v = o.values,
+                vl = v.length,
+                value,
+                i;
+
+            if (typeof o.min === "string") o.min = +o.min;
+            if (typeof o.max === "string") o.max = +o.max;
+            if (typeof o.from === "string") o.from = +o.from;
+            if (typeof o.to === "string") o.to = +o.to;
+            if (typeof o.step === "string") o.step = +o.step;
+
+            if (typeof o.from_min === "string") o.from_min = +o.from_min;
+            if (typeof o.from_max === "string") o.from_max = +o.from_max;
+            if (typeof o.to_min === "string") o.to_min = +o.to_min;
+            if (typeof o.to_max === "string") o.to_max = +o.to_max;
+
+            if (typeof o.keyboard_step === "string") o.keyboard_step = +o.keyboard_step;
+            if (typeof o.grid_num === "string") o.grid_num = +o.grid_num;
+
+            if (o.max < o.min) {
+                o.max = o.min;
+            }
+
+            if (vl) {
+                o.p_values = [];
+                o.min = 0;
+                o.max = vl - 1;
+                o.step = 1;
+                o.grid_num = o.max;
+                o.grid_snap = true;
+
+
+                for (i = 0; i < vl; i++) {
+                    value = +v[i];
+
+                    if (!isNaN(value)) {
+                        v[i] = value;
+                        value = this._prettify(value);
+                    } else {
+                        value = v[i];
+                    }
+
+                    o.p_values.push(value);
+                }
+            }
+
+            if (typeof o.from !== "number" || isNaN(o.from)) {
+                o.from = o.min;
+            }
+
+            if (typeof o.to !== "number" || isNaN(o.to)) {
+                o.to = o.max;
+            }
+
+            if (o.type === "single") {
+
+                if (o.from < o.min) o.from = o.min;
+                if (o.from > o.max) o.from = o.max;
+
+            } else {
+
+                if (o.from < o.min) o.from = o.min;
+                if (o.from > o.max) o.from = o.max;
+
+                if (o.to < o.min) o.to = o.min;
+                if (o.to > o.max) o.to = o.max;
+
+                if (this.update_check.from) {
+
+                    if (this.update_check.from !== o.from) {
+                        if (o.from > o.to) o.from = o.to;
+                    }
+                    if (this.update_check.to !== o.to) {
+                        if (o.to < o.from) o.to = o.from;
+                    }
+
+                }
+
+                if (o.from > o.to) o.from = o.to;
+                if (o.to < o.from) o.to = o.from;
+
+            }
+
+            if (typeof o.step !== "number" || isNaN(o.step) || !o.step || o.step < 0) {
+                o.step = 1;
+            }
+
+            if (typeof o.keyboard_step !== "number" || isNaN(o.keyboard_step) || !o.keyboard_step || o.keyboard_step < 0) {
+                o.keyboard_step = 5;
+            }
+
+            if (typeof o.from_min === "number" && o.from < o.from_min) {
+                o.from = o.from_min;
+            }
+
+            if (typeof o.from_max === "number" && o.from > o.from_max) {
+                o.from = o.from_max;
+            }
+
+            if (typeof o.to_min === "number" && o.to < o.to_min) {
+                o.to = o.to_min;
+            }
+
+            if (typeof o.to_max === "number" && o.from > o.to_max) {
+                o.to = o.to_max;
+            }
+
+            if (r) {
+                if (r.min !== o.min) {
+                    r.min = o.min;
+                }
+
+                if (r.max !== o.max) {
+                    r.max = o.max;
+                }
+
+                if (r.from < r.min || r.from > r.max) {
+                    r.from = o.from;
+                }
+
+                if (r.to < r.min || r.to > r.max) {
+                    r.to = o.to;
+                }
+            }
+
+            if (typeof o.min_interval !== "number" || isNaN(o.min_interval) || !o.min_interval || o.min_interval < 0) {
+                o.min_interval = 0;
+            }
+
+            if (typeof o.max_interval !== "number" || isNaN(o.max_interval) || !o.max_interval || o.max_interval < 0) {
+                o.max_interval = 0;
+            }
+
+            if (o.min_interval && o.min_interval > o.max - o.min) {
+                o.min_interval = o.max - o.min;
+            }
+
+            if (o.max_interval && o.max_interval > o.max - o.min) {
+                o.max_interval = o.max - o.min;
+            }
+        },
+
+        decorate: function (num, original) {
+            var decorated = "",
+                o = this.options;
+
+            if (o.prefix) {
+                decorated += o.prefix;
+            }
+
+            decorated += num;
+
+            if (o.max_postfix) {
+                if (o.values.length && num === o.p_values[o.max]) {
+                    decorated += o.max_postfix;
+                    if (o.postfix) {
+                        decorated += " ";
+                    }
+                } else if (original === o.max) {
+                    decorated += o.max_postfix;
+                    if (o.postfix) {
+                        decorated += " ";
+                    }
+                }
+            }
+
+            if (o.postfix) {
+                decorated += o.postfix;
+            }
+
+            return decorated;
+        },
+
+        updateFrom: function () {
+            this.result.from = this.options.from;
+            this.result.from_percent = this.convertToPercent(this.result.from);
+            if (this.options.values) {
+                this.result.from_value = this.options.values[this.result.from];
+            }
+        },
+
+        updateTo: function () {
+            this.result.to = this.options.to;
+            this.result.to_percent = this.convertToPercent(this.result.to);
+            if (this.options.values) {
+                this.result.to_value = this.options.values[this.result.to];
+            }
+        },
+
+        updateResult: function () {
+            this.result.min = this.options.min;
+            this.result.max = this.options.max;
+            this.updateFrom();
+            this.updateTo();
+        },
+
+
+        // =============================================================================================================
+        // Grid
+
+        appendGrid: function () {
+            if (!this.options.grid) {
+                return;
+            }
+
+            var o = this.options,
+                i, z,
+
+                total = o.max - o.min,
+                big_num = o.grid_num,
+                big_p = 0,
+                big_w = 0,
+
+                small_max = 4,
+                local_small_max,
+                small_p,
+                small_w = 0,
+
+                result,
+                html = '';
+
+
+
+            this.calcGridMargin();
+
+            if (o.grid_snap) {
+                big_num = total / o.step;
+                big_p = this.toFixed(o.step / (total / 100));
+            } else {
+                big_p = this.toFixed(100 / big_num);
+            }
+
+            if (big_num > 4) {
+                small_max = 3;
+            }
+            if (big_num > 7) {
+                small_max = 2;
+            }
+            if (big_num > 14) {
+                small_max = 1;
+            }
+            if (big_num > 28) {
+                small_max = 0;
+            }
+
+            for (i = 0; i < big_num + 1; i++) {
+                local_small_max = small_max;
+
+                big_w = this.toFixed(big_p * i);
+
+                if (big_w > 100) {
+                    big_w = 100;
+
+                    local_small_max -= 2;
+                    if (local_small_max < 0) {
+                        local_small_max = 0;
+                    }
+                }
+                this.coords.big[i] = big_w;
+
+                small_p = (big_w - (big_p * (i - 1))) / (local_small_max + 1);
+
+                for (z = 1; z <= local_small_max; z++) {
+                    if (big_w === 0) {
+                        break;
+                    }
+
+                    small_w = this.toFixed(big_w - (small_p * z));
+
+                    html += '<span class="irs-grid-pol small" style="left: ' + small_w + '%"></span>';
+                }
+
+                html += '<span class="irs-grid-pol" style="left: ' + big_w + '%"></span>';
+
+                result = this.convertToValue(big_w);
+                if (o.values.length) {
+                    result = o.p_values[result];
+                } else {
+                    result = this._prettify(result);
+                }
+
+                html += '<span class="irs-grid-text js-grid-text-' + i + '" style="left: ' + big_w + '%">' + result + '</span>';
+            }
+            this.coords.big_num = Math.ceil(big_num + 1);
+
+
+
+            this.$cache.cont.addClass("irs-with-grid");
+            this.$cache.grid.html(html);
+            this.cacheGridLabels();
+        },
+
+        cacheGridLabels: function () {
+            var $label, i,
+                num = this.coords.big_num;
+
+            for (i = 0; i < num; i++) {
+                $label = this.$cache.grid.find(".js-grid-text-" + i);
+                this.$cache.grid_labels.push($label);
+            }
+
+            this.calcGridLabels();
+        },
+
+        calcGridLabels: function () {
+            var i, label, start = [], finish = [],
+                num = this.coords.big_num;
+
+            for (i = 0; i < num; i++) {
+                this.coords.big_w[i] = this.$cache.grid_labels[i].outerWidth(false);
+                this.coords.big_p[i] = this.toFixed(this.coords.big_w[i] / this.coords.w_rs * 100);
+                this.coords.big_x[i] = this.toFixed(this.coords.big_p[i] / 2);
+
+                start[i] = this.toFixed(this.coords.big[i] - this.coords.big_x[i]);
+                finish[i] = this.toFixed(start[i] + this.coords.big_p[i]);
+            }
+
+            if (this.options.force_edges) {
+                if (start[0] < -this.coords.grid_gap) {
+                    start[0] = -this.coords.grid_gap;
+                    finish[0] = this.toFixed(start[0] + this.coords.big_p[0]);
+
+                    this.coords.big_x[0] = this.coords.grid_gap;
+                }
+
+                if (finish[num - 1] > 100 + this.coords.grid_gap) {
+                    finish[num - 1] = 100 + this.coords.grid_gap;
+                    start[num - 1] = this.toFixed(finish[num - 1] - this.coords.big_p[num - 1]);
+
+                    this.coords.big_x[num - 1] = this.toFixed(this.coords.big_p[num - 1] - this.coords.grid_gap);
+                }
+            }
+
+            this.calcGridCollision(2, start, finish);
+            this.calcGridCollision(4, start, finish);
+
+            for (i = 0; i < num; i++) {
+                label = this.$cache.grid_labels[i][0];
+
+                if (this.coords.big_x[i] !== Number.POSITIVE_INFINITY) {
+                    label.style.marginLeft = -this.coords.big_x[i] + "%";
+                }
+            }
+        },
+
+        // Collisions Calc Beta
+        // TODO: Refactor then have plenty of time
+        calcGridCollision: function (step, start, finish) {
+            var i, next_i, label,
+                num = this.coords.big_num;
+
+            for (i = 0; i < num; i += step) {
+                next_i = i + (step / 2);
+                if (next_i >= num) {
+                    break;
+                }
+
+                label = this.$cache.grid_labels[next_i][0];
+
+                if (finish[i] <= start[next_i]) {
+                    label.style.visibility = "visible";
+                } else {
+                    label.style.visibility = "hidden";
+                }
+            }
+        },
+
+        calcGridMargin: function () {
+            if (!this.options.grid_margin) {
+                return;
+            }
+
+            this.coords.w_rs = this.$cache.rs.outerWidth(false);
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            if (this.options.type === "single") {
+                this.coords.w_handle = this.$cache.s_single.outerWidth(false);
+            } else {
+                this.coords.w_handle = this.$cache.s_from.outerWidth(false);
+            }
+            this.coords.p_handle = this.toFixed(this.coords.w_handle  / this.coords.w_rs * 100);
+            this.coords.grid_gap = this.toFixed((this.coords.p_handle / 2) - 0.1);
+
+            this.$cache.grid[0].style.width = this.toFixed(100 - this.coords.p_handle) + "%";
+            this.$cache.grid[0].style.left = this.coords.grid_gap + "%";
+        },
+
+
+
+        // =============================================================================================================
+        // Public methods
+
+        update: function (options) {
+            if (!this.input) {
+                return;
+            }
+
+            this.is_update = true;
+
+            this.options.from = this.result.from;
+            this.options.to = this.result.to;
+            this.update_check.from = this.result.from;
+            this.update_check.to = this.result.to;
+
+            this.options = $.extend(this.options, options);
+            this.validate();
+            this.updateResult(options);
+
+            this.toggleInput();
+            this.remove();
+            this.init(true);
+        },
+
+        reset: function () {
+            if (!this.input) {
+                return;
+            }
+
+            this.updateResult();
+            this.update();
+        },
+
+        destroy: function () {
+            if (!this.input) {
+                return;
+            }
+
+            this.toggleInput();
+            this.$cache.input.prop("readonly", false);
+            $.data(this.input, "ionRangeSlider", null);
+
+            this.remove();
+            this.input = null;
+            this.options = null;
+        }
+    };
+
+    $.fn.ionRangeSlider = function (options) {
+        return this.each(function() {
+            if (!$.data(this, "ionRangeSlider")) {
+                $.data(this, "ionRangeSlider", new IonRangeSlider(this, options, plugin_count++));
+            }
+        });
+    };
+
+
+
+    // =================================================================================================================
+    // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+    // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+
+    // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+
+    // MIT license
+
+    (function() {
+        var lastTime = 0;
+        var vendors = ['ms', 'moz', 'webkit', 'o'];
+        for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+            window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+            window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                || window[vendors[x]+'CancelRequestAnimationFrame'];
+        }
+
+        if (!window.requestAnimationFrame)
+            window.requestAnimationFrame = function(callback, element) {
+                var currTime = new Date().getTime();
+                var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                    timeToCall);
+                lastTime = currTime + timeToCall;
+                return id;
+            };
+
+        if (!window.cancelAnimationFrame)
+            window.cancelAnimationFrame = function(id) {
+                clearTimeout(id);
+            };
+    }());
+
+}));

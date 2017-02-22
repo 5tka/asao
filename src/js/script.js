@@ -28,45 +28,91 @@ $(document).ready(function(){
         prevText:"",
         infiniteLoop: !1
     });
-    var optProducers={};
-    if (width>=1240) {
-        optProducers = {
-            pager:!1,
-            nextText:"",
-            prevText:"",
-            infiniteLoop: !1,
-            slideMargin: 42,
-             slideWidth: 160 ,
-            minSlides:6,
-            maxSlides:6,
-            moveSlides:2
+
+    // $('.producers-slider').bxSlider(optProducers);
+    /* /producers js */
+    var itemsNum = 0;
+    var owl = $('.producers-slider');
+
+    owl.on('initialized.owl.carousel', function(event) {
+        var itemCount =  event.item.count;
+        var size      = event.page.size;
+        var dragLength = 100 / (itemCount/size);
+        console.log(itemCount+'+size'+size);
+        var owlThis = $(this);
+        console.log(owlThis.next('.range'));
+        owlThis.closest('.js_prodSlider-wrap').find('.range').ionRangeSlider({
+        type: "single",
+        min: 1,
+        max: itemCount - (size - 1),
+        keyboard: true,
+        step: 1,
+        from: 1,
+        onChange: function (data) {
+          //owl.trigger('changed.owl.carousel', [???]);
+              owlTo = (data.from) - 1;
+              console.log("Позиция ползунка: " + owlTo);
+              owlThis.trigger('to.owl.carousel', [owlTo, 500, true]);
         }
-    } else if (width<1240 && width >700) {
-        optProducers = {
-            pager:!1,
-            nextText:"",
-            prevText:"",
-            infiniteLoop: !1,
-            slideMargin: 58,
-             slideWidth: 160 ,
-            minSlides:4,
-            maxSlides:4,
-            moveSlides:2
+      });
+
+      $(this).closest('.js_prodSlider-wrap').find('.irs-slider.single').css('width', dragLength + "%")
+
+    });
+
+    //Слайдер
+    owl.owlCarousel({
+        loop:false,
+        margin:10,
+        dots: false,
+        slideBy:1,
+        items: 6,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:2
+            },
+            500:{
+                items:3
+            },
+            600:{
+                items:4
+            },
+            700:{
+                items:5
+            },
+            900:{
+                items:6
+            }
         }
-    } else if (width <=700) {
-        optProducers = {
-            pager:!1,
-            nextText:"",
-            prevText:"",
-            infiniteLoop: !1,
-            slideMargin: 70,
-             slideWidth: 160 ,
-            minSlides:2,
-            maxSlides:2,
-            moveSlides:2
-        }
-    }
-    $('.producers-slider').bxSlider(optProducers);
+    });
+
+    // owl.on('dragged.owl.carousel', function(event) {
+    //     var itemCount =  event.item.count;
+    //       var size      = event.page.size;
+    //       var curItem = event.item.index + 1;
+    //       var dragLength = 100 / (itemCount/size);
+    //       var parent=$(this).closest('.js_prodSlider-wrap');
+    //       console.log(curItem);
+    //         parent.find('.range').data("ionRangeSlider").update({from: curItem});
+    //         parent.find('.irs-slider.single').css('width', dragLength + "%");
+    // });
+
+    owl.on('resized.owl.carousel', function(event) {
+        var itemCount =  event.item.count;
+        var size      = event.page.size;
+        var curItem = event.item.index + 1;
+        var dragLength = 100 / (itemCount/size);
+        var parent=$(this).closest('.js_prodSlider-wrap');
+        parent.find('.range').data("ionRangeSlider").update({
+            max: itemCount - (size - 1),
+            from: curItem
+        });
+        parent.find('.irs-slider.single').css('width', dragLength + "%");
+    });
+
+    /* /producers js */
+
 
     $('.grayscale').gray();
     $('.grayscale').hover(function() {
