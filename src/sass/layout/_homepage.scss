@@ -133,8 +133,10 @@
 }
 
 .producers-inner-wrap {
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, .04);
 	border: 1px solid #e4e4e4;
 	margin-bottom: 18px;
+	background: #fff;
 }
 .producers-slider-wrap {
 	padding: 20px;
@@ -174,6 +176,8 @@
 	height: 60px;
 	line-height: 50px;
 	img {
+		@include transition(filter .25s);
+		
 		max-width: 100%;
 		vertical-align: middle;
 		display: inline-block;
