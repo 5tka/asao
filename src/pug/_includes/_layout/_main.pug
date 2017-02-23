@@ -5,7 +5,7 @@ main.main
 				.sliders-title
 					h2.title
 						| Производители
-				.producers-slider-wrap
+				.producers-slider-wrap.js_prodSlider-wrap
 					.producers-slider
 						.slide
 							.producer
@@ -31,6 +31,8 @@ main.main
 						.slide
 							.producer
 								img.grayscale(src='img/sliders/producers/dixis.jpg' alt='dixis')
+					div.scroll-line
+						input.range(type='text', value='', name='range')
 	.main__bestsellers-wrap
 		.container
 			.mainBanner-img.fl-l
@@ -206,43 +208,46 @@ main.main
 				.sliders-title
 					h2.title
 						| Партнеры
-				.bestsellerItems-slider
-					.bestseller-item
-						.b-img
-							img(src="img/p-1.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-2.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-3.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-4.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-5.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-6.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-1.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-2.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-3.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-4.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-5.jpg", alt="").grayscale
-					.bestseller-item
-						.b-img
-							img(src="img/p-6.jpg", alt="").grayscale
+				.js_prodSlider-wrap
+					.bestsellerItems-slider.producers-slider
+						.bestseller-item
+							.b-img
+								img(src="img/p-1.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-2.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-3.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-4.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-5.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-6.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-1.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-2.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-3.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-4.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-5.jpg", alt="").grayscale
+						.bestseller-item
+							.b-img
+								img(src="img/p-6.jpg", alt="").grayscale
+					.scroll-line
+						input.range(type='text', value='', name='range')
 	.main__bestsellers-wrap.double__slider-wrap
 		.container
 			.bestsellerItems-wrapper

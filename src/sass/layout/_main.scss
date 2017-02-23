@@ -81,6 +81,11 @@
         }
     }
 }
+.producers-wrap  {
+    .container {
+        background-color: #fff;
+    }
+}
 .sliders-title {
     min-height: 45px;
     line-height: 45px;
@@ -95,9 +100,9 @@
     cursor: pointer;
     font-size: 14px;
     text-align: center;
-    display: inline-block;
+    display: block;
     position: relative;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
     &:after {
         content: "";
         position: absolute;
