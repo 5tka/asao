@@ -162,68 +162,173 @@ header.header
                         - for (var x=0, k=list.length; x<k; x++)
                             li.products__cat-item
                                 a.products__cat-link.inner_menu(href='#') #{list[x]}
-                                if x==0
-                                    .hiddenmenu-table#hm_table
-                                        .hiddenmenu-blocks-wrap
-                                            .block__notation
-                                                .block__notation-title
-                                                    .close
-                                                        span Закрыть
-                                                    | Приминение
-                                                    .next
-                                                        span Далее
-                                                .block__content
-                                                    - var list2 = ['Скважинные насосы','Колодезные насосы','Насосные станции','Поверхностные насосы','Фекальные насосы','Циркуляционные насосы','Канализационные установки','Дозировочные насосы'];
-                                                    ul.block__notation-list
-                                                        - for (var i=0, g=list2.length; i<g; i++)
-                                                            li
-                                                                a(href='#' class= i==0 ? 'active': '') #{list2[i]}
-                                            .block__info
-                                                .block__info-content
-                                                    table
-                                                        thead
-                                                            tr
-                                                                td Производитель
-                                                                td Напор
-                                                                td Производительность
-                                                                td Диаметр
-                                                        tbody
-                                                            tr
-                                                                td
-                                                                    a(href='#') Pedrollo
-                                                                td До 405 м
-                                                                td До 60 м3/ч
-                                                                td 4-6`
-                                                            tr
-                                                                td
-                                                                    a(href='#') Pedrollo
-                                                                td До 405 м
-                                                                td До 60 м3/ч
-                                                                td 4-6`
-                                                            tr
-                                                                td
-                                                                    a(href='#') Pedrollo
-                                                                td До 405 м
-                                                                td До 60 м3/ч
-                                                                td 4-6`
-                                                            tr
-                                                                td
-                                                                    a(href='#') Pedrollo
-                                                                td До 405 м
-                                                                td До 60 м3/ч
-                                                                td 4-6`
-                                                            tr
-                                                                td
-                                                                    a(href='#') Pedrollo
-                                                                td До 405 м
-                                                                td До 60 м3/ч
-                                                                td 4-6`
-                                                            tr
-                                                                td
-                                                                    a(href='#') Pedrollo
-                                                                td До 405 м
-                                                                td До 60 м3/ч
-                                                                td 4-6`
+                                case x
+                                    when 0
+                                        .hiddenmenu-table#hm_table
+                                            .hiddenmenu-blocks-wrap
+                                                .block__notation
+                                                    .block__notation-title
+                                                        .close
+                                                            span Закрыть
+                                                        | Приминение
+                                                        .next
+                                                            span Далее
+                                                    .block__content
+                                                        - var list2 = ['Скважинные насосы','Колодезные насосы','Насосные станции','Поверхностные насосы','Фекальные насосы','Циркуляционные насосы','Канализационные установки','Дозировочные насосы'];
+                                                        ul.block__notation-list
+                                                            - for (var i=0, g=list2.length; i<g; i++)
+                                                                li.block__notation-item
+                                                                    a.block__notation-link(href='#' class= i==0 ? 'active': '' data-num=i) #{list2[i]}
+                                                .block__info
+                                                    .block__info-content.active
+                                                        table
+                                                            thead
+                                                                tr
+                                                                    td Производитель
+                                                                    td Напор
+                                                                    td Производительность
+                                                                    td Диаметр
+                                                            tbody
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                                    .block__info-content
+                                                        table
+                                                            thead
+                                                                tr
+                                                                    td Производитель
+                                                                    td Напор
+                                                                    td Производительность
+                                                                    td Диаметр
+                                                            tbody
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                                                tr
+                                                                    td
+                                                                        a(href='#') Pedrollo
+                                                                    td До 405 м
+                                                                    td До 60 м3/ч
+                                                                    td 4-6`
+                                    when 1
+                                        .hiddenmenu-table#hm_table
+                                                    .hiddenmenu-blocks-wrap
+                                                        .block__notation
+                                                            .block__notation-title
+                                                                .close
+                                                                    span Закрыть
+                                                                | Приминение
+                                                                .next
+                                                                    span Далее
+                                                            .block__content
+                                                                - var list2 = ['Газовые напольные котлы','Газовые настенные котлы','Газовые конденсационные','Комбинированные котлы','Твердотопливные котлы','Электрические котлы','Пеллетные котлы','Бойлеры косвенного нагрева','Теплонакопители и буферные ёмкости'];
+                                                                ul.block__notation-list
+                                                                    - for (var i=0, g=list2.length; i<g; i++)
+                                                                        li
+                                                                            a.block__notation-link(href='#' class= i==0 ? 'active': '' data-num=i) #{list2[i]}
+                                                        .block__info
+                                                            .block__info-content.active
+                                                                table
+                                                                    thead
+                                                                        tr
+                                                                            td Производитель2
+                                                                            td Напор
+                                                                            td Производительность
+                                                                            td Диаметр
+                                                                    tbody
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
+                                                            .block__info-content
+                                                                table
+                                                                    thead
+                                                                        tr
+                                                                            td Производитель
+                                                                            td Напор
+                                                                            td Производительность
+                                                                            td Диаметр
+                                                                    tbody
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
+                                                                        tr
+                                                                            td
+                                                                                a(href='#') Pedrollo
+                                                                            td До 405 м
+                                                                            td До 60 м3/ч
+                                                                            td 4-6`
             .search-slider-wrap
                 form.search-form__wrap
                     label.search-label
