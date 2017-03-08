@@ -102,7 +102,7 @@
     text-align: center;
     display: block;
     position: relative;
-    // margin-bottom: 25px;
+    margin-bottom: 25px;
     &:after {
         content: "";
         position: absolute;
@@ -248,6 +248,7 @@
 .video-container {
     line-height: 0;
     padding: 9px;
+    padding-bottom: 12px;
     iframe {
         width: 382px;
         height: 219px;
