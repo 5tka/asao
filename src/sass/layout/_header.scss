@@ -74,6 +74,7 @@
         padding-right: 22px;
         padding-top: 5px;
         padding-bottom: 10px;
+        height: 81px;
         li {
             display: inline-block;
             padding: 0 10px;
@@ -97,6 +98,7 @@
     }
 }
 .topMnu-wrap {
+    height: 81px;
     padding-left: 10px;
     padding-top: 5px;
     border-right: 2px solid #f9f9f9;
@@ -185,6 +187,7 @@
     display: block;
 }
 .telephone-wrap {
+    height: 81px;
     max-width: 355px;
     border-right: 2px solid #f9f9f9;
     padding: 5px 15px 10px;
@@ -214,6 +217,7 @@
 }
 
 .cont-wrap {
+    height: 81px;
     padding-top: 5px;
     text-align: center;
     .mail {
@@ -480,6 +484,20 @@
             display: table;
             clear: both;
         }
+    }
+    .cont-wrap {
+        float: none;
+        display: inline-block;
+    }
+    .header__top-line {
+        text-align: center;
+    }
+    .telephone-wrap {
+        float: none;
+        display: inline-block;
+    }
+    .topMnu-wrap {
+        float: right;
     }
 }
 @media screen and (max-width: 1000px) {
