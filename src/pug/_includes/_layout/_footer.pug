@@ -1,21 +1,7 @@
 footer.footer
 	.container
 		.footer-blocks-wrap
-			.footer-block.help
-				.footer-block__caption Помощь
-				ul.footer-menu__list
-					- list = ['Как сделать заказ','Способы оплаты','Доставка','Возврат и обмен','Обратная связь','Подбор оборудования','Реквизиты','Сертификаты','Производители'];
-					- for (var x=0, k=list.length; x<k; x++)
-						li.footer-menu__item
-							a(href='#') #{list[x]}
 			.footer-block.about
-				.footer-items-wrap
-					.footer-block__caption Акции
-					ul.footer-menu__list
-						- list = ['Сезонные цены','Наборы','Наши акции','Бонусы','Новинки'];
-						- for (var x=0, k=list.length; x<k; x++)
-							li.footer-menu__item
-								a(href='#') #{list[x]}
 				.footer-items-wrap
 					.footer-block__caption О компании
 					ul.footer-menu__list
@@ -23,6 +9,20 @@ footer.footer
 						- for (var x=0, k=list.length; x<k; x++)
 							li.footer-menu__item
 								a(href='#') #{list[x]}
+				.footer-items-wrap
+					.footer-block__caption Акции
+					ul.footer-menu__list
+						- list = ['Сезонные цены','Наборы','Наши акции','Бонусы','Новинки'];
+						- for (var x=0, k=list.length; x<k; x++)
+							li.footer-menu__item
+								a(href='#') #{list[x]}
+			.footer-block.help
+				.footer-block__caption Помощь
+				ul.footer-menu__list
+					- list = ['Как сделать заказ','Способы оплаты','Доставка','Возврат и обмен','Обратная связь','Подбор оборудования','Реквизиты','Сертификаты','Производители'];
+					- for (var x=0, k=list.length; x<k; x++)
+						li.footer-menu__item
+							a(href='#') #{list[x]}
 			.footer-block.contacts
 				.footer-items-wrap
 					.footer-block__caption Контакты
