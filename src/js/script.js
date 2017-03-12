@@ -19,11 +19,11 @@ $(document).ready(function(){
             } else {
                 $('.js_posHmenu').find('.hmenu').css('width', $('.container').width() - $('.js_posHmenu').offset().left - 15);
             }
+        } else if (width >= 1240) {
+             $('.js_posHmenu').find('.hmenu').css('width','');
         } else {
             $('.js_posHmenu').removeClass('right');
             $('.js_posHmenu').find('.hmenu').css('width', $('.container').width()).css('left', $('.js_posHmenu').offset().left * (-1)+15 );
-        } else if (width >=1240) {
-             $('.js_posHmenu').find('.hmenu').css('width','');
         }
     }
 
