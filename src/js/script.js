@@ -1,9 +1,30 @@
 console.log('hello from script.js');
 var windowSize = document.documentElement.clientWidth;
 var windowHeight = document.documentElement.clientHeight;
+
+
 $(document).ready(function(){
     /*xeon */
     var width = document.documentElement.clientWidth;
+
+    function js_posHmenu () {
+         if (width >=650) {
+            if ($('.container').width() - $('.js_posHmenu').offset().left <= 300) {
+                $('.js_posHmenu').addClass('right');
+            } else {
+                $('.js_posHmenu').removeClass('right');
+            }
+            if ($('.js_posHmenu').hasClass('right')) {
+                $('.js_posHmenu').find('.hmenu').css('width', $('.js_posHmenu').offset().left + $('.js_posHmenu').width() - 15 )
+            } else {
+                $('.js_posHmenu').find('.hmenu').css('width', $('.container').width() - $('.js_posHmenu').offset().left - 15);
+            }
+        } else {
+            $('.js_posHmenu').removeClass('right');
+            $('.js_posHmenu').find('.hmenu').css('width', $('.container').width()).css('left', $('.js_posHmenu').offset().left * (-1)+15 );
+        }
+    }
+
     $(window).resize(function(event) {
         /* Act on the event */
         width = document.documentElement.clientWidth;
@@ -13,7 +34,13 @@ $(document).ready(function(){
         else if (width >= 1009 && width <=1280 ){
             $('.hiddenmenu-table').css('width', width-30-400)
         }
+        /* шапка ПРОИЗВОДИТЕЛИ*/
+        js_posHmenu ();
+
+
     });
+
+    js_posHmenu ();
 
     if (width > 700 && width <= 1009) {
         $('.hiddenmenu-table').css('width', width-30-200)

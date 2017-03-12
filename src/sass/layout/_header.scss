@@ -110,6 +110,13 @@
 .topMnu-item{
     display: inline-block;
     position: relative;
+    &.right {
+        .hmenu {
+            position: absolute;
+            right: 0;
+            overflow-x: auto;
+        }
+    }
     .hblock {
         display: none;
         position: absolute;
@@ -140,14 +147,16 @@
     }
     &:hover .hblock {
         display: block;
-        z-index: 1;
+        z-index: 2;
     }
     .hmenu {
+        position: relative;
+        overflow-x: auto;
         background-color: #fcfcfc;
         border: 1px solid #e4e4e4;
         @include clearfix;
         .block {
-            float: left;
+            display: table-cell;
             border-right: 1px solid #f9f9f9;
             &:last-of-type {
                 border-right: none;
@@ -515,7 +524,7 @@
         float: right;
     }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 925px) {
     .header__first-line {
         .inBasket {
             float: right;
