@@ -8,7 +8,7 @@ $(document).ready(function(){
     var width = document.documentElement.clientWidth;
 
     function js_posHmenu () {
-         if (width >=650) {
+         if (width >=60) {
             if ($('.container').width() - $('.js_posHmenu').offset().left <= 300) {
                 $('.js_posHmenu').addClass('right');
             } else {
@@ -22,6 +22,8 @@ $(document).ready(function(){
         } else {
             $('.js_posHmenu').removeClass('right');
             $('.js_posHmenu').find('.hmenu').css('width', $('.container').width()).css('left', $('.js_posHmenu').offset().left * (-1)+15 );
+        } else if (width >=1240) {
+             $('.js_posHmenu').find('.hmenu').css('width','');
         }
     }
 
