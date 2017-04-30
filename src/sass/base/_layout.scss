@@ -10,14 +10,19 @@
 .container {
     @include container(1240, 320);
 }
+.clearfix{
+    @include clearfix;
+}
 .fl-l {
     float: left;
 }
 .fl-r {
     float: right;
 }
-
-.title {
+.mb0{
+    margin-bottom: 0 !important;
+}
+h3.title {
     font-size: 18px;
     font-weight: 800;
     color: $dg;
@@ -25,13 +30,11 @@
     position: relative;
     display: inline-block;
     border-bottom: 2px solid $ac;
-    // &:after {
-    //     content: "";
-    //     position: absolute;
-    //     width: 85px;
-    //     top: 100%;
-    //     bottom: 0;
-    //     left: 50%;
-    //     margin: 4px 0 0 -42.5px;
-    // }
+}
+h2.title{
+    @extend h3.title;
+    font-size: 16px;
+}
+body{
+    background-color: #fcfcfc;
 }

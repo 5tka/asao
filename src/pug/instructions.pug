@@ -1,0 +1,76 @@
+extends _layout.pug
+block main
+    main.catalogs.instructions
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-2
+                        a(href="#") Документация 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Электронные каталоги
+        .container.clearfix
+            aside.page-sidebar.fl-l
+                .sidebar-container
+                    ul.page-aside-list
+                        li
+                            a(href="catalogs.html") Электронные каталоги
+                        li 
+                            a(href="#") Сертификаты
+                        li 
+                            a(href="#") Подбор оборудования
+                        li 
+                            a(href="#") Опросные листы
+                        li.page-aside-link--active
+                            a(href="insturtions.html") Инструкции
+                .sidebar-container.mb0
+                    span.f-t Звоните нам!
+                    span.s-d 8 (812) 821 52 54
+                    p г. Санкт-Петербург, ул. Строителей, 25 офис 121
+                    a(href="#")
+                        | Перезвоните мне
+
+
+            artical.news-content.catalogs-content.fl-l
+                .artical-container
+                    .artical-title
+                        h3.title
+                            | Инструкции
+                    .artical-content.clearfix
+                        .catalogs-item
+                            ul.page-aside-list
+                                li
+                                    a(href="#") Насосы и установки для бытового водоснабжения
+
+                        .catalogs-item
+                            ul.page-aside-list
+                                li
+                                    a(href="#")  Насосы и установки для водоснабжения, повышения давления и пожаротушения
+
+                        .catalogs-item
+                            ul.page-aside-list
+                                li
+                                    a(href="#") Погружное оборудование
+
+                        .catalogs-item
+                            ul.page-aside-list
+                                li
+                                    a(href="#") Самовсасывающие дренажные насосы
+
+                        .catalogs-item
+                            ul.page-aside-list
+                                li
+                                    a(href="#") Циркуляционные насосы
+                        .catalogs-item
+                            ul.page-aside-list
+                                li
+                                    a(href="#") Насосы большой производительности
+                        .catalogs-item
+                            ul.page-aside-list
+                                li
+                                    a(href="#") Шкафы управления и Системы автоматизации
+                .feedback-us-instructions.clearfix
+                    p.fl-l.
+                        Напишите сообщение нашим специалистам и мы обязательно с Вами свяжемся!
+                    a(href="#").fl-r Написать сообщение

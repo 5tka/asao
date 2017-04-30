@@ -1,0 +1,148 @@
+.garancy-content {
+    .artical-content {
+        padding: 25px 0;
+    }
+}
+.garancy-items-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.garancy-item {
+    width: 25%;
+    text-align: center;
+    border-right: 1px solid #f9f9f9;
+    padding: 0 25px;
+    .g-img {
+        margin-bottom: 20px;
+        height: 75px;
+        line-height: 75px;
+        img {
+            vertical-align: middle;
+        }
+    }
+    .g-title {
+        span {
+            font-size: 14px;
+            color: #424242;
+            display: block;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+    }
+    .g-dscr {
+        p {
+            color: #8a8a8a;
+            line-height: 18px;
+            font-size: 14px;
+        }
+    }
+}
+
+
+
+@include breakpoint(970) {
+    .garancy-item {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
+@include breakpoint(700) {
+    .garancy-item {
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f9f9f9;
+    }
+}
+
+
+
+.garancy-info-items {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.garancy-info-item {
+    .sidebar-container {
+        min-height: 255px;
+        margin-bottom: 40px;
+    }
+    width: 30.61%;
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+    .page-aside-list {
+        li {
+            padding: 10px;
+        }
+    }
+}
+
+@include breakpoint(768) {
+    .garancy-info-item {
+        width: 45%;
+        margin: 0 auto !important;
+    }
+}
+@include breakpoint(550) {
+    .garancy-info-item {
+        width: 100%;
+        .sidebar-container {
+            min-height: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+.prod_catalog-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    .garancy-info-item {
+        width: 22.58%;
+        .sidebar-container {
+            min-height: 270px;
+        }
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+    }
+    &:first-child {
+        .sidebar-container {
+            min-height: 480px;
+        }
+    }
+    &:last-child {
+        justify-content: flex-start;
+        .garancy-info-item {
+            margin-right: 40px;
+        }
+    }
+}
+
+
+@include breakpoint(1170) {
+    .prod_catalog-items {
+        .garancy-info-item {
+            width: 48%;
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+@include breakpoint(550) {
+    .prod_catalog-items {
+        .garancy-info-item {
+            width: 100%;
+                margin-right: 0 !important;
+        }
+    }
+}
+

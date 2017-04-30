@@ -206,6 +206,15 @@ $(document).ready(function(){
         moveSlides:1,
     });
 
+        
+    $('.montag-items-slider').bxSlider({
+        pager:!1,
+        nextText:"",
+        prevText:"",
+        minSlides:1,
+        maxSlides:3,
+        moveSlides:1,
+    });
     var all = $('.double__slider-wrap .title') // клас стиля ссылки
 	all.click( function(){
 		all.removeClass('title--active')   // клас активной ссылки
@@ -238,4 +247,48 @@ $(document).ready(function(){
             .removeClass('db')
             .addClass('dn');
     });
-});
+
+    var b_link = $('.bonus-info-title span') // клас стиля ссылки
+	b_link.click( function(){
+		b_link.removeClass('b-info--active')   // клас активной ссылки
+		$(this).addClass('b-info--active')
+	})
+    $('.bonus-info-1 .b-info-1').click(function(){
+        $('.bonus-info-1 .b-info-content-1').addClass('df');
+        $('.bonus-info-1 .b-info-content-2').addClass('dn');
+        $('.bonus-info-1 .b-info-content-2').removeClass('df');
+    });
+    $('.bonus-info-1 .b-info-2').click(function(){
+        $('.bonus-info-1 .b-info-content-2').addClass('df');
+        $('.bonus-info-1 .b-info-content-1').addClass('dn');
+        $('.bonus-info-1 .b-info-content-1').removeClass('df');
+    });
+    $('.bonus-info-2 .b-info-1').click(function(){
+        $('.bonus-info-2 .b-info-content-1').addClass('df');
+        $('.bonus-info-2 .b-info-content-2').addClass('dn');
+        $('.bonus-info-2 .b-info-content-2').removeClass('df');
+    });
+    $('.bonus-info-2 .b-info-2').click(function(){
+        $('.bonus-info-2 .b-info-content-2').addClass('df');
+        $('.bonus-info-2 .b-info-content-1').addClass('dn');
+        $('.bonus-info-2 .b-info-content-1').removeClass('df');
+    });
+
+    $('.accord .catalogs-item .page-aside-list .page-aside-link--active').click(function(e){
+
+        e = event.preventDefault();
+
+        $(this).nextAll().stop(true).slideToggle("slow");
+
+    });
+    $('.footer-block__caption').click(function(e){
+        e = event.preventDefault();
+
+        $(this).nextAll().stop(true).slideToggle('slow')
+    });
+
+
+
+
+
+}); // document.ready
