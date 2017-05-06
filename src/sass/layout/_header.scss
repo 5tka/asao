@@ -7,7 +7,7 @@
         @include clearfix;
         text-align: center;
     }
-    .ac{
+    span{
         margin: 0 5px;
     }
     i {
@@ -65,7 +65,7 @@
     .container {
         @include clearfix;
     }
-    padding-top: 20px;
+    padding-top: 25px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e6e6e6;
     font-size: 14px;
@@ -74,7 +74,7 @@
         border-right: 2px solid #f9f9f9;
         padding-right: 22px;
         padding-top: 5px;
-        padding-bottom: 10px;
+        // padding-bottom: 10px;
         height: 81px;
         li {
             display: inline-block;
@@ -96,6 +96,12 @@
         display: block;
         text-align: center;
         margin-bottom: 8px;
+        margin-top: -23px;
+        img{
+            width: 170px;
+            display: block;
+            margin: 0 auto;
+        }
     }
 }
 .topMnu-wrap {

@@ -1,0 +1,32 @@
+extends _layout.pug
+block main
+    main.subscribe
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Пописаться на рассылку
+        .container
+            .artical-container.subscribe-container
+                .artical-title
+                    h3.title 
+                        | УВАЖАЕМЫЙ КЛИЕНТ!
+                .artical-content
+                    span Мы рады Вас видеть на сайте компании "АСАО"!
+                    p.
+                        На этой страничке мы предлагаем Вас подписаться на наши регулярные бесплатные email-рассылки. Наши письма содержат материал и предложения, которые 
+                        могут Вам быть полезными и выгодными. Темы наших писем разнообразны: это акции и распродажи, описание новых товаров и технологий, успешные примеры 
+                        использования приобретенного оборудования, познавательные статьи и предложения наших партнеров! Для того, чтобы подписаться достаточно указать Ваш 
+                        электронный адрес и Ваше имя.
+                    p.
+                        Если рассылка Вам не понравится, отписаться от неё будет очень просто — достаточно нажать «отписаться» в конце любого нашего письма.
+                    span Желаем приятного и полезного чтения!
+                    .form-subscribe-wrap
+                        form(action="/").subscribe-form    
+                            label(for="name")
+                                input(type="text" placeholder="Имя *")
+                            label(for="email")
+                                input(type="email" placeholder="E-mail *")
+                            button(type="submit").btn Подписаться на рассылку

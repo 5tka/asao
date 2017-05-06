@@ -183,12 +183,16 @@ $(document).ready(function(){
     });
 
     $('.cats .cat-title').click(function (event) {
-        if (width<=1024 && width > 440) {
-            $('.cats-toggle').fadeToggle();
+        if(width <= 1024){
+            $('.cats-toggle').stop(true).slideToggle();            
         }
-        if (width<=440) {
-            $(this).next('.cats-toggle').slideToggle();
-        }
+        // $(this).next().slideToggle();
+        // if (width<=1024 && width > 440) {
+        //     $('.cats-toggle').fadeToggle();
+        // }
+        // if (width<=440) {
+        //     $(this).next('.cats-toggle').slideToggle();
+        // }
     })
     /* end xeon */
 

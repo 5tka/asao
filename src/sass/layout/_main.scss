@@ -324,7 +324,7 @@
 }
 .news-slider {
     .bestseller-item {
-        padding: 0 20px;
+        padding: 0 30px;
         width: 273px !important;
         .b-img {
             margin-bottom: 20px;
@@ -345,9 +345,9 @@
                 margin-bottom: 5px;
             }
             a {
+                color: $dg;                
                 @include transition(font-weight .25s);
                 &:hover {
-                    color: $dg;
                     font-weight: 700;
                 }
             }
