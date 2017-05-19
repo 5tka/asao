@@ -10,6 +10,12 @@
 .container {
     @include container(1240, 320);
 }
+@media screen and (max-width: 380px) {
+   .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 .clearfix{
     @include clearfix;
 }
@@ -37,4 +43,9 @@ h2.title{
 }
 body{
     background-color: #fcfcfc;
+}
+@media screen and (max-width: 380px) {
+    body {
+        background-color: #fff;
+    }
 }

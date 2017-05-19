@@ -1,4 +1,39 @@
 header.header
+    .header__mobile
+        .header__mobile-first-line
+            .container
+                .adaptive-menu
+                    a.adaptive-menu_init.js_menu-init(href='#')
+                        span Меню
+                    .adaptive-menu__wrap
+                        a.adaptive-menu_close.js_menu-close(href='#')
+                            span Закрыть
+                        div.js_adapt-menu
+                            ul.adaptive-menu__list
+                                each item in ['Акции','закладки','сравнения']
+                                    li
+                                        a(href='#')=item
+                            ul.adaptive-menu__list
+                                each item in ['контакты','документация','пресс-центр','объекты','производители','реквизиты']
+                                    li
+                                        a(href='#')=item
+                            ul.adaptive-menu__list
+                                each item in ['снабжение','проектирование','монтаж']
+                                    li
+                                        a(href='#')=item
+                a.header__mobile-profile-link(href='#')
+                    i.fa.fa-user
+                    span Вход
+                a.header__mobile-cart-link(href='#')
+                    i.fa.fa-cart-plus
+                    span.ac 4
+        .header__mobile-logo-line
+            .container
+                a.logo_mobile(href='#')
+                    img(src='img/logo_m.png' alt='ASAO')
+                a.call-link_mobile(href='#')
+                    i.fa.fa-phone
+                    span Вызов
     .header__first-line
         .container
             ul.left-nav.fl-l
@@ -16,10 +51,12 @@ header.header
                         | Сравнение
                         span.ac 20
             .inBasket
-                a(href="#")
+                a.basket__link(href="#")
                     i.fa.fa-cart-plus(aria-hidden='true')
                     | В корзине
-                    span.ac 4 товара
+                    span.ac
+                        i.cart_number 4
+                        | товара
                     | на сумму
                     span.ac 59 789 руб
             .right-nav.fl-r
@@ -29,15 +66,15 @@ header.header
                 p
                     span USD:
                     | 64.21 RUB
-                a(href="#")
+                a.log-in_link(href="#")
                     i.fa.fa-user(aria-hidden='true')
-                    | Вход
+                    span Вход
     .header__top-line
         .container
             .logo-img-wrap.fl-l
                 a.logo-link(href='#')
                     img.logo-img(src='img/logo.png', alt='title')
-                ul
+                ul.logo-img__menu
                     li
                         a(href="#")
                             |Снабжение
