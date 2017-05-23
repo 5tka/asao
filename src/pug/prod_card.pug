@@ -21,7 +21,7 @@ block main
 					.prod-card__img-block
 						img(src='img/demo-img/product-card/m1.jpg')
 					.prod-card__preview-block
-						ul.prod-card__preview-slider
+						ul.prod-card__preview-slider.common-slider
 							each item in ['img/sliders/prod-card/1.jpg','img/sliders/prod-card/2.jpg','img/sliders/prod-card/3.jpg','img/sliders/prod-card/1.jpg']
 								li.prod-card__preview-slider_item
 									img(src=item)
@@ -41,22 +41,23 @@ block main
 									li.prod-card__delivery-links-li
 										a(href='#')=item
 				.right-side
-					.prod-card__details-block
+					.prod-card__details-block.js_tabs
 						.prod-card__block-title-line.js_tabs-navigation
 							.tab-link-wrap
-								a.prod-card__block-title(href='#characteristics') характеристики
+								a.prod-card__block-title.js_tabs-link.activated(href='#characteristics') характеристики
 							.tab-link-wrap
-								a.prod-card__block-title(href='#delivery_set') состав поставки
+								a.prod-card__block-title.js_tabs-link(href='#delivery_set') состав поставки
 						.prod-card__block-inner.js_tabs-wrap
-							#characteristics.js_limited-height
+							#characteristics.activated.js_limited-height
 								-var charList=['Код товара','Производство','Серия','Модель','Страна','Артикул','Тип ','Область применения','Ограничение применения','Тип динамического насоса','Тип погружного насоса','Регулирование','К-во ступеней регулирования'];
 								-var charDef= ['248279','Grundfos','SQ','SQ 2-115','Дания','96510203','водоснабжение','питьевая,техническая вода','погружной','2'];
-								dl.prod-card__delivery-list
+								dl.prod-card__delivery-list.js_limited-height__object
 									-for (var x=0; x<charList.length;x++)
 										.line
 											dt=charList[x]
 											dd=charDef[x]
-								a.js_full-height(href='#') Показать все
+								.full-height__line
+									a.js_full-height(href='#') Показать все
 							#delivery_set
 								-var charList=['Код товара','Производство','Серия'];
 								-var charDef= ['248279','Grundfos','SQ'];
@@ -67,7 +68,7 @@ block main
 											dd=charDef[x]
 					.prod-card__desrc-block
 						.prod-card__block-title-line
-							h3.prod-card__block-title доставка
+							h3.prod-card__block-title описание
 						.prod-card__block-inner.prod-card__desrc
 							p Электродвигатель: MS 3 (высокий КПД, плавный пуск, встроенная защита от перенапряжения, падения напряжения и перегрузки)
 							p Детали насоса из нержавеющей стали (высокая износостойкость) <br>
@@ -75,31 +76,32 @@ block main
 							p Максимальное содержание песка: 50 г/м3
 					ul.prod-card__link-block
 						li
-							a(href='#') Добавить в сравнения
+							a.prod-card__link(href='#') Добавить в сравнения
 						li
-							a(href='#') Инструкция
+							a.prod-card__link(href='#') Инструкция
 			section.prod-card__additions.js_accordion-wrap
 				.prod-card__block-title-line
 					h3.prod-card__block-title дополнительно
 				.prod-card__block-inner
-					.prod-card__additions-item.js_accordion-item
-						.prod-card__additions-item__title.js_accordion-init Зажим для троса
-						.prod-card__additions-item__content
+					.prod-card__additions-item.js_accordion-item.opened
+						a.prod-card__additions-item__title.js_accordion-init(href='#') Зажим для троса
+						.prod-card__additions-item__content.js_accordion-toggled
 							ul.prod-card__additions-list
 								each item in [1,2,3,4]
 									li.prod-card__additions-product
 										label.additions__checkbox
-											input(type='checkbox' name='rele')
+											input(type='radio' name='rele')
 											span.checkbox
 										.additions-product__img
+											img(src='img/demo-img/product-card/dop1.jpg')
 										.additions-product__title Реле давления Grundfos МDR 21/6+ Е/А
 										.additions-product__prise 2 400 р.
-							.prod-card__additions-list_toggle.js_accordion-toggle
+							.prod-card__additions-list_toggle.js_accordion-slideUp
 								span Свернуть
 								i.fa.fa-caret-up
 					.prod-card__additions-item.js_accordion-item
-						.prod-card__additions-item__title.js_accordion-init Шланг для подключения бака
-						.prod-card__additions-item__content
+						a.prod-card__additions-item__title.js_accordion-init(href='#') Шланг для подключения бака
+						.prod-card__additions-item__content.js_accordion-toggled
 							ul.prod-card__additions-list
 								each item in [1,2,3,4]
 									li.prod-card__additions-product
@@ -107,28 +109,29 @@ block main
 											input(type='checkbox' name='rele')
 											span.checkbox
 										.additions-product__img
+											img(src='img/demo-img/product-card/dop2.jpg')
 										.additions-product__title Реле давления Grundfos МDR 21/6+ Е/А
 										.additions-product__prise 2 400 р.
-							.prod-card__additions-list_toggle.js_accordion-toggle
+							.prod-card__additions-list_toggle.js_accordion-slideUp
 								span Свернуть
 								i.fa.fa-caret-up
 			section.prod-card__variants
 				.prod-card__block-title-line
 					h3.prod-card__block-title варианты исполнения
-				.prod-card__block-inner
-					.table-adapt-wrap.js_limited-height
-						table
+				.prod-card__block-inner.js_limited-height
+					.table-adapt-wrap.js_limited-height__object
+						table.prod-card__variants-table
 							thead
 								tr
-									th Модель
-									th Цена
-									th
-									th Габариты
-									th К-во ступеней регулирования
-									th Трубное присоединение, мм
-									th Вес, кг
-									th Мощность,Вт
-									th Напор, м
+									th.model Модель
+									th.prise Цена
+									th.link
+									th.dimensions Габариты
+									th.amount К-во ступеней регулирования
+									th.pipe_connection Трубное присоединение, мм
+									th.weight Вес, кг
+									th.power Мощность,Вт
+									th.pressure Напор, м
 							tbody
 								each item in [1,2,3,4,5,6,7]
 									tr
@@ -142,16 +145,16 @@ block main
 										td 4.8
 										td 700
 										td 36
-						a.all-vaiants__link.js_full-height(href='#') Показать все (17)
+					a.all-vaiants__link.js_full-height(href='#') Показать все (17)
 			section.prod-card__similar-block
 				.prod-card__block-title-line
 					h3.prod-card__block-title похожие товары
 				.prod-card__block-inner
-					.production-slider
+					.production-slider.common-slider.js_production-slider
 						each item in [1,2,3,4,5]
 							.product-mini-item
 								.product-mini-img
-									img('img/demo-img/product-card/s1.jpg')
+									img(src='img/demo-img/product-card/s1.jpg')
 								a.product-mini-title(href='#') Погружной насос Grundfos SQ 2-100
 								.product-mini-prise 62 110 р.
 								.product-mini-descr
@@ -174,11 +177,11 @@ block main
 				.prod-card__block-title-line
 					h3.prod-card__block-title Другие товары из коллекции Grundfos SQ
 				.prod-card__block-inner
-					.production-slider
+					.production-slider.common-slider.js_production-slider
 						each item in [1,2,3,4,5]
 							.product-mini-item
 								.product-mini-img
-									img('img/demo-img/product-card/s1.jpg')
+									img(src='img/demo-img/product-card/s1.jpg')
 								a.product-mini-title(href='#') Погружной насос Grundfos SQ 2-100
 								.product-mini-prise 62 110 р.
 					.prod-card__collection-text-line
@@ -190,10 +193,10 @@ block main
 				.prod-card__block-title-line
 					h3.prod-card__block-title вы смотрели
 				.prod-card__block-inner
-					.production-slider
+					.production-slider.not__slider
 						each item in [1,2]
 							.product-mini-item
 								.product-mini-img
-									img('img/demo-img/product-card/s1.jpg')
+									img(src='img/demo-img/product-card/s1.jpg')
 								a.product-mini-title(href='#') Погружной насос Grundfos SQ 2-100
 								.product-mini-prise 62 110 р.
