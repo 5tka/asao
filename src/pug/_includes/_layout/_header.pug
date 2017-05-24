@@ -1,352 +1,381 @@
 header.header
-    .header__first-line
-        .container
-            ul.left-nav.fl-l
-                li
-                    a(href="discount.html")
-                        i.fa.fa-tags(aria-hidden='true')
-                        | Акции
-                li
-                    a(href="#")
-                        i.fa.fa-star(aria-hidden='true')
-                        | Закладки
-                li
-                    a(href="#")
-                        i.fa.fa-random(aria-hidden='true')
-                        | Сравнение
-                        span.ac 20
-            .inBasket
-                a(href="#")
-                    i.fa.fa-cart-plus(aria-hidden='true')
-                    | В корзине
-                    span.ac 4 товара
-                    | на сумму
-                    span.ac 59 789 руб
-            .right-nav.fl-r
-                p
-                    span EUR:
-                    | 71.34 RUB
-                p
-                    span USD:
-                    | 64.21 RUB
-                a(href="#")
-                    i.fa.fa-user(aria-hidden='true')
-                    | Вход
-    .header__top-line
-        .container
-            .logo-img-wrap.fl-l
-                a.logo-link(href='#')
-                    img.logo-img(src='img/logo.png', alt='title')
-                ul
-                    li
-                        a(href="#")
-                            |Снабжение
-                    li
-                        a(href="#")
-                            | Проектирование
-                    li
-                        a(href="#")
-                            | Монтаж
-            .topMnu-wrap.fl-l
-                ul.topMnu-list
-                    li.topMnu-item
-                        a(href="#").topMnu-link
-                            | Контакты
-                    li.topMnu-item
-                        a(href="#").topMnu-link
-                            | Документация
-                        .hblock.document
-                            a.hblock-link(href='#') Документация
-                            .hmenu
-                                ul.hmenu-list
-                                    li.hmenu-item
-                                        a(href='#') Паспорта
-                                    li.hmenu-item
-                                        a(href='#') Инструкции
-                                    li.hmenu-item
-                                        a(href='#') Сертефикаты
-                                    li.hmenu-item
-                                        a(href='#') Прайс листы
-                                    li.hmenu-item
-                                        a(href='#') Монтажные схемы
-                    li.topMnu-item
-                        a(href="#").topMnu-link
-                            | Пресс-центр
-                        .hblock.press
-                            a.hblock-link(href='#') Пресс-центр
-                            .hmenu
-                                ul.hmenu-list
-                                    li.hmenu-item
-                                        a(href='#') Новости
-                                    li.hmenu-item
-                                        a(href='#') Статьи
-                                    li.hmenu-item
-                                        a(href='#') Акции
-                    li.topMnu-item
-                        a(href="#").topMnu-link
-                            | Объекты
-                    li.topMnu-item.js_posHmenu
-                        a(href="#").topMnu-link
-                            | Производители
-                        .hblock.producers
-                            a.hblock-link(href='#') Производители
-                            .hmenu
-                                ul.hmenu-list
-                                    - var list =['Grundfos','Wilo','Nibe','Zota','Vaillant','Baxi','KSB','DAB','Uponor','ESBE','Danfoss','Thermex'];
-                                    .block
-                                        - for (var x=0, k=list.length; x<k; x++)
-                                            li.hmenu-item
-                                                a(href='#') #{list[x]}
-                                        - list = ['DAB','Pedrollo','Flygt','Lowara','Jeelex','Belamos','Unipump','SFA','Seko','Calpeda','Zenit','FLUX'];
-                                    .block
-                                        - for (var x=0, k=list.length; x<k; x++)
-                                            li.hmenu-item
-                                                a(href='#') #{list[x]}
-                                        - list = ['ZOTA','EVAN','NIBE','STROPUVA','Gorenje','BUDERUS','VIADRUS','ACV','Viessmann','Hajdu','Protherm','СтС'];
-                                    .block
-                                        - for (var x=0, k=list.length; x<k; x++)
-                                            li.hmenu-item
-                                                a(href='#') #{list[x]}
-                                        - list = ['Jaspi','STIEBEL ELTRON','Saunier Duval','Wespe Heizung','Wolf','DRAZICE','Watts','Meibes','Danfoss','Tiemme','E.M.S','Schneider electric'];
-                                    .block
-                                        - for (var x=0, k=list.length; x<k; x++)
-                                            li.hmenu-item
-                                                a(href='#') #{list[x]}
-                                        - list = ['Valtec','Broen','Uponor','Zetkama','Energoflex','Tecofi','K-flex','Itap','Henco','Clariant','Dixis','Miele'];
-                                    .block
-                                        - for (var x=0, k=list.length; x<k; x++)
-                                            li.hmenu-item
-                                                a(href='#') #{list[x]}
-                                        - list = ['Kuppersberg','Smeg','Teka','Gaggenau','Zilmet','ANION','Eco Prom','Reflex','Calidor Super','Kermi','Lidea','Purma'];
-                                    .block
-                                        - for (var x=0, k=list.length; x<k; x++)
-                                            li.hmenu-item
-                                                a(href='#') #{list[x]}
-                                        - list = ['Robin subaru','Varisco','Global','NEFF','Ensto','De dietrich','Espa','OSO'];
-                                    .block
-                                        - for (var x=0, k=list.length; x<k; x++)
-                                            li.hmenu-item
-                                                a(href='#') #{list[x]}
-                    li.topMnu-item
-                        a(href="#").topMnu-link
-                            | Реквизиты
-            .telephone-wrap.fl-l
-                .tel-line
-                    a(href='tel:88128215254').tel
-                        span 8 (812) 
-                        span.akcent 821 52 54
-                    a(href='tel:88121990890').tel
-                        span 8 (812) 
-                        span.akcent 199-08-90
-                p.work-time
-                    | Пн - Сб с 9:00 до 21:00
-            .cont-wrap.fl-r
-                .emails-wrap
-                    a(href='mailto:info@asao.ru').mail info@asao.ru
-                    a(href='mailto:spb@asao.ru').mail spb@asao.ru
-                a(href='#').btn_call Перезвоните мне
-    .header__catalog-line
-        .container
-            .cats-wrap
-                .services__cat-wrap.cats
-                    h3.cat-title КАТАЛОГ УЛУГ
-                    - list = ['Подбор оборудования','Бурение на воду','Системы фильтрации','Монтажные работы','Анализ воды','Сервисные центры','Обслуживание','Аренда техники','Доставка по России','Проектирование'];
-                    ul.services__cat-list.cats-toggle
-                        - for (var x=0, k=list.length; x<k; x++)
-                            li.services__cat-item
-                                a(href='#') #{list[x]}
-                .products__cat-wrap.cats
-                    h3.cat-title КАТАЛОГ товаров
-                    - list = ['Насосное оборудование','Котельное оборудование','Водонагреватели','Комплектующие','Отопительные приборы','Канализация','Тепловые насосы','Пластиковые баки','Мембранные баки','Мотопомпы'];
-                    ul.products__cat-list.cats-toggle
-                        - for (var x=0, k=list.length; x<k; x++)
-                            li.products__cat-item
-                                a.products__cat-link.inner_menu(href='#') #{list[x]}
-                                case x
-                                    when 0
-                                        .hiddenmenu-table#hm_table
-                                            .hiddenmenu-blocks-wrap
-                                                .block__notation
-                                                    .block__notation-title
-                                                        .close
-                                                            span Закрыть
-                                                        | Приминение
-                                                        .next
-                                                            span Далее
-                                                    .block__content
-                                                        - var list2 = ['Скважинные насосы','Колодезные насосы','Насосные станции','Поверхностные насосы','Фекальные насосы','Циркуляционные насосы','Канализационные установки','Дозировочные насосы'];
-                                                        ul.block__notation-list
-                                                            - for (var i=0, g=list2.length; i<g; i++)
-                                                                li.block__notation-item
-                                                                    a.block__notation-link(href='#' class= i==0 ? 'active': '' data-num=i) #{list2[i]}
-                                                .block__info
-                                                    .block__info-content.active
-                                                        table
-                                                            thead
-                                                                tr
-                                                                    td Производитель
-                                                                    td Напор
-                                                                    td Производительность
-                                                                    td Диаметр
-                                                            tbody
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                                    .block__info-content
-                                                        table
-                                                            thead
-                                                                tr
-                                                                    td Производитель
-                                                                    td Напор
-                                                                    td Производительность
-                                                                    td Диаметр
-                                                            tbody
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                                                tr
-                                                                    td
-                                                                        a(href='#') Pedrollo
-                                                                    td До 405 м
-                                                                    td До 60 м3/ч
-                                                                    td 4-6`
-                                    when 1
-                                        .hiddenmenu-table#hm_table
-                                                    .hiddenmenu-blocks-wrap
-                                                        .block__notation
-                                                            .block__notation-title
-                                                                .close
-                                                                    span Закрыть
-                                                                | Приминение
-                                                                .next
-                                                                    span Далее
-                                                            .block__content
-                                                                - var list2 = ['Газовые напольные котлы','Газовые настенные котлы','Газовые конденсационные','Комбинированные котлы','Твердотопливные котлы','Электрические котлы','Пеллетные котлы','Бойлеры косвенного нагрева','Теплонакопители и буферные ёмкости'];
-                                                                ul.block__notation-list
-                                                                    - for (var i=0, g=list2.length; i<g; i++)
-                                                                        li
-                                                                            a.block__notation-link(href='#' class= i==0 ? 'active': '' data-num=i) #{list2[i]}
-                                                        .block__info
-                                                            .block__info-content.active
-                                                                table
-                                                                    thead
-                                                                        tr
-                                                                            td Производитель2
-                                                                            td Напор
-                                                                            td Производительность
-                                                                            td Диаметр
-                                                                    tbody
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-                                                            .block__info-content
-                                                                table
-                                                                    thead
-                                                                        tr
-                                                                            td Производитель
-                                                                            td Напор
-                                                                            td Производительность
-                                                                            td Диаметр
-                                                                    tbody
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-                                                                        tr
-                                                                            td
-                                                                                a(href='#') Pedrollo
-                                                                            td До 405 м
-                                                                            td До 60 м3/ч
-                                                                            td 4-6`
-            .search-slider-wrap
-                form.search-form__wrap
-                    label.search-label
-                        span.fa.fa-search
-                        input(type='text' name='search-text' placeholder='Умный поиск').input-search
-                        select.js_select(name='search-in')
-                            option По всем категориям
-                            option По товарах
-                    button(type='submit').search-submit Найти
-                .main-slider-wrap
-                    .main-slider
-                        .slide.grundfos
-                            p.slide-text
-                                strong Grundfos
-                                | надежный партнер в промышленной сфере деятельности на которого можно положиться в самых сложных инжинерных решениях. Мы рекомендуем пожарные станции и станции повышения давления серии
-                                strong MX и HYDRO multi.
-                        .slide.grundfos
-                            p.slide-text
-                                strong  Grundfos
-                                | надежный партнер в промышленной сфере деятельности на которого можно положиться в самых сложных инжинерных решениях. Мы рекомендуем пожарные станции и станции повышения давления серии
-                                strong MX и HYDRO multi.
+	.header__mobile
+		.header__mobile-first-line
+			.container
+				.adaptive-menu
+					a.adaptive-menu_init.js_menu-init(href='#')
+						span Меню
+					.adaptive-menu__wrap
+						a.adaptive-menu_close.js_menu-close(href='#')
+							span Закрыть
+						div.js_adapt-menu
+							ul.adaptive-menu__list
+								each item in ['Акции','закладки','сравнения']
+									li
+										a(href='#')=item
+							ul.adaptive-menu__list
+								each item in ['контакты','документация','пресс-центр','объекты','производители','реквизиты']
+									li
+										a(href='#')=item
+							ul.adaptive-menu__list
+								each item in ['снабжение','проектирование','монтаж']
+									li
+										a(href='#')=item
+				a.header__mobile-profile-link(href='#')
+					i.fa.fa-user
+					span Вход
+				a.header__mobile-cart-link(href='#')
+					i.fa.fa-cart-plus
+					span.ac 4
+		.header__mobile-logo-line
+			.container
+				a.logo_mobile(href='#')
+					img(src='img/logo_m.png' alt='ASAO')
+				a.call-link_mobile(href='#')
+					i.fa.fa-phone
+					span Вызов
+	.header__first-line
+		.container
+			ul.left-nav.fl-l
+				li
+					a(href="discount.html")
+						i.fa.fa-tags(aria-hidden='true')
+						| Акции
+				li
+					a(href="#")
+						i.fa.fa-star(aria-hidden='true')
+						| Закладки
+				li
+					a(href="#")
+						i.fa.fa-random(aria-hidden='true')
+						| Сравнение
+						span.ac 20
+			.inBasket
+				a.basket__link(href="#")
+					i.fa.fa-cart-plus(aria-hidden='true')
+					| В корзине
+					span.ac
+						i.cart_number 4
+						| товара
+					| на сумму
+					span.ac 59 789 руб
+			.right-nav.fl-r
+				p
+					span EUR:
+					| 71.34 RUB
+				p
+					span USD:
+					| 64.21 RUB
+				a.log-in_link(href="#")
+					i.fa.fa-user(aria-hidden='true')
+					span Вход
+	.header__top-line
+		.container
+			.logo-img-wrap.fl-l
+				a.logo-link(href='#')
+					img.logo-img(src='img/logo.png', alt='title')
+				ul.logo-img__menu
+					li
+						a(href="#")
+							|Снабжение
+					li
+						a(href="#")
+							| Проектирование
+					li
+						a(href="#")
+							| Монтаж
+			.topMnu-wrap.fl-l
+				ul.topMnu-list
+					li.topMnu-item
+						a(href="#").topMnu-link
+							| Контакты
+					li.topMnu-item
+						a(href="#").topMnu-link
+							| Документация
+						.hblock.document
+							a.hblock-link(href='#') Документация
+							.hmenu
+								ul.hmenu-list
+									li.hmenu-item
+										a(href='#') Паспорта
+									li.hmenu-item
+										a(href='#') Инструкции
+									li.hmenu-item
+										a(href='#') Сертефикаты
+									li.hmenu-item
+										a(href='#') Прайс листы
+									li.hmenu-item
+										a(href='#') Монтажные схемы
+					li.topMnu-item
+						a(href="#").topMnu-link
+							| Пресс-центр
+						.hblock.press
+							a.hblock-link(href='#') Пресс-центр
+							.hmenu
+								ul.hmenu-list
+									li.hmenu-item
+										a(href='#') Новости
+									li.hmenu-item
+										a(href='#') Статьи
+									li.hmenu-item
+										a(href='#') Акции
+					li.topMnu-item
+						a(href="#").topMnu-link
+							| Объекты
+					li.topMnu-item.js_posHmenu
+						a(href="#").topMnu-link
+							| Производители
+						.hblock.producers
+							a.hblock-link(href='#') Производители
+							.hmenu
+								ul.hmenu-list
+									- var list =['Grundfos','Wilo','Nibe','Zota','Vaillant','Baxi','KSB','DAB','Uponor','ESBE','Danfoss','Thermex'];
+									.block
+										- for (var x=0, k=list.length; x<k; x++)
+											li.hmenu-item
+												a(href='#') #{list[x]}
+										- list = ['DAB','Pedrollo','Flygt','Lowara','Jeelex','Belamos','Unipump','SFA','Seko','Calpeda','Zenit','FLUX'];
+									.block
+										- for (var x=0, k=list.length; x<k; x++)
+											li.hmenu-item
+												a(href='#') #{list[x]}
+										- list = ['ZOTA','EVAN','NIBE','STROPUVA','Gorenje','BUDERUS','VIADRUS','ACV','Viessmann','Hajdu','Protherm','СтС'];
+									.block
+										- for (var x=0, k=list.length; x<k; x++)
+											li.hmenu-item
+												a(href='#') #{list[x]}
+										- list = ['Jaspi','STIEBEL ELTRON','Saunier Duval','Wespe Heizung','Wolf','DRAZICE','Watts','Meibes','Danfoss','Tiemme','E.M.S','Schneider electric'];
+									.block
+										- for (var x=0, k=list.length; x<k; x++)
+											li.hmenu-item
+												a(href='#') #{list[x]}
+										- list = ['Valtec','Broen','Uponor','Zetkama','Energoflex','Tecofi','K-flex','Itap','Henco','Clariant','Dixis','Miele'];
+									.block
+										- for (var x=0, k=list.length; x<k; x++)
+											li.hmenu-item
+												a(href='#') #{list[x]}
+										- list = ['Kuppersberg','Smeg','Teka','Gaggenau','Zilmet','ANION','Eco Prom','Reflex','Calidor Super','Kermi','Lidea','Purma'];
+									.block
+										- for (var x=0, k=list.length; x<k; x++)
+											li.hmenu-item
+												a(href='#') #{list[x]}
+										- list = ['Robin subaru','Varisco','Global','NEFF','Ensto','De dietrich','Espa','OSO'];
+									.block
+										- for (var x=0, k=list.length; x<k; x++)
+											li.hmenu-item
+												a(href='#') #{list[x]}
+					li.topMnu-item
+						a(href="#").topMnu-link
+							| Реквизиты
+			.telephone-wrap.fl-l
+				.tel-line
+					a(href='tel:88128215254').tel
+						span 8 (812) 
+						span.akcent 821 52 54
+					a(href='tel:88121990890').tel
+						span 8 (812) 
+						span.akcent 199-08-90
+				p.work-time
+					| Пн - Сб с 9:00 до 21:00
+			.cont-wrap.fl-r
+				.emails-wrap
+					a(href='mailto:info@asao.ru').mail info@asao.ru
+					a(href='mailto:spb@asao.ru').mail spb@asao.ru
+				a(href='#').btn_call Перезвоните мне
+	.header__catalog-line
+		.container
+			mixin catsWrap(jsClass)
+				.cats-wrap(class=jsClass)
+					.services__cat-wrap.cats
+						h3.cat-title КАТАЛОГ УЛУГ
+						- list = ['Подбор оборудования','Бурение на воду','Системы фильтрации','Монтажные работы','Анализ воды','Сервисные центры','Обслуживание','Аренда техники','Доставка по России','Проектирование'];
+						ul.services__cat-list.cats-toggle
+							- for (var x=0, k=list.length; x<k; x++)
+								li.services__cat-item
+									a(href='#') #{list[x]}
+					.products__cat-wrap.cats
+						h3.cat-title КАТАЛОГ товаров
+						- list = ['Насосное оборудование','Котельное оборудование','Водонагреватели','Комплектующие','Отопительные приборы','Канализация','Тепловые насосы','Пластиковые баки','Мембранные баки','Мотопомпы'];
+						ul.products__cat-list.cats-toggle
+							- for (var x=0, k=list.length; x<k; x++)
+								li.products__cat-item
+									a.products__cat-link.inner_menu(href='#') #{list[x]}
+									case x
+										when 0
+											.hiddenmenu-table#hm_table
+												.hiddenmenu-blocks-wrap
+													.block__notation
+														.block__notation-title
+															.close
+																span Закрыть
+															| Приминение
+															.next
+																span Далее
+														.block__content
+															- var list2 = ['Скважинные насосы','Колодезные насосы','Насосные станции','Поверхностные насосы','Фекальные насосы','Циркуляционные насосы','Канализационные установки','Дозировочные насосы'];
+															ul.block__notation-list
+																- for (var i=0, g=list2.length; i<g; i++)
+																	li.block__notation-item
+																		a.block__notation-link(href='#' class= i==0 ? 'active': '' data-num=i) #{list2[i]}
+													.block__info
+														.block__info-content.active
+															table
+																thead
+																	tr
+																		td Производитель
+																		td Напор
+																		td Производительность
+																		td Диаметр
+																tbody
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+														.block__info-content
+															table
+																thead
+																	tr
+																		td Производитель
+																		td Напор
+																		td Производительность
+																		td Диаметр
+																tbody
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+																	tr
+																		td
+																			a(href='#') Pedrollo
+																		td До 405 м
+																		td До 60 м3/ч
+																		td 4-6`
+										when 1
+											.hiddenmenu-table#hm_table
+														.hiddenmenu-blocks-wrap
+															.block__notation
+																.block__notation-title
+																	.close
+																		span Закрыть
+																	| Приминение
+																	.next
+																		span Далее
+																.block__content
+																	- var list2 = ['Газовые напольные котлы','Газовые настенные котлы','Газовые конденсационные','Комбинированные котлы','Твердотопливные котлы','Электрические котлы','Пеллетные котлы','Бойлеры косвенного нагрева','Теплонакопители и буферные ёмкости'];
+																	ul.block__notation-list
+																		- for (var i=0, g=list2.length; i<g; i++)
+																			li
+																				a.block__notation-link(href='#' class= i==0 ? 'active': '' data-num=i) #{list2[i]}
+															.block__info
+																.block__info-content.active
+																	table
+																		thead
+																			tr
+																				td Производитель2
+																				td Напор
+																				td Производительность
+																				td Диаметр
+																		tbody
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+																.block__info-content
+																	table
+																		thead
+																			tr
+																				td Производитель
+																				td Напор
+																				td Производительность
+																				td Диаметр
+																		tbody
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+																			tr
+																				td
+																					a(href='#') Pedrollo
+																				td До 405 м
+																				td До 60 м3/ч
+																				td 4-6`
+			block cats_wrap
+				+catsWrap('secondary__сats')
+			.search-slider-wrap
+				form.search-form__wrap
+					label.search-label
+						span.fa.fa-search
+						input(type='text' name='search-text' placeholder='Умный поиск').input-search
+						select.js_select(name='search-in')
+							option По всем категориям
+							option По товарах
+					button(type='submit').search-submit Найти
+				block headerslider
