@@ -1,0 +1,69 @@
+extends _layout.pug
+block main
+    main.personal
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Личный кабинет
+        .container
+            .artical-container
+                .artical-title
+                    h3.title 
+                        | Личный кабинет
+                .main-personal.artical-content
+                    .container.clearfix
+                        aside.page-sidebar.fl-l
+                            .sidebar-container
+                                ul.page-aside-list
+                                    li
+                                        a(href="personal-ac.html") 
+                                            span.fl-l Активные заказы
+                                    li.page-aside-link--active
+                                        a(href="personal.html") 
+                                            span.fl-l История Заказов
+                                    li
+                                        a(href="#") 
+                                            span.fl-l Бонусы
+                                    li
+                                        a(href="#") 
+                                            span.fl-l Корзина
+                                    li
+                                        a(href="#") 
+                                            span.fl-l Товары в сравнении
+                                    li
+                                        a(href="#") 
+                                            span.fl-l Мои настройки
+                        artical.news-content.fl-l
+                            .artical-container.personal-container
+                                .artical-title
+                                    span
+                                        | История заказов
+                                .artical-content
+                                    .order-info
+                                        span.data
+                                            | 27.07.2016г.
+                                        span.name
+                                            | Компрессор КАЛИБР Мастер КБ-1100М
+                                .artical-content
+                                    .personal-login-data
+                                        span.ld-1.ld--active
+                                            | Редактировать личные данные
+                                        span.ld-2
+                                            | Изменить пароль для входа
+                                    .personal-login-info.ld-1
+                                        p.
+                                            Привязать личный кабинет к <br> акканутну в социальной сети
+                                        ul.socials-footer
+                                            li.socials-item
+                                                a(href='#').social.vk
+                                                    span Вконтакте
+                                            li.socials-item
+                                                a(href='#').social.tw
+                                                    span instagram
+                                    .personal-login-info.ld-2.dn
+                                        p.
+                                            Изменить пароль для входа
+                            

@@ -1,0 +1,42 @@
+extends _layout.pug
+block main
+    main.how-to-pay
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Как оплатить
+        .container
+            .artical-container.how-to-pay-container
+                .artical-title
+                    h3.title Как оплатить
+                .artical-content    
+                    .how-to-pay-items
+                        span
+                            | Для физических лиц
+                        .how-how-to-pay-item
+                            p.
+                                Для вашего удобства мы предлагаем вам различные способы оплаты:
+                            ul
+                                li Наличными при получении;
+                                li Картой Visa/MasterCard на сайте;
+                                li Картой Visa/MasterCard через терминал;
+                                li Банковским переводом на счет.
+
+                            p.
+                                Чтобы выбрать удобный для вас способ оплаты на странице подтверждения заказа выберите из 
+                                выпадающего списка интересующий вариант оплаты.
+                            img(src="img/h-1.jpg", alt="")
+                            p.
+                                Далее следуйте инструкции на сайте.
+                        span
+                            | Для юриддических лиц
+                        .how-how-to-pay-item
+                            p.
+                                Оплата банковским переводом по счету возможна от юридического лица. Выберите нужные вам 
+                                товары и на странице товара нажмите на иконку корзины. Далее следуйте инструкциям по оформлению заказа.
+                            img(src="img/h-1.jpg", alt="")
+                            p.
+                                Далее следуйте инструкции на сайте.

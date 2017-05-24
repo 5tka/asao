@@ -62,7 +62,7 @@
     padding: 10px 0;
     li {
         color: #8a8a8a;
-        padding: 10px 20px;
+        padding: 10px 20px 10px 15px;
         @include transition(.25s);
         &:hover {
             border-left: 3px solid #fc0;

@@ -278,6 +278,27 @@ $(document).ready(function(){
         $('.bonus-info-2 .b-info-content-1').removeClass('df');
     });
 
+
+    // personal
+    
+    $('.personal-login-data .ld-1').click(function(){
+        
+        $('.personal-login-data .ld-1').addClass('ld--active');  
+        $('.personal-login-data .ld-2').removeClass('ld--active');  
+        $('.personal-login-info.ld-2').addClass('dn');
+        $('.personal-login-info.ld-1').removeClass('dn');      
+
+    });
+    $('.personal-login-data .ld-2').click(function(){
+        
+        $('.personal-login-data .ld-2').addClass('ld--active');  
+        $('.personal-login-data .ld-1').removeClass('ld--active');  
+        $('.personal-login-info.ld-1').addClass('dn');
+        $('.personal-login-info.ld-2').removeClass('dn');      
+
+    });
+
+
     $('.accord .catalogs-item .page-aside-list .page-aside-link--active').click(function(e){
 
         e = event.preventDefault();
