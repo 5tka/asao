@@ -1,0 +1,51 @@
+extends _layout.pug
+block main
+    main.make-order
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Как сделать заказ
+        .container
+            .artical-container.make-order-container
+                .artical-title
+                    h3.title 
+                        | Как сделать заказ
+                .artical-content
+                    .make-order-items
+                        .mk-item
+                            .mk-title
+                                span
+                                    | 1) Добавьте выбранные товары или услуги в корзину.
+                            .mk-img
+                                img(src="img/order/o-1.jpg", alt="")
+                                p
+                                    | Под изображением нажмите кнопку "В корзину"
+                            .mk-img
+                                img(src="img/order/o-2.jpg", alt="")
+                                p
+                                    | Для заказа услуги нажмите «Заказать услугу».
+                            .mk-img
+                                img(src="img/order/o-3.jpg", alt="")
+                                p
+                                    | Далее приступить к оформлению заказа, нажав сумму вашего заказа.                        
+                        .mk-item
+                            .mk-title
+                                span
+                                    | 2) Выберите способ доставки
+                            .mk-img
+                                img(src="img/order/o-4.jpg", alt="")
+                                p
+                                    | В корзине укажите удобный для Вас способ доставки и нажмите «Оформить заказ».                        
+                        .mk-item
+                            .mk-title
+                                span
+                                    | 3) Введите необходимые данные и подтвердите заказ
+                            .mk-img
+                                img(src="img/order/o-5.jpg", alt="")
+                                p
+                                    | Интервал времени звонка, контактное лицо, номер телефона, <br>
+                                    | адрес и нажмите «Продолжить». В указаное время с Вами свяжется <br>
+                                    | наш консультант и обсудит подробности
