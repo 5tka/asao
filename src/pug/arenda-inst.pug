@@ -1,0 +1,130 @@
+extends _layout.pug
+block main
+	main.arenda
+		.container
+			.breadcrumbs
+				ul.breadcrumbs-list
+					li.breadcrumbs-item--active-1
+						a(href="#") Главная
+					li.breadcrumbs-item--active-3
+						a(href="#") Аренда инструмента
+					.sliders-title
+			section.section
+				.producers-slider-wrap.js_scrollSlider-wrap
+					.photo__slider.js_photoSlider
+						each item in [1,2,3,4]
+							.slide
+								.slide_photo
+									img(src='img/demo-img/arenda/sl1.jpg' alt='grundfos')
+							.slide
+								.slide_photo
+									img(src='img/demo-img/arenda/sl2.jpg' alt='grundfos')
+					.scroll-line
+						input.range(type='text', value='', name='range')
+			ul.arenda__navigation
+				li.arenda__navigation-li
+					a.arenda__navigation-link.js_pagenav(href='#ar_about') О компании
+				li.arenda__navigation-li
+					a.arenda__navigation-link.js_pagenav(href='#ar_history') История
+				li.arenda__navigation-li
+					a.arenda__navigation-link.js_pagenav(href='#ar_digits') ASAO в цифрах
+				li.arenda__navigation-li
+					a.arenda__navigation-link.js_pagenav(href='#ar_calture') Корпоративная культура
+			section.section#ar_about.ar_about
+				.section__title-line
+					h3.section__title Аренда инструмента
+				.section__block-inner
+					p Благодаря инженерным системам, сегодня можно решить множество задач, таких как: горячее водоснабжение загородного дома, центральное отопление, установка системы отопления «теплый пол» или радиаторов, удачный монтаж оборудования в соответствии с дизайном помещения и т.д.
+					p При этом очень важно выбрать как фирму-производителя системы отопления и водоснабжения, так и компанию, которая на выгодных условиях и в сжатые сроки доставит их на Ваш объект, и грамотно произведет монтаж системы отопления и водоснабжения в Вашем доме или на предприятии. Позвонив менеджерам интернет-магазина «ПроТепло-СПб», Вы получите грамотную консультацию, список необходимого оборудования и расчеты стоимости всей системы. Цена на каждую позицию указана на сайте.
+				blockquote.arenda__blockquote
+					.arenda__blockquote-img
+					.arenda__blockquote-inner
+						p.heading Котельное и отопительное оборудование - вещь серьезная.
+						p.text Мы готовы выслушать и дать совет всем специалистам, <br> поэтому стали для многих компаний надежными партнерами.
+						p.autor Руководитель департамента товарных направлений, <br> Иванов И.И.
+			section.section#ar_history.ar_history
+				.section__title-line
+					h3.section__title история компании
+				.section__block-inner
+					.sides
+						.ar_history__img-side
+							img(src='img/other/arenda_history.jpg')
+						.ar_history__text-side
+							p Благодаря инженерным системам, сегодня можно решить множество задач, таких как: горячее водоснабжение загородного дома, центральное отопление, установка системы отопления «теплый пол» или радиаторов, удачный монтаж оборудования в соответствии с дизайном помещения и т.д.
+							p При этом очень важно выбрать как фирму-производителя системы отопления и водоснабжения, так и компанию, которая на выгодных условиях и в сжатые сроки доставит их на Ваш объект, и грамотно произведет монтаж системы отопления и водоснабжения в Вашем доме или на предприятии. Позвонив менеджерам интернет-магазина «ПроТепло-СПб», Вы получите грамотную консультацию, список необходимого оборудования и расчеты стоимости всей системы. Цена на каждую позицию указана на сайте.
+							p Благодаря инженерным системам, сегодня можно решить множество задач, таких как: горячее водоснабжение загородного дома, центральное отопление, установка системы отопления «теплый пол» или радиаторов, удачный монтаж оборудования в соответствии с дизайном помещения и т.д.
+					ul.ar_history__list
+						li.ar_history__li
+							a.ar_history__link(href='#') Начало работы
+						li.ar_history__li
+							a.ar_history__link(href='#') Становление
+						li.ar_history__li
+							a.ar_history__link(href='#') Наше время
+			section.section#ar_digits.ar_digits
+				.section__title-line
+					h3.section__title история компании
+				.section__block-inner
+					ul.digits__wrap
+						li.digits__block
+							.digit-wrap
+								span.digit 22
+								| года
+							.digit__text Опыт решения <br> технических задач
+						li.digits__block
+							.digit-wrap
+								span.digit 10
+							.digit__text Больших товарных <br> групп
+						li.digits__block
+							.digit-wrap
+								span.digit 20
+								| %
+							.digit__text Процент крупных <br> поставок
+						li.digits__block
+							.digit-wrap
+								span.digit 100
+							.digit__text Число сотрудников <br> в компании
+						li.digits__block
+							.digit-wrap
+								span.digit 8
+								| лет
+							.digit__text Средний стаж <br> работников
+					.digit__summary Более 50 000 артикулов в асортименте, более 3 000 штук постоянно на складе
+					ul.digits__wrap
+						li.digits__block
+							.digit-wrap
+								span.digit 15
+								| секунд
+							.digit__text Ожидание ответ <br>  оператора call-центра.
+						li.digits__block
+							.digit-wrap
+								span.digit 1
+								| час
+							.digit__text Период выставления <br> счета после <br> оформления заявки
+						li.digits__block
+							.digit-wrap
+								| До
+								span.digit 5
+								| лет
+							.digit__text Гарантия на товары. <br> Более 20 партнеров <br> 	по сервису в РФ.
+						li.digits__block
+							.digit-wrap
+								| До
+								span.digit 3
+								| лет
+							.digit__text Оперативная <br> доставка
+						li.digits__block
+							.digit-wrap
+								span.digit 100
+							.digit__text Число реализованных <br> предложений <br> от клиентов
+					.digit__summary Более 50 заводов-партнеров из 15 стран
+			section.section#ar_calture.ar_calture
+				.section__title-line
+					h3.section__title Корпоративная культура
+				.section__block-inner
+					.sides
+						.ar_calture__img-side
+							img(src='img/other/arenda_history.jpg')
+						.ar_calture__text-side
+							p Благодаря инженерным системам, сегодня можно решить множество задач, таких как: горячее водоснабжение загородного дома, центральное отопление, установка системы отопления «теплый пол» или радиаторов, удачный монтаж оборудования в соответствии с дизайном помещения и т.д.
+							p При этом очень важно выбрать как фирму-производителя системы отопления и водоснабжения, так и компанию, которая на выгодных условиях и в сжатые сроки доставит их на Ваш объект, и грамотно произведет монтаж системы отопления и водоснабжения в Вашем доме или на предприятии. Позвонив менеджерам интернет-магазина «ПроТепло-СПб», Вы получите грамотную консультацию, список необходимого оборудования и расчеты стоимости всей системы. Цена на каждую позицию указана на сайте.
+							p Благодаря инженерным системам, сегодня можно решить множество задач, таких как: горячее водоснабжение загородного дома, центральное отопление, установка системы отопления «теплый пол» или радиаторов, удачный монтаж оборудования в соответствии с дизайном помещения и т.д.

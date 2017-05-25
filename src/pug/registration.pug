@@ -1,0 +1,76 @@
+extends _layout.pug
+block main
+	main.registration
+		.container
+			.breadcrumbs
+				ul.breadcrumbs-list
+					li.breadcrumbs-item--active-1
+						a(href="#") Главная
+					li.breadcrumbs-item--active-3
+						a(href="#") Регистрация
+					.sliders-title
+			section.section
+				.section__title-line
+					h3.section__title Регистрация
+				.section__block-inner
+					form.registration__form
+						fieldset.registration__form-inputs
+							input(type='text' name='surname')
+							input(type='text' name='name')
+							input(type='text' name='phone')
+							input(type='email' name='email')
+						fieldset.registration__form-radio
+							label.additions__checkbox
+								input(type='radio' name='rele')
+								span.checkbox
+								span.text Я частное лицо
+							label.additions__checkbox
+								input(type='radio' name='rele')
+								span.checkbox
+								span.text Я представитель организации
+						fieldset
+							p Выберите подходящий вам способ входа и подтвердите личные данные. Подтверждение необходимо для повышения безопасности и защиты персональной информации покупателей.
+							.registration__form-submit-block
+								a.auth-method-link(href='#')
+									label
+										input(type='radio' name='entryType')
+										span Номер телефона
+								a.auth-method-link(href='#')
+									label
+										input(type='radio' name='entryType')
+										span Адрес электронной почты
+			section.section
+				.section__title-line
+					h3.section__title Войти как пользователь
+				.section__block-inner
+					p Осуществляя вход в "Личный кабинет" сайта, вы подтверждаете свою дееспособность, согласие на получение информации о статусе заказов, согласие с согласие с правилами использования XXL-бонусов и согласие на обработку персональных данных. Если у вас уже есть учетная запись, вы можете привязать к ней социальные сети в личном кабинете.
+					ul.auth__with-socials
+						li.auth__with-socials-li
+							a.auth__with-socials-link
+								span vk
+						li.auth__with-socials-li
+							a.auth__with-socials-link
+								span odnoklasniki
+						li.auth__with-socials-li
+							a.auth__with-socials-link
+								span facebook
+						li.auth__with-socials-li
+							a.auth__with-socials-link
+								span twitter
+						li.auth__with-socials-li
+							a.auth__with-socials-link
+								span g+
+					hr
+					ul.auth__with-mobile
+						li.auth__with-mobile-li
+							a.auth__with-mobile-link
+								span мегафон
+						li.auth__with-mobile-li
+							a.auth__with-mobile-link
+								span мтс
+						li.auth__with-mobile-li
+							a.auth__with-mobile-link
+								span билайн
+						li.auth__with-mobile-li
+							a.auth__with-mobile-link
+								span tele2

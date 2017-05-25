@@ -45,4 +45,19 @@
             }
         }
     }
+    &_tr-ac {
+        display: inline-block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 14px;
+        line-height: 16px;
+        color: #373737;
+        border-radius: 2px;
+        transition: color 0.25s;
+        border: 1px solid #373737;
+        &:hover {
+            border-color: $ac;
+            color: $ac;
+        }
+    }
 }

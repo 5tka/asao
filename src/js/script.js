@@ -8,6 +8,15 @@ $(document).ready(function(){
     var width = document.documentElement.clientWidth;
 
     /* карточка товару      */
+    $("a.js_pagenav").click(function() {
+        var elementClick = $(this).attr("href")
+        var destination = $(elementClick).offset().top - 60;
+        $("html:not(:animated),body:not(:animated)").animate({
+          scrollTop: destination
+        }, 800);
+        return false;
+    });
+
     $('.js_full-height').click(function(event) {
         event.preventDefault();
             $(this).closest('.js_limited-height').find('.js_limited-height__object').toggleClass('opened');;
@@ -39,15 +48,47 @@ $(document).ready(function(){
         onInitialized: function (event) {
             $(event.target).removeClass('common-slider');
         },
+        responsive:{
+            0:{
+                items: 1
+            },
+            500:{
+                items: 2
+            },
+            800:{
+                items: 3
+            },
+            900: {
+                items: 4
+            }
+        }
     });
 
     $('.prod-card__preview-slider').owlCarousel({
         items: 3,
         nav: true,
+        margin: 10,
         dots: false,
         onInitialized: function (event) {
             $(event.target).removeClass('common-slider');
         },
+        responsive:{
+            0:{
+                items: 1
+            },
+            500:{
+                items: 2
+            },
+            600:{
+                items: 3
+            },
+            768:{
+                items: 4
+            },
+            980: {
+                items: 3
+            }
+        }
     });
 
     /* табы карточка товаров */
@@ -137,16 +178,16 @@ $(document).ready(function(){
     // $('.producers-slider').bxSlider(optProducers);
     /* /producers js */
     var itemsNum = 0;
-    var owl = $('.producers-slider');
+    var owl = $('.js_producersSlider').length ? $('.js_producersSlider'): $('.js_photoSlider') ;
 
     owl.on('initialized.owl.carousel', function(event) {
         var itemCount =  event.item.count;
-        var size      = event.page.size;
+        var size      =  event.page.size;
         var dragLength = 100 / (itemCount/size);
-        console.log(itemCount+'+size'+size);
+        // console.log(itemCount+'+size'+size);
         var owlThis = $(this);
-        console.log(owlThis.next('.range'));
-        owlThis.closest('.js_prodSlider-wrap').find('.range').ionRangeSlider({
+        // console.log(owlThis.next('.range'));
+        owlThis.closest('.js_scrollSlider-wrap').find('.range').ionRangeSlider({
         type: "single",
         min: 1,
         max: itemCount - (size - 1),
@@ -156,48 +197,51 @@ $(document).ready(function(){
         onChange: function (data) {
           //owl.trigger('changed.owl.carousel', [???]);
               owlTo = (data.from) - 1;
-              console.log("Позиция ползунка: " + owlTo);
+              // console.log("Позиция ползунка: " + owlTo);
               owlThis.trigger('to.owl.carousel', [owlTo, 500, true]);
         }
       });
 
-      $(this).closest('.js_prodSlider-wrap').find('.irs-slider.single').css('width', dragLength + "%")
+      $(this).closest('.js_scrollSlider-wrap').find('.irs-slider.single').css('width', dragLength + "%")
 
     });
 
-    //Слайдер
+    var options = $('.js_producersSlider').length ? 6 : 5;
     owl.owlCarousel({
         loop:false,
-        margin:10,
+        margin: options == 6 ? 10 : 0, // 10 для производителей и 0 для фотогалереи со скроллом
         dots: false,
         slideBy:1,
-        items: 6,
+        items: options,
         responsiveClass:true,
         responsive:{
             0:{
-                items:2
+                items: 1
             },
             500:{
-                items:3
+                items: 2
             },
             600:{
-                items:4
+                items: options -2
             },
             700:{
-                items:5
+                items: options - 1
             },
             900:{
-                items:6
+                items: options
             }
         }
     });
+
+    //Слайдер
+
 
     // owl.on('dragged.owl.carousel', function(event) {
     //     var itemCount =  event.item.count;
     //       var size      = event.page.size;
     //       var curItem = event.item.index + 1;
     //       var dragLength = 100 / (itemCount/size);
-    //       var parent=$(this).closest('.js_prodSlider-wrap');
+    //       var parent=$(this).closest('.js_scrollSlider-wrap');
     //       console.log(curItem);
     //         parent.find('.range').data("ionRangeSlider").update({from: curItem});
     //         parent.find('.irs-slider.single').css('width', dragLength + "%");
@@ -208,7 +252,7 @@ $(document).ready(function(){
         var size      = event.page.size;
         var curItem = event.item.index + 1;
         var dragLength = 100 / (itemCount/size);
-        var parent=$(this).closest('.js_prodSlider-wrap');
+        var parent=$(this).closest('.js_scrollSlider-wrap');
         parent.find('.range').data("ionRangeSlider").update({
             max: itemCount - (size - 1),
             from: curItem
