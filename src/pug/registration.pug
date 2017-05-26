@@ -8,69 +8,72 @@ block main
 						a(href="#") Главная
 					li.breadcrumbs-item--active-3
 						a(href="#") Регистрация
-					.sliders-title
 			section.section
 				.section__title-line
 					h3.section__title Регистрация
 				.section__block-inner
 					form.registration__form
 						fieldset.registration__form-inputs
-							input(type='text' name='surname')
-							input(type='text' name='name')
-							input(type='text' name='phone')
-							input(type='email' name='email')
+							.line
+								input(type='text' name='surname' placeholder='Фамилия')
+								input(type='text' name='name' placeholder='Имя')
+							.line
+								input(type='text' name='phone' placeholder='Номер телефона')
+								input(type='email' name='email' placeholder='Эл. адрес')
 						fieldset.registration__form-radio
-							label.additions__checkbox
-								input(type='radio' name='rele')
+							label.additions__checkbox.private__person
+								input(type='radio' name='person' checked)
 								span.checkbox
 								span.text Я частное лицо
-							label.additions__checkbox
-								input(type='radio' name='rele')
+							label.additions__checkbox.entity
+								input(type='radio' name='person')
 								span.checkbox
 								span.text Я представитель организации
-						fieldset
+						fieldset.registration__form-submit-block
 							p Выберите подходящий вам способ входа и подтвердите личные данные. Подтверждение необходимо для повышения безопасности и защиты персональной информации покупателей.
-							.registration__form-submit-block
-								a.auth-method-link(href='#')
-									label
-										input(type='radio' name='entryType')
-										span Номер телефона
-								a.auth-method-link(href='#')
-									label
-										input(type='radio' name='entryType')
-										span Адрес электронной почты
-			section.section
+							.registration__form-submit-methods
+								button.auth-method-link(href='#' type='submit')
+									| Номер телефона
+								button.auth-method-link(href='#' type='submit')
+									| Адрес электронной почты
+			section.section.sign-in__as-user-block
 				.section__title-line
 					h3.section__title Войти как пользователь
 				.section__block-inner
 					p Осуществляя вход в "Личный кабинет" сайта, вы подтверждаете свою дееспособность, согласие на получение информации о статусе заказов, согласие с согласие с правилами использования XXL-бонусов и согласие на обработку персональных данных. Если у вас уже есть учетная запись, вы можете привязать к ней социальные сети в личном кабинете.
 					ul.auth__with-socials
 						li.auth__with-socials-li
-							a.auth__with-socials-link
+							a.auth__with-socials-link(href='#')
+								i.fa.fa-vk
 								span vk
 						li.auth__with-socials-li
-							a.auth__with-socials-link
+							a.auth__with-socials-link(href='#')
+								i.fa.fa-odnoklassniki
 								span odnoklasniki
 						li.auth__with-socials-li
-							a.auth__with-socials-link
+							a.auth__with-socials-link(href='#')
+								i.fa.fa-facebook
 								span facebook
 						li.auth__with-socials-li
-							a.auth__with-socials-link
+							a.auth__with-socials-link(href='#')
+								i.fa.fa-twitter
 								span twitter
 						li.auth__with-socials-li
-							a.auth__with-socials-link
+							a.auth__with-socials-link(href='#')
+								i.fa.fa-google-plus
 								span g+
 					hr
 					ul.auth__with-mobile
+						//- img только чтобы занять необходимое пространство, изменение идет в css
 						li.auth__with-mobile-li
-							a.auth__with-mobile-link
-								span мегафон
+							a.auth__with-mobile-link.megafon
+								img(src='img/auth-methods/megafon.png' alt='мегафон')
 						li.auth__with-mobile-li
-							a.auth__with-mobile-link
-								span мтс
+							a.auth__with-mobile-link.mts
+								img(src='img/auth-methods/mts.png' alt='МТС')
 						li.auth__with-mobile-li
-							a.auth__with-mobile-link
-								span билайн
+							a.auth__with-mobile-link.bylain
+								img(src='img/auth-methods/bylain.png' alt='Билайн')
 						li.auth__with-mobile-li
-							a.auth__with-mobile-link
-								span tele2
+							a.auth__with-mobile-link.tele2
+								img(src='img/auth-methods/tele2.png' alt='Теле2')
