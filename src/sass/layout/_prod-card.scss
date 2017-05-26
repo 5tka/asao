@@ -565,6 +565,7 @@ a.prod-card__block-title {
 	font-size: 14px;
 	font-weight: 400;
 	border-left: 1px solid #f9f9f9;
+	cursor: pointer;
 	&:last-of-type {
 		border-right: 1px solid #f9f9f9;
 	}
@@ -609,6 +610,7 @@ a.prod-card__block-title {
 	line-height: 20px;
 	.line {
 		@include clearfix;
+		line-height: 24px;
 	}
 	dd,dt {
 		margin: 0;
@@ -638,7 +640,7 @@ a.prod-card__block-title {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: $ac;
+	background-color: rgba(255,204,0,.75);
 }
 .product-mini__add-matching,
 .product-mini__add-cart {
