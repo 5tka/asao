@@ -1,0 +1,191 @@
+.registration__form {
+	margin: 0 auto;
+	max-width: 610px;
+}
+
+.registration__form-inputs,
+.registration__form-radio,
+.registration__form-submit-block {
+	border: none;
+}
+.registration__form-inputs {
+	padding: 0;
+	margin: 0 0 35px;
+	.line {
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: space-between;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		input {
+			height: 36px;
+			border: 1px solid #e4e4e4;
+			display: block;
+			padding: 5px 20px;
+			border-radius: 2px;
+			flex: 0.5;
+			&:nth-of-type(even) {
+				margin-left: 10px;
+			}
+			&:nth-of-type(odd) {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+.registration__form-radio {
+	padding: 0;
+	@include clearfix;
+	margin: 0 auto 55px;
+	max-width: 430px;
+	.additions__checkbox {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	.private__person {
+		float: left;
+	}
+	.entity {
+		float: right;
+	}
+}
+.registration__form-submit-block {
+	text-align: center;
+	margin: 0 0 10px;
+	padding: 0;
+	p {
+		color: #8a8a8a;
+		text-align: center;
+		font-size: 13px;
+	}
+}
+.registration__form-submit-methods {
+	margin-top: 30px;
+}
+.auth-method-link {
+	@extend .btn_tr-ac_b;
+	font-weight: 600;
+	padding: 5px 24px;
+	margin: 0 5px;
+}
+.sign-in__as-user-block {
+	hr {
+		margin: 0 10px;
+		border: 1px solid #e4e4e4;
+	}
+	p {
+		font-size: 13px;
+		color: #8a8a8a;
+	}
+}
+.auth__with-socials {
+	margin: 40px 0 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.auth__with-socials-li {
+	margin: 0 15px;
+}
+.auth__with-socials-link {
+	background-color: #3d3d3d;
+	border-radius: 5px;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	line-height: 1;
+	transition: background-color 0.25s;
+	&:hover {
+		background-color: $ac;
+	}
+	.fa {
+		font-size: 24px;
+	}
+	span {
+		display: none;
+	}
+}
+
+.auth__with-mobile {
+	margin: 5px 0 5px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.auth__with-mobile-li {
+	margin: 5px 10px;
+}
+.auth__with-mobile-link {
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center;
+	img {
+		visibility: hidden;
+	}
+	&.megafon {
+		background-image: url(../img/auth-methods/megafon.png)
+	}
+	&.mts {
+		background-image: url(../img/auth-methods/mts.png)
+	}
+	&.bylain {
+		background-image: url(../img/auth-methods/bylain.png)
+	}
+	&.tele2 {
+		background-image: url(../img/auth-methods/tele2.png)
+	}
+	&:hover {
+		&.megafon {
+		background-image: url(../img/auth-methods/megafon_h.png)
+		}
+		&.mts {
+			background-image: url(../img/auth-methods/mts_h.png)
+		}
+		&.bylain {
+			background-image: url(../img/auth-methods/bylain_h.png)
+		}
+		&.tele2 {
+			background-image: url(../img/auth-methods/tele2_h.png)
+		}
+	}
+}
+
+@include breakpoint(500) {
+	.registration__form-inputs {
+		margin-bottom: 20px;
+	}
+	.registration__form-inputs .line {
+		display: block;
+	}
+	.registration__form-inputs .line input {
+		margin: 0 0 10px !important;
+		width: 100%;
+	}
+	.registration__form-radio {
+		max-width: none;
+	}
+	.registration__form-radio {
+		margin-bottom: 15px;
+	}
+	.additions__checkbox {
+		float: none !important;
+	}
+	.auth-method-link {
+		margin-bottom: 10px;
+	}
+	.registration__form-submit-methods {
+		margin-bottom: 20px;
+	}
+	.auth__with-socials {
+		margin: 20px 0 ;
+	}
+	.auth__with-socials-li {
+		margin-bottom: 10px;
+	}
+}
