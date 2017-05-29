@@ -26,13 +26,14 @@ $(document).ready(function(){
     $('.js_accordion-init').click(function(event) {
         event.preventDefault();
             if ($(this).closest('.js_accordion-item').hasClass('opened')) {
-                $(this).next('.js_accordion-toggled').slideUp();
+                $(this).siblings('.js_accordion-toggled').slideUp();
             } else {
-                $(this).next('.js_accordion-toggled').slideDown();
+                $(this).siblings('.js_accordion-toggled').slideDown();
             }
             $(this).closest('.js_accordion-item').toggleClass('opened');
         return false;
     });
+
     $('.js_accordion-slideUp').click(function(event) {
         event.preventDefault();
             $(this)
@@ -41,6 +42,29 @@ $(document).ready(function(){
                 .find('.js_accordion-toggled').slideUp();
     });
 
+    $('.sort-by-list__init').click(function(event) {
+        event.preventDefault();
+        $(this).toggleClass('selector')
+                .next('.sort-by-list').slideToggle();
+        return false;
+    });
+
+    /* переключатель вида списка */
+    $('.catalog-view-link').click(function(event) {
+        event.preventDefault();
+            console.log($('.catalog-side').attr('data-class'));
+            console.log($(this).data('class'));
+            console.log(!$('.catalog-side').attr('data-class')==$(this).data('class'));
+            if ($('.catalog-side').attr('data-class') != $(this).data('class')) {
+                $('.catalog-view-link').toggleClass('is_active');
+                $('.catalog-side').attr('data-class',$(this).data('class'));
+            }
+        return false;
+    });
+
+
+
+
     $('.js_production-slider').owlCarousel({
         items: 4,
         nav: true,
@@ -48,7 +72,7 @@ $(document).ready(function(){
         onInitialized: function (event) {
             $(event.target).removeClass('common-slider');
         },
-        responsive:{
+        responsive: {
             0:{
                 items: 1
             },
@@ -60,6 +84,28 @@ $(document).ready(function(){
             },
             900: {
                 items: 4
+            }
+        }
+    });
+    $('.js_production-review-slider').owlCarousel({
+        items: 3,
+        nav: true,
+        dots: false,
+        onInitialized: function (event) {
+            $(event.target).removeClass('common-slider');
+        },
+        responsive: {
+            0:{
+                items: 1
+            },
+            500:{
+                items: 2
+            },
+            800:{
+                items: 3
+            },
+            900: {
+                items: 3
             }
         }
     });
@@ -164,8 +210,24 @@ $(document).ready(function(){
     $('.block__notation-title .close').click(function(e){
         $(this).closest('.hiddenmenu-table').hide();
     })
-    $('.js_select').select2({
-    	minimumResultsForSearch: Infinity
+
+    $('.js_select').each(function(index, el) {
+        $(el).select2({
+        	minimumResultsForSearch: Infinity,
+            dropdownParent: $(el).closest('.js_select__wrap')
+        });
+
+    });
+    $('.js_mark').raty({
+        number: function() {
+            return $(this).attr('data-number') || 5;
+        },
+        score: function() {
+            return $(this).attr('data-score');
+        },
+        readOnly: function() {
+            return $(this).attr('data-readonly');
+        }
     });
 
     $('.main-slider').bxSlider({
@@ -405,21 +467,21 @@ $(document).ready(function(){
 
 
     // personal
-    
+
     $('.personal-login-data .ld-1').click(function(){
-        
-        $('.personal-login-data .ld-1').addClass('ld--active');  
-        $('.personal-login-data .ld-2').removeClass('ld--active');  
+
+        $('.personal-login-data .ld-1').addClass('ld--active');
+        $('.personal-login-data .ld-2').removeClass('ld--active');
         $('.personal-login-info.ld-2').addClass('dn');
-        $('.personal-login-info.ld-1').removeClass('dn');      
+        $('.personal-login-info.ld-1').removeClass('dn');
 
     });
     $('.personal-login-data .ld-2').click(function(){
-        
-        $('.personal-login-data .ld-2').addClass('ld--active');  
-        $('.personal-login-data .ld-1').removeClass('ld--active');  
+
+        $('.personal-login-data .ld-2').addClass('ld--active');
+        $('.personal-login-data .ld-1').removeClass('ld--active');
         $('.personal-login-info.ld-1').addClass('dn');
-        $('.personal-login-info.ld-2').removeClass('dn');      
+        $('.personal-login-info.ld-2').removeClass('dn');
 
     });
 
@@ -468,7 +530,7 @@ function initialize() {
     myPlaces.push(new Place('ул. Строителей, 25 офис 121', 55.688407, 37.5326675, 'г. Санкт-Петербург'));
     //Теперь добавим маркеры для каждого места
     for (var i = 0, n = myPlaces.length; i < n; i++) {
-        			
+
 				var companyImage = new google.maps.MarkerImage('js/marker.png',
 					new google.maps.Size(100,50),
 					new google.maps.Point(0,0),

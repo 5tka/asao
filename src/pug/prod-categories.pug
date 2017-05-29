@@ -1,0 +1,195 @@
+extends _layout.pug
+block main
+	main.reviews
+		.container
+			.breadcrumbs
+				ul.breadcrumbs-list
+					li.breadcrumbs-item--active-1
+						a(href="#") Главная
+					li.breadcrumbs-item--active-3
+						a(href="#") Последние отзывы
+			.sidefilter_wrap
+				aside.sidefilter.js_accordion-item
+					.sidefilter-mob-block.js_accordion-init
+						a.sidefilter__open(href='#')
+							i.fa.fa-filter
+							span.text Фильтр
+						a.sidefilter__close(href='#')
+							i.fa.fa-close
+							span.text Закрыть
+					.sidefilter-blocks-wrap
+						.sidefilter-block.js_accordion-item.opened
+							.sidefilter-block-title.js_accordion-init Название категории
+							.sidefilter-block-inner.js_accordion-toggled
+								each item in [1,2,3,4,5,6]
+									.sidefilter-item(class= item==1 ? 'is_active' : '')
+										a.sidefilter-link(href='#') Подкатегория
+										a.sidefilter-link-cancel(href='#')
+											i.fa.fa-close
+											span x
+						.sidefilter-block.js_accordion-item.opened
+							.sidefilter-block-title.js_accordion-init наличие
+							.sidefilter-block-inner.js_accordion-toggled
+								each item,index in ['Во всех ЦИЗах','В некоторых']
+									.sidefilter-item(class= index==0 ? 'is_active' : '')
+										a.sidefilter-link(href='#')
+											label.additions__checkbox
+												case index
+													when 0
+														input(type='radio' name='availability' checked)
+													default
+														input(type='radio' name='availability')
+												span.checkbox
+												span.text=item
+										a.sidefilter-link-cancel(href='#')
+											i.fa.fa-close
+											span x
+						.sidefilter-block.js_accordion-item.opened
+							.sidefilter-block-title.js_accordion-init Срок получения
+							.sidefilter-block-inner.js_accordion-toggled
+								each item,index in ['Под заказ','Сегодня']
+									.sidefilter-item(class= index==0 ? 'is_active' : '')
+										a.sidefilter-link(href='#')
+											label.additions__checkbox
+												case index
+													when 0
+														input(type='radio' name='Deadline' checked)
+													default
+														input(type='radio' name='Deadline')
+												span.checkbox
+												span.text=item
+										a.sidefilter-link-cancel(href='#')
+											i.fa.fa-close
+											span x
+						.sidefilter-block.js_accordion-item.opened
+							.sidefilter-block-title.js_accordion-init Бренд
+							.sidefilter-block-inner.js_accordion-toggled
+								each item in [1,2,3,4,5,6]
+									.sidefilter-item(class= item==1 ? 'is_active' : '')
+										a.sidefilter-link(href='#') Бренд
+										a.sidefilter-link-cancel(href='#')
+											i.fa.fa-close
+											span x
+						.sidefilter-block.js_accordion-item.opened
+							.sidefilter-block-title.js_accordion-init Цена
+							.sidefilter-block-inner.js_accordion-toggled
+								.sidefilter-item
+									.from-to-block
+										label.from
+											span.text От
+											input(type='text' name='prise_from' placeholder='400')
+										label.to
+											span.text До
+											input(type='text' name='prise_to' placeholder='1000')
+									a.sidefilter-link-cancel(href='#')
+										i.fa.fa-close
+										span x
+						.sidefilter-block.js_accordion-item
+							.sidefilter-block-title.js_accordion-init фильтр
+							.sidefilter-block-inner.js_accordion-toggled
+								.sidefilter-item
+									.from-to-block
+										label.from
+											span.text От
+											input(type='text' name='prise_from' placeholder='400')
+										label.to
+											span.text До
+											input(type='text' name='prise_to' placeholder='1000')
+									a.sidefilter-link-cancel(href='#')
+										i.fa.fa-close
+										span x
+						.sidefilter-block.js_accordion-item
+							.sidefilter-block-title.js_accordion-init фильтр
+							.sidefilter-block-inner.js_accordion-toggled
+								.sidefilter-item
+									.from-to-block
+										label.from
+											span.text От
+											input(type='text' name='prise_from' placeholder='400')
+										label.to
+											span.text До
+											input(type='text' name='prise_to' placeholder='1000')
+									a.sidefilter-link-cancel(href='#')
+										i.fa.fa-close
+										span x
+						a.all_params(href='#')
+							i.fa.fa-angle-double-right
+							span Все параметры
+				.catalog-side(data-class='td__view')
+					.product__modifitacation-wrap
+						.sort-by-list-wrap
+							a.sort-by-list__init(href='#')
+								span.text Сортировать по
+								i.fa.fa-angle-down
+							ul.sort-by-list
+								each item,index in ['Рейтингу','Возростанию цены','Убыванию цены']
+									li.sort-by-li
+										a.sort-by-option-link(href='#' class= index==0 ? 'is_active' : '')
+											label.additions__checkbox
+												case index
+													when 0
+														input(type='radio' name='sortby' checked)
+													default
+														input(type='radio' name='sortby')
+												span.checkbox
+												span.text=item
+						.catalog-view-wrap
+							span.text Вид каталога
+							ul.catalog-view-list
+								li.catalog-view-li
+									a.catalog-view-link(data-class='tr__view' href='#')
+										i.fa.fa-th-list
+										span.text Cписок
+								li.catalog-view-li
+									a.catalog-view-link.is_active(data-class='td__view' href='#')
+										i.fa.fa-th
+										span.text Плитка
+					ul.product__list-wrap
+						each item in [1,2,3,4,5,6]
+							li.product__list-item
+								.product__list-item-inner
+									a.product__list-item-img(href='#')
+										img(src='img/demo-img/product-card/s1.jpg')
+									.product__text-wrap
+										a.product__list-item-title(href='#') Погружной насос Grundfos SQ 2-100
+										.product__list-item-prise
+											p.item-prise-old 7000 р
+											p.item-status Нет в наличии
+											p.item-prise 62 110 р.
+										.product__list-item-descr
+											.product__list-item__details
+												-var charList=['Вес брутто, кг:','Вес, кг: ','К-во ступеней регулирования:','Напор, м:','Высота, см:','Мощность, Вт:','Ток, А:'];
+												-var charDef= ['6,8','6,2','6','132','86.1','1680','11.2'];
+												dl.product__list-item__descr-list
+													-for (var x=0; x<charList.length;x++)
+														.line
+															dt=charList[x]
+															dd=charDef[x]
+										.product__list-item__hover-block
+											.product__list-item__hover-text
+												-var charList=['Артикул:','Гарантия: ','Рейтинг:'];
+												-var charDef= ['345345453',' 1 год','9.5'];
+												dl.product__list-item__descr-list
+													-for (var x=0; x<charList.length;x++)
+														.line
+															dt=charList[x]
+															dd=charDef[x]
+											.product__list-item__hover-buttons
+												a.product__list-item__add-favorite(href='#')
+													i.fa.fa-heart
+													span В закладки
+												a.product__list-item__add-matching(href='#')
+													i.fa.fa-balance-scale
+													span Сравнение
+									.product__list-item__prise-block
+										.product__list-item-prise
+											p.item-prise-old 7000 р
+											p.item-prise 62 110 р.
+											p.item-status Нет в наличии
+										a.product__list-item__add-cart(href='#')
+											i.fa.fa-shopping-cart
+											span В корзину
+					.show__more-wrap
+						a.show__all(href='#') Показать все
+
+

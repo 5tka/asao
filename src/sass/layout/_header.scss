@@ -1,3 +1,5 @@
+.js_select__wrap {
+}
 .ac {
     color: $ac;
     font-weight: 600;
@@ -435,6 +437,9 @@
             background-color: #fc0;
         }
     }
+
+}
+.search-label {
     .select2-container {
         position: absolute;
         top: 4px;
@@ -457,10 +462,10 @@
     .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
         @extend .fa-angle-up;
     }
-}
-.select2-container--open .select2-dropdown--below {
-    border: none;
-    font-size: 15px;
+    .select2-container--open .select2-dropdown--below {
+        border: none;
+        font-size: 15px;
+    }
 }
 
 .mainpage__сats {
