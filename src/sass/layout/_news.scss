@@ -39,7 +39,7 @@
 }
 .breadcrumbs-item--active-3 {
     color: #8a8a8a;
-}   
+}
 
 // новости
 .page-sidebar {
@@ -172,6 +172,11 @@
             text-align: center;
             float: none;
         }
+    }
+}
+@include breakpoint(550) {
+    .breadcrumbs {
+        margin: 15px 0;
     }
 }
 @include breakpoint(425) {

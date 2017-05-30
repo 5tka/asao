@@ -1,0 +1,125 @@
+extends _layout.pug
+block main
+	main.reviews
+		.container
+			.reviews__top-line
+				.breadcrumbs
+					ul.breadcrumbs-list
+						li.breadcrumbs-item--active-1
+							a(href="#") Главная
+						li.breadcrumbs-item--active-3
+							a(href="#") Последние отзывы
+				.reviews__sort-wrap
+					.sort-by__block
+						label.js_select__wrap
+							span.pr_text Сортировать:
+							select.js_select(name='sort')
+								option(value='mark') По оценке
+								option(value='date') По дате
+								option(value='utility') По полезности
+			.reviews__content-wrap
+				.reviews-right-side
+					section.section.section__rating
+						.section__title-line
+							h3.section__title Показать отзывы с оценкой
+						.section__block-inner
+							ul.reviews__rating-list
+								li.reviews__rating-li
+									a.reviews__rating-link(href='#')
+										.js_mark(data-number='5' data-score='5' data-readonly='true')
+										span.text 92% (500 отзывов)
+								li.reviews__rating-li
+									a.reviews__rating-link(href='#')
+										.js_mark(data-number='4' data-score='4' data-readonly='true')
+										span.text 5% (20 отзывов)
+								li.reviews__rating-li
+									a.reviews__rating-link(href='#')
+										.js_mark(data-number='3' data-score='3' data-readonly='true')
+										span.text <1% (1 отзыв)
+								li.reviews__rating-li
+									a.reviews__rating-link(href='#')
+										.js_mark(data-number='2' data-score='2' data-readonly='true')
+										span.text 2% (5 отзывов)
+								li.reviews__rating-li
+									a.reviews__rating-link(href='#')
+										.js_mark(data-number='1' data-score='1' data-readonly='true')
+										span.text 3% 12 отзывов
+					.banner-wrap
+						img(src='img/banner.jpg')
+				.reviews-side
+					section.section
+						.section__title-line
+							h3.section__title Все отзывы (504)
+						.section__block-inner
+							.reviews__avarage_mark-block
+								p.reviews__avarage_mark
+									| (4.5/5.0)
+								.js_mark(data-score='4.5' data-readonly='true')
+							p.reviews__avarage_mark-text Общий рейтинг на основе отзывов покупателей и данных службы качества Маркета за последние 3 месяца.
+					each item in [1,2,3]
+						section.section.review__item
+							.section__block-inner
+								.review__header
+									.review__image
+										img(src='img/demo-img/reviews/author.jpg')
+									h4.review__author Богдан Маделык
+									.review__author-rate-line
+										.js_mark(data-score='4.5' data-readonly='true')
+										p.review__method Способ покупки: самовывоз
+								.review__content
+									.review__content-block
+										strong Достоинства:
+										| Качество, цена, быстрое оформление заказа
+									.review__content-block
+										strong Недостатки:
+										| не обнаружил
+									.review__content-block
+										strong Комментарий:
+										| Вах, как круто! Спасибо большое, я так счастлив, что нашел Вас! Моя жизнь обрела смысл, после того как я получил свои мембранные баки!!!
+								.review__footer
+									.review__date 28 января 2017, Санкт-Петербург
+									.review__rate
+										a.review__isgood(href='#')
+											i.fa.fa-thumbs-up
+											| (18)
+										a.review__isbad(href='#')
+											i.fa.fa-thumbs-down
+											| (3)
+					a.more_reviews(href='#') Показать еще
+					ul.pagination
+						li.pagination__prev
+							a(href='#')
+								i.fa.fa-angle-left
+								| <
+						each item,index in [1,2,3,4,5]
+							li.pagination__item(class= index == 2 ? 'is_active' : '')
+								a(href='#')=item
+						li.pagination__next
+							a(href='#')
+								i.fa.fa-angle-right
+								| >
+					section.section
+						.section__title-line
+							h3.section__title Написать Отзыв
+						.section__block-inner
+							form.reviews__form
+								.line
+									input(type='text' name='name' placeholder='Имя*')
+									input(type='text' name='email' placeholder='E-mail*')
+								textarea.review__text-field(type='text' name='review_content' placeholder='Отзыв')
+								button.reviews__form-submit(type='submit') Написать отзыв
+					section.section
+						.section__title-line
+							h3.section__title Вас могут заинтересовать
+						.section__block-inner
+							.production-slider.common-slider.js_production-review-slider(data-responsive='{0:{items: 1},500:{items: 2},800:{items: 3},900: {items: 4}}' data-item='4')
+								each item in [1,2,3,4,5]
+									.product-mini-item
+										.product-mini-img
+											img(src='img/demo-img/product-card/s1.jpg')
+										a.product-mini-title(href='#') Погружной насос Grundfos SQ 2-100
+										.product-mini-prise 62 110 р.
+						.section__block-inner.reviews__interested-in-more
+							a.show_more(href='#') Показать еще
+
+
