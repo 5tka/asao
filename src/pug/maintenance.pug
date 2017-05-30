@@ -1,0 +1,132 @@
+extends _layout.pug
+block main
+    main.maintenance
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Обслуживание
+        .container
+            .artical-container
+                .artical-title
+                    h3.title
+                        | Сервисные услуги
+                .artical-content
+                    .maintenance-content.clearfix
+                        .m-dscr.fl-l
+                            p.
+                                Даже после покупки и установки оборудования вы можете рассчитывать на поддержку нашей компании. Специалисты «ПроТепло-СПб» проводят сервисное обслуживание и ремонт приборов для систем отопления, водоснабжения, канализации, вентиляции и электроснабжения.
+                            p.
+                                Благодаря прямому сотрудничеству с поставщиками мы можем найти любые необходимые запчасти, расходные материалы и комплектующие для любого оборудования, приобретённого 
+                                в интернет-магазине «ПроТепло-СПб».
+                            span
+                                | Мы обслуживаем:
+                            ul
+                                li котлы и котельные
+                                li канализационные станции
+                                li вентиляционные установки и кондиционеры
+                                li водонагреватели и газовые колонки
+                                li генераторы
+                                li насосное оборудование.
+                        .m-img.fl-r
+                            img(src="img/m.jpg", alt="")
+            .artical-container
+                .artical-title
+                    h3.title
+                        | Основные виды работ
+                .artical-content
+                    .equipment-content-list.maintenance-list-a
+                        p.
+                            На всю продукцию, которая была приобретена в интернет-магазине «ПроТепло-СПб» и установлена нашими мастерами, действует гарантия производителя и
+                            гарантия магазина. Поэтому для вашего удобства мы не только продаем и устанавливаем приборы, но осуществляем их сервисное обслуживание, ремонт и замну 
+                            деталей.
+                        ul
+                            li 
+                                span
+                                    | Настройка оборудования и запуск системы коммуникаций в эксплуатацию
+                                p
+                                    | Если понадобиться, то вы можете первый раз запустить систему или отдельное оборудование под присмотром наших мастеров. Специалисты 
+                                    |   протестируют, корректно ли работает система, и сразу устранят неполадки, если что-то даст сбой.
+                            li
+                                span Регулярная замена расходных материалов
+                                p.
+                                    Как и автомобиль, оборудование для систем коммуникаций должно периодически проходить своеобразный техосмотр. Мы можем взять на себя 
+                                    регулярное сервисное обслуживание вашего оборудования, вовремя менять расходные материалы и осуществлять другие плановые процедуры.
+
+                            li
+                                span Ремонт оборудования
+                                p.
+                                    Компания «ПроТепло-СПб» осуществляет сервисное обслуживание в течение гарантийного срока и поле его окончания. Поэтому вы можете 
+                                    рассчитывать на нашу поддержку, если что-то из оборудования выйдет из строя или поломается. Наши специалисты устранят неисправность 
+                                    или свяжутся с поставщиками и сделают замену оборудования.
+                            li
+                                span Замена комплектующих
+                                p.
+                                    Если какая-то деталь выйдет из строя или вы решите поменять, к примеру, заменить горелку, чтобы изменить тип топлива в котле, в нашем 
+                                    интернет-магазине вы можете заказать нужную продукцию по лучшим на рынке ценам и осуществить замену своими силам или привлечь 
+                                    нашего монтажника.
+            .artical-container
+                .artical-title
+                    h3.title
+                        | Стоимость и сроки
+                .artical-content
+                    .equipment-content-list.maintenance-list-a
+                        p.
+                            Стоимость сервисного обслуживания и ремонта зависит от типа оборудования, производителя и модели, а также цен на расходные материалы. Расскажите 
+                            о своей задаче или проблеме нашему менеджеру, и он подготовит для вас индивидуальный расчет с учетом стоимости необходимых комплектующих, а также 
+                            ориентирует по срокам выполнения работ. <br><br>
+                        p.
+                            Чтобы рассчитать стоимость монтажа, позвоните нам по телефону (888) 000-00-00 или пришлите заявку на электронную почту sales@example.ru.
+            .artical-container
+                .artical-title
+                    h3.title
+                        | Заказать сервисные услуги
+                .artical-content
+                    .maintenance-form-container
+                        span.m-title
+                            | Укажите систему коммуникации:
+                        form.maintenance__form.clearfix
+                            fieldset.maintenance__form-radio
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person')
+                                    span.checkbox
+                                    span.text Вентиляция
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person')
+                                    span.checkbox
+                                    span.text Кондиционеры
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person' checked)
+                                    span.checkbox
+                                    span.text Дымоходы
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person')
+                                    span.checkbox
+                                    span.text Газовые колонки
+                            fieldset.maintenance__form-radio
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person')
+                                    span.checkbox
+                                    span.text Отопление
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person')
+                                    span.checkbox
+                                    span.text Котельная
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person' checked)
+                                    span.checkbox
+                                    span.text Внутреннее водоснабжение и/или канализация
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person')
+                                    span.checkbox
+                                    span.text Наружное водоснабжение и/или канализация
+                            fieldset.maintenance__form-radio.spec-grty
+                                label.additions__checkbox
+                                    input(type='checkbox' name='person')
+                                    span.checkbox
+                                    span.text У меня есть проект или спецификация
+                                label(for="email").email-label
+                                    input(type="email" placeholder="Телефон*")
+                                button(type="submit").btn Отправить

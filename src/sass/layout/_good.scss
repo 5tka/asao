@@ -1,0 +1,307 @@
+.good-content {
+    p {
+        font-size: 14px;
+        color: #373737;
+        line-height: 21px;
+        span {
+            display: block;
+            font-weight: 700;
+            text-align: right;
+            margin-top: 7px;
+        }
+    }
+}
+.good-man-info {
+    padding-left: 25px;
+}
+.g-img {
+    margin-right: 30px;
+}
+.g-dscr {
+    width: 69%;
+    .man {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: #373737;
+        margin-bottom: 20px;
+    }
+    .man_w {
+        li {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            span {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #e5e5e5;
+                p {
+                    position: relative;
+                    &:first-child,
+                    &:last-child {
+                        &:after {
+                            content: "";
+                            border-bottom: 1px solid #fff;
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            left: 0;
+                            bottom: -1px;
+                        }
+                    }
+                    &:first-child {
+                        color: #000;
+                        font-weight: 600;
+                    }
+                    &:last-child {
+                        color: #8a8a8a;
+                    }
+                }
+            }
+        }
+    }
+    .btn {
+        clear: both;
+        padding: 6px 29px;
+        float: right;
+        margin-top: 10px;
+    }
+}
+.help-info-container {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    .artical-container {
+        &:first-child {
+            width: 66%;
+        }
+        &:last-child {
+            width: 32%;
+        }
+    }
+}
+.help-info-news {
+    .container {
+        padding: 0;
+    }
+}
+.qretsd {
+    display: block;
+    float: left;
+    height: 75px;
+    line-height: 75px;
+    width: 32.42%;
+    margin-top: 20px;
+    background-color: $ac;
+    text-align: center;
+    a {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 700;
+        border-bottom: 1px solid #fff;
+
+        @include transition(.25s);
+        &:hover {
+            border-bottom: 1px solid transparent;
+            i {
+                transform: translateX(10px);
+            }
+        }
+    }
+}
+.need-help {
+    text-align: center;
+    background-color: $ac;
+    padding: 68px 0;
+    span {
+        display: block;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #373737;
+    }
+    a {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 700;
+        border-bottom: 1px solid #fff;
+        @include transition(.25s);
+        &:hover {
+            border-bottom: 1px solid transparent;
+            i {
+                transform: translateX(10px);
+            }
+        }
+    }
+}
+
+.help-people-item {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    width: 20%;
+    outline: 1px solid #e4e4e4;
+    padding: 30px 20px;
+    @include transition(.25s);
+    background-color: #fff;
+    .p-img {
+        text-align: center;
+        margin-bottom: 25px;
+        img {
+            width: 72px;
+            height: 72px;
+        }
+    }
+    .b-name {
+        display: block;
+        font-size: 16px;
+        color: #373737;
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+    p {
+        color: #8a8a8a;
+        line-height: 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        span {
+            font-weight: 600;
+            color: #373737;
+            margin-right: 4px;
+        }
+    }
+    &:hover {
+        transform: scale(1.04);
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, .15);
+        text-shadow: 0 0 13px rgba(0, 0, 0, .15);
+    }
+}
+.help-people-items {
+    .artical-content {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .show-all {
+        font-size: 14px;
+        color: #8a8a8a;
+        &:before {
+            width: 100%;
+        }
+    }
+}
+.our-projs {
+    display: flex;
+    justify-content: space-between;
+    padding:  {
+        right: 50px;
+        left: 50px;
+        bottom: 30px;
+    }
+}
+.our-proj {
+    width: 28%;
+    text-align: center;
+    .o-img {
+        line-height: 0;
+        margin-bottom: 40px;
+        img {
+            width: 100%;
+        }
+    }
+    .o-dscr {
+        a {
+            font-weight: 700;
+            color: #373737;
+            font-size: 14px;
+            display: block;
+            @include transition(.25s);
+            &:hover {
+                color: $ac;
+            }
+        }
+    }
+}
+
+@include breakpoint(1170) {
+    .help-people-item {
+        width: 47%;
+        text-align: center;
+        margin: 10px;
+        &:hover {
+            transform: scale(1);
+        }
+    }
+    .our-projs {
+        padding:  {
+            right: 0;
+            left: 0;
+        }
+    }
+}
+@include breakpoint(1042) {
+    .good-man-info {
+        padding-left: 0;
+    }
+}
+@include breakpoint(1024) {
+    .help-info-container {
+        display: block;
+        .artical-container {
+            width: 100% !important;
+        }
+    }
+    .need-help {
+        padding: 20px;
+    }
+    .qretsd {
+        display: none;
+    }
+}
+@include breakpoint(768) {
+    .help-people-item {
+        width: 100%;
+    }
+}
+@include breakpoint(677) {
+    .good-man-info {
+        text-align: center;
+    }
+    .g-img {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    .g-dscr {
+        float: none;
+        width: 100%;
+    }
+    .our-projs {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .our-proj {
+        width: 51%;
+        margin-bottom: 20px;
+        .o-img{
+            margin-bottom: 25px;
+        }
+    }
+}
+@include breakpoint(500) {
+    .our-proj {
+        width: 100%
+    }
+}
+@include breakpoint(425) {
+    .g-dscr .man_w li span {
+        display: block;
+    }
+    .g-dscr .btn {
+        float: none;
+    }
+}

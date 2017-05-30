@@ -1,0 +1,64 @@
+extends _layout.pug
+block main
+    main.legal
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Юридическим лицам
+        .container.bonus-content
+            .artical-container
+                .artical-title
+                    h3.title 
+                        | Оптовые продажи
+                .artical-content
+                    .legal-content
+                        .bonus-items
+                            .bonus-item
+                                .b-img
+                                    img(src="img/bonus-5.png", alt="")
+                                .b-dscr
+                                    p.
+                                        На рынке <br>
+                                        с 1999 года
+                            .bonus-item
+                                .b-img
+                                    img(src="img/bonus-3.png", alt="")
+                                .b-dscr
+                                    p.
+                                        Доставка <br>
+                                        по всей России
+                            .bonus-item
+                                .b-img
+                                    img(src="img/arms.png", alt="")
+                                .b-dscr
+                                    p.
+                                        Дилерские <br>
+                                        цены
+                            .bonus-item
+                                .b-img
+                                    img(src="img/bonus-6.png", alt="")
+                                .b-dscr
+                                    p.
+                                        Отсрочка <br>
+                                        платежа
+        .container
+            .artical-container
+                .artical-title
+                    h3.title 
+                        | Получить коммерческое предложение по вашей спецификации в течение 55 минут.
+                .artical-content
+                    .legal-content-form
+                        p
+                            | Укажите контактные данные, и наш менеджер свяжется с Вами.
+                        .form-subscribe-wrap
+                            form(action="/").subscribe-form    
+                                label(for="name")
+                                    input(type="text" placeholder="Имя")
+                                label(for="name")
+                                    input(type="text" placeholder="Телефон")
+                                label(for="email")
+                                    input(type="email" placeholder="E-mail")
+                                button(type="submit").btn Отправить

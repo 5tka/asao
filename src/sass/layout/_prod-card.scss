@@ -562,16 +562,22 @@ a.prod-card__block-title {
 		width: 13px;
 		height: 26px;
 		background-image: url(../img/sl-l.png);
+		opacity: .7;
 	}
 	.owl-next {
 		float: right;
 		width: 13px;
 		height: 26px;
 		background-image: url(../img/sl-r.png);
+		opacity: .7;		
 	}
 	.owl-prev ,
 	.owl-next {
 		font-size: 0;
+		cursor: pointer;
+		&:hover{
+			opacity: 1;
+		}
 		&.disabled {
 			opacity: 0.1;
 		}

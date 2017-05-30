@@ -1,0 +1,132 @@
+extends _layout.pug
+block main
+    main.planning
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Контакты
+        .container
+            .artical-container
+                .artical-title
+                    h3.title 
+                        | контакты “асао”
+                .artical-content
+                    form.contacts-select
+                        label.search-label
+                            select.js_select(name='search-in')
+                                option В другом городе
+                                option Город 1
+                                option Город 2
+                                option Город 3
+                                option Город 4
+                                option Город 5
+                    .contacts-content.clearfix
+                        .contacts-sidebar.fl-r
+                            ul
+                                li
+                                    a(href="#")
+                                        | О компании
+                                li
+                                    a(href="#")
+                                        | Адреса магазинов
+                                li
+                                    a(href="#")
+                                        | Сервисные центры
+                                li
+                                    a(href="#")
+                                        | Оптовые продажи
+                                li
+                                    a(href="#")
+                                        | Франшиза
+                                li
+                                    a(href="#")
+                                        | Задать вопрос
+                        .contacts-items.fl-l
+                            .contacts-item
+                                .c-img
+                                    img(src="img/cont/c-1.png", alt="")
+                                .c-content
+                                    span.bold
+                                        | Федеральный номер:
+                                    a(href="8(800)3339220")
+                                        | 8 (800) 333-9-220 
+                                        span (бесплатный)
+                                    a(href="#").cal-btn 
+                                        | Во всех регионах
+                            .contacts-item
+                                .c-img
+                                    img(src="img/cont/c-4.png", alt="")
+                                .c-content
+                                    p
+                                        | Общие вопросы: 
+                                        span vopros@220-volt.ru <br>
+                                        | Отдел продаж: 
+                                        span zakaz@220-volt.ru <br>
+                                        | Skype: 
+                                        span i220-volt <br>
+                                        | ICQ: 
+                                        span 220-200-20 <br>
+                            .contacts-item
+                                .c-img
+                                    img(src="img/cont/c-2.png", alt="")                                                            
+                                .c-content
+                                    span.bold
+                                        | Отдел развития
+                                    p
+                                        | Илья Владимирович Одинцов
+                                    a(href="mailto:odintsov@220-volt.ru")
+                                        | odintsov@220-volt.ru
+                                    a(href="").btn.p-b-c  
+                                        | Заказать обратный звонок
+                            .contacts-item
+                                .c-img
+                                    img(src="img/cont/c-5.png", alt="")
+                                .c-content
+                                    span.bold Пресс-служба
+                                    p
+                                        | Мария Комендантова
+                                    a(href="tel:+7(812)6220220")
+                                        |+7 (812) 6-220-220 доб. 3860
+                                    a(href="mailto:komendantova@220-volt.ru")   
+                                        | komendantova@220-volt.ru
+                            .contacts-item
+                                .c-img
+                                    img(src="img/cont/c-3.png", alt="")  
+                                .c-content
+                                    span.bold
+                                        | Наши реквизиты
+                                    p
+                                        | Организационно-правовая форма: 
+                                        span ООО <br>
+                                        | Наименование: 
+                                        span Торговый дом Северо-западный<br> 
+                                        | Фактический адрес: 
+                                        span 127015, Москва, ул.Бутырская 86 Б. Магазин "220-Вольт" <br>
+                                        | Юридический адрес:
+                                        span 199178, Санкт-Петербург, 18-я линия, В.О., дом 29 <br>
+                                        | ОГРН: 
+                                        span 1027809186899  <br>                  
+                                
+    .popup-contacts
+        .artical-container
+            .artical-title
+                h3.title 
+                    | Заказать обратный звонок
+                i.fa.fa-times(aria-hidden='true').c-c-p
+            .artical-content       
+                .contacts-popup_form
+                    form.registration__form
+                        fieldset.registration__form-inputs
+                            .line
+                                input(type='text' name='name' placeholder='Имя*')
+                                input(type='text' name='phone' placeholder='Телефон*')
+                            .line
+                                input(type='text' name='email' placeholder='E-mail')
+                                input(type='email' name='time' placeholder='Удобное время для звонка')
+                        p
+                            | (*) - обязательно для заполнения
+                        button(type="submit").btn
+                            | Отправить

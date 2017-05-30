@@ -1,0 +1,31 @@
+.popup-contacts {
+    width: 930px;
+    margin: 0 auto;
+    display: none;
+    .artical-title{
+        i{
+            cursor: pointer;
+            float: right;
+            margin-right: 20px;
+            color: #8a8a8a;
+            font-size: 20px;
+            line-height: 48px;
+        }
+    }
+}
+.contacts-popup_form {
+    color: #a9a9a9;
+    .registration__form-inputs .line input {
+        color: #a9a9a9;
+        outline: none;
+    }
+    p{
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 13px;
+    }
+    .btn{
+        margin: 0 auto;
+        display: block;
+    }
+}

@@ -25,6 +25,7 @@
 			padding: 5px 20px;
 			border-radius: 2px;
 			flex: 0.5;
+			outline: none;
 			&:nth-of-type(even) {
 				margin-left: 10px;
 			}
@@ -156,7 +157,7 @@
 	}
 }
 
-@include breakpoint(500) {
+@include breakpoint(550) {
 	.registration__form-inputs {
 		margin-bottom: 20px;
 	}
