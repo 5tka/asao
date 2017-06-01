@@ -62,8 +62,14 @@ $(document).ready(function(){
         return false;
     });
 
-
-
+    $('.set__item').click(function(event) {
+        $(this).toggleClass('selected');
+    });
+    $('.prod-card__preview-slider_item').click(function(event) {
+        event.preventDefault();
+            $('.js_current-preview').attr('src', $(this).data('img'));
+        return false;
+    });
 
     $('.js_production-slider').owlCarousel({
         items: 4,

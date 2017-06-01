@@ -245,6 +245,9 @@
 		padding: 10px 26px;
 		text-align: left;
 		margin-bottom: 20px;
+		&:focus {
+			outline: none;
+		}
 	}
 	.line {
 		display: flex;
