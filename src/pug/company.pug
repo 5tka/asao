@@ -13,10 +13,10 @@ block main
 					.photo__slider.js_photoSlider
 						each item in [1,2,3,4]
 							.slide
-								.slide_photo
+								a.slide_photo(href='img/demo-img/arenda/sl1.jpg' data-lightbox="arenda1")
 									img(src='img/demo-img/arenda/sl1.jpg' alt='grundfos')
 							.slide
-								.slide_photo
+								a.slide_photo(href='img/demo-img/arenda/sl2.jpg' data-lightbox="arenda1")
 									img(src='img/demo-img/arenda/sl2.jpg' alt='grundfos')
 					.scroll-line
 						input.range(type='text', value='', name='range')
