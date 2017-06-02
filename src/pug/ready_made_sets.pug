@@ -1,0 +1,79 @@
+extends _layout.pug
+block main
+	main
+		.container
+			.breadcrumbs
+				ul.breadcrumbs-list
+					li.breadcrumbs-item--active-1
+						a(href="#") Главная
+					li.breadcrumbs-item--active-3
+						a(href="#") Регистрация
+			section.section.set-cheaper
+				.section__block-inner
+					h3.section__title В наборе дешевле!
+					menu.set-cheaper__list
+						each item in ['Инструмент','Все для монтажа','Расходные материалы','Станки','Климатическое оборудование','Силовая техника','Сантехника','Ручной инструмент','Строительное оборудование']
+							li.set-cheaper__li
+								a.set-cheaper__link.btn_tr-ac(href='#')=item
+			section.section
+				.section__title-line
+					h3.section__title каталог товаров
+				.section__block-inner
+					menu.sets-catalog__list
+						each item in ['Насосное оборудование','Водонагреватели','Отопительные приборы','Тепловые насосы','Мембранные баки','Котельное оборудование','Комплектующие','Канализация','Пластиковые баки','Мотопомпы']
+							li.sets-catalog__li
+								a.sets-catalog__link(href='#')=item
+			each item in [1,2,3]
+				section.set__block
+					.set__block-inner
+						.set__item
+							a.set__check 
+								span.text Вкл
+							.set__item-img
+								img(src='img/demo-img/ready-sets/r1.jpg')
+							a.set__item-link(href='#')
+								p.set__item-title Перфоратор Интерскоп  
+								p.set__item-mark П26 - 800 ЭР
+							a.set__item-prise 5 640 p.
+						.set__item.selected
+							a.set__check 
+								span.text Вкл
+							.set__item-img
+								img(src='img/demo-img/ready-sets/r2.jpg')
+							a.set__item-link(href='#')
+								p.set__item-title Смазка для буров 
+								p.set__item-mark Makita 196804-7
+							a.set__item-prise 640 p.
+						.set__item
+							a.set__check 
+								span.text Вкл
+							.set__item-img
+								img(src='img/demo-img/ready-sets/r1.jpg')
+							a.set__item-link(href='#')
+								p.set__item-title Перфоратор Интерскоп  
+								p.set__item-mark П26 - 800 ЭР
+							a.set__item-prise 5 640 p.
+						.set__item
+							a.set__check 
+								span.text Вкл
+							.set__item-img
+								img(src='img/demo-img/ready-sets/r2.jpg')
+							a.set__item-link(href='#')
+								p.set__item-title Смазка для буров 
+								p.set__item-mark Makita 196804-7
+							a.set__item-prise 640 p.				
+						.set__summary
+							dl.set__summary-text
+								.line
+									dt.text Общая сумма:  
+									dd.set__summary-price 8 017 руб.
+								.line
+									dt.text Экономия: 
+									dd.set__summary-economy 240 руб.
+								.line
+									dt.text Ваша цена:
+									dd.set__summary-current-price 7 777 руб.
+							a.set__buy-link.btn_ac(href='#') Купить набор!
+			.sets__footer
+				a.sets_amount.btn_tr(href='#') Найдено наборов: 10
+				a.make-better(href='#') Что можно улучшить на этой странице?

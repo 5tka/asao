@@ -19,11 +19,11 @@ block main
 			section.prod-card__section
 				.left-side
 					.prod-card__img-block
-						img(src='img/demo-img/product-card/m1.jpg')
+						img.js_current-preview(src='img/demo-img/product-card/m1.jpg')
 					.prod-card__preview-block
 						ul.prod-card__preview-slider.common-slider
-							each item in ['img/sliders/prod-card/1.jpg','img/sliders/prod-card/2.jpg','img/sliders/prod-card/3.jpg','img/sliders/prod-card/1.jpg']
-								li.prod-card__preview-slider_item
+							each item,index in ['img/sliders/prod-card/1.jpg','img/sliders/prod-card/2.jpg','img/sliders/prod-card/3.jpg','img/sliders/prod-card/1.jpg']
+								li.prod-card__preview-slider_item(data-img= index <=1 ? 'img/demo-img/product-card/m1.jpg': 'img/demo-img/product-card/m2.jpg')
 									img(src=item)
 					.prod-card__delivery-block
 						.prod-card__block-title-line

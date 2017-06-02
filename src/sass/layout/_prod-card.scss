@@ -98,6 +98,7 @@
 	visibility: hidden;
 }
 .prod-card__preview-slider_item {
+	cursor: pointer;
 	background-color: #fff;
 	width: 130px;
 	height: 130px;
@@ -114,21 +115,21 @@
 .prod-card__preview-block {
 	position: relative;
 	margin-bottom: 38px;
-	.owl-nav {
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		margin-top: -14px;
-		@include clearfix;
-	}
 	.owl-prev {
+		position: absolute;
+		top: 50%;		
+		left: 0;
+		margin-top: -14px;
 		float: left;
 		width: 13px;
 		height: 26px;
 		background-image: url(../img/sl-l.png);
 	}
 	.owl-next {
+		position: absolute;
+		top: 50%;		
+		right: 0;
+		margin-top: -14px;
 		float: right;
 		width: 13px;
 		height: 26px;
