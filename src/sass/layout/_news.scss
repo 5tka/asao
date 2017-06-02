@@ -94,6 +94,9 @@
 .artical-content {
     padding: 25px;
     .a-img {
+        a {
+            display: block;
+        }
         line-height: 0;
         width: 25.64%;
         img {
@@ -141,6 +144,33 @@
     a {
         font-weight: 700;
         color: #373737;
+    }
+}
+.catalogs-item {
+    .page-aside-link--active {
+        padding:  {
+            top: 10px;
+            bottom: 10px;
+            left: 20px;
+        }
+        a {
+            position: relative;
+            display: inline-block;
+            padding-right: 15px;
+            &:after {
+                content: "\203A";
+                position: absolute;
+                font-weight: 600;
+                top: 0px;
+                right: 0px;
+                transform: rotate(90deg);
+                font-size: 17px;
+            }
+            @include transition(.25s);
+            &:hover {
+                color: $ac;
+            }
+        }
     }
 }
 @include breakpoint(1170) {

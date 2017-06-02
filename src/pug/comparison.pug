@@ -1,0 +1,157 @@
+extends _layout.pug
+block main
+    main.comparison
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-item--active-1
+                        a(href="#") Главная 
+                    li.breadcrumbs-item--active-3
+                        a(href="#") Сравнение 
+        .container
+            .artical-container
+                .artical-title
+                    h3.title
+                        | сравнение товаров
+                .artical-content
+                    .comparison-content.dn
+                        .no-content
+                            i.fa.fa-balance-scale(aria-hidden='true')
+                            p
+                                | Вы не выбрали ни одного товара для сравнение
+                            a(href="#").btn Продолжить
+                    .comparison-content
+                        .comparison-graphs
+                            .graphs-cols
+                                .gr-title
+                                    span Цена
+                                .gr-img
+                                    img(src="img/gr-1.png", alt="")
+                                .gr-dscr
+                                    span
+                                        | Перфоратор <br> HAMMER PRT850
+                                    span
+                                        | Перфоратор HAMMER <br> PRT700C PREMIUM
+                            .graphs-cols
+                                .gr-title
+                                    span Напор и производительность
+                                .gr-img
+                                    img(src="img/gr-2.png", alt="") 
+                                .gr-dscr
+                                    span
+                                        | Перфоратор <br> HAMMER PRT850
+                                    span
+                                        | Перфоратор HAMMER <br> PRT700C PREMIUM
+                        .comparison-items
+                            .comp-table
+                                .cm-name
+                                    ul
+                                        li Цена
+                                        li Модель
+                                        li Производитель
+                                        li Доступность
+                                        li Краткое описание
+                                .cm-itemss.clearfix
+                                    .cm-item1
+                                        .cm-img
+                                            img(src="img/dr-1.png", alt="")
+                                        .cm-dscr
+                                            ul
+                                                li.price 5 499 р.
+                                                li.name Перфоратор HAMMER PRT850
+                                                li.dscr США
+                                                li.dscr В наличии
+                                                li.dscr 
+                                                    p.
+                                                        HAMMER PRT850 – надежный трехрежимный перфоратор 
+                                                        для домашнего мастера.
+                                                        Предназначен для выдалбливания отверстий в камне, 
+                                                        кирпиче и бетоне, а так же сверления металла и дерева. 
+                                                        Двигатель на 850 Вт и сила удара в 2,8 Дж
+                                                        позволяют быстро справиться с работой.
+                                    .cm-item2
+                                        .cm-img
+                                            img(src="img/dr-2.png", alt="")
+                                        .cm-dscr
+                                            ul
+                                                li.price 5 499 р.
+                                                li.name Перфоратор HAMMER PRT850
+                                                li.dscr США
+                                                li.dscr В наличии
+                                                li.dscr 
+                                                    p.
+                                                        Перфоратор HAMMER PRT700C PREMIUM предназначен 
+                                                        для создания отверстий небольшого и среднего размера в
+                                                        металлических,  деревянных и бетонных поверхностях. 
+                                                        Работает в режиме сверления, сверления с ударом и
+                                                        долбления.  Оборудован быстрозажимным патроном. 
+                                                        Предусмотрены фиксация шпинделя и блокировка
+                                                        кнопки «пуск». 
+                                                        Для работ различного вида - реверс и система регулировки
+                                                        оборотов.
+                            .comp-table.comp-table-mt
+                                .cm-title
+                                    span Техническая спецификация
+                                .cm-name
+                                    ul
+                                        li Цена
+                                        li Модель
+                                        li Производитель
+                                        li Доступность
+                                        li Краткое описание
+                                .cm-itemss.clearfix
+                                    .cm-item1
+                                        ul
+                                            li.price 5 499 р.
+                                            li.name Перфоратор HAMMER PRT850
+                                            li.dscr США
+                                            li.dscr В наличии
+                                            li.dscr 
+                                                p.
+                                                    HAMMER PRT850 – надежный трехрежимный перфоратор 
+                                                    для домашнего мастера.
+                                                    Предназначен для выдалбливания отверстий в камне, 
+                                                    кирпиче и бетоне, а так же сверления металла и дерева. 
+                                                    Двигатель на 850 Вт и сила удара в 2,8 Дж
+                                                    позволяют быстро справиться с работой.
+                                    .cm-item2
+                                        ul
+                                            li.price 5 499 р.
+                                            li.name Перфоратор HAMMER PRT850
+                                            li.dscr США
+                                            li.dscr В наличии
+                                            li.dscr 
+                                                p.
+                                                    Перфоратор HAMMER PRT700C PREMIUM предназначен 
+                                                    для создания отверстий небольшого и среднего размера в
+                                                    металлических,  деревянных и бетонных поверхностях. 
+                                                    Работает в режиме сверления, сверления с ударом и
+                                                    долбления.  Оборудован быстрозажимным патроном. 
+                                                    Предусмотрены фиксация шпинделя и блокировка
+                                                    кнопки «пуск». 
+                                                    Для работ различного вида - реверс и система регулировки
+                                                    оборотов.
+                            .comp-table.comp-table-mt
+                                .cm-title
+                                    span Физические параметры
+                                .cm-name
+                                    ul
+                                        li Размеры
+                                        li Вес нетто
+                                        li Вес брутто
+                                .cm-itemss.clearfix
+                                    .cm-item1
+                                        ul
+                                            li.dscr (68,6 in X 25,2 in X 23,2 in)
+                                            li.dscr 2,4 кг
+                                            li.dscr 6.4 кг  
+                                        a(href="#").btn
+                                            | Удалить
+                                        
+                                    .cm-item2
+                                        ul
+                                            li.dscr (68,6 in X 25,2 in X 23,2 in)
+                                            li.dscr 2,4 кг
+                                            li.dscr 6.4 кг
+                                        a(href="#").btn
+                                            | Удалить

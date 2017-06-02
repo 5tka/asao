@@ -22,6 +22,10 @@ body {
 iframe {
     border: 0;
 }
+input,
+textarea{
+    outline: none !important; 
+}
 h1,
 h2,
 h3,
