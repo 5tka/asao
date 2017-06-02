@@ -512,7 +512,7 @@ $(document).ready(function(){
         $(this).nextAll().stop(true).slideToggle('slow')
     });
 
-      $('#p-b-c').click(function(e) {
+      $('.p-b-c').click(function(e) {
         e = event.preventDefault();
         $('.popup-contacts').bPopup({
             opacity: 0.65,
@@ -520,6 +520,7 @@ $(document).ready(function(){
         });
         return false;
     })
+
 
 
 
