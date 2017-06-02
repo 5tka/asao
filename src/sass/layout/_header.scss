@@ -731,7 +731,7 @@
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 740px) {
     .adaptive-menu_init {
         display: block;
         padding-top: 7px;
@@ -919,11 +919,13 @@
             text-indent: -999px;
         }
     }
+
+}
+@media screen and (max-width: 380px) {
     .main-slider-wrap,
     .producers-wrap {
         display: none;
     }
-
 }
 
 @media screen and (max-width: 370px) {
